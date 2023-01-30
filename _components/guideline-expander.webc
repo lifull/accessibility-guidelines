@@ -1,0 +1,36 @@
+<button class="button" type="button">
+	Toggle all
+</button>
+
+<script>
+	customElements.define('guideline-expander', class extends HTMLElement {
+		connectedCallback() {
+			this.#prepareAttributes();
+			this.button.addEventListener('click', () => this.toggleAll());
+		}
+
+		toggleAll() {
+			const { expanded } = this.firstGuideline;
+			this.button.ariaExpanded = String(!expanded);
+			this.guidelines.forEach((guideline) => {
+				expanded ? guideline.collapse() : guideline.expand();
+			});
+		}
+
+		get button() {
+			return this.querySelector('.button');
+		}
+
+		get firstGuideline() {
+			return document.querySelector('l-guideline');
+		}
+
+		get guidelines() {
+			return [...document.querySelectorAll('l-guideline')];
+		}
+
+		#prepareAttributes() {
+			this.button.ariaExpanded = String(this.firstGuideline.expanded);
+		}
+	})
+</script>

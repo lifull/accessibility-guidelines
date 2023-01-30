@@ -1,0 +1,72 @@
+<h3 class="heading">
+	<button class="button" type="button" :aria-controls="this.uid" @text="title"></button>
+</h3>
+<div :id="this.uid" class="content">
+	<slot></slot>
+</div>
+
+<style webc:scoped>
+	:host {
+		display: block;
+		border: 1px solid;
+		border-radius: 0.5em;
+	}
+
+	.heading {
+		margin: 0;
+	}
+
+	.button {
+		border: 0;
+		background: none;
+		padding: 0.5em 1em;
+		text-align: left;
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.content {
+	}
+
+	:host:not(:defined) .content {
+		display: block;
+	}
+</style>
+
+<script>
+	customElements.define('l-guideline', class extends HTMLElement {
+		connectedCallback() {
+			this.button.addEventListener('click', () => this.toggle());
+			this.content.addEventListener('beforematch', () => this.expand());
+		}
+
+		toggle() {
+			this.expanded = !this.expanded;
+		}
+
+		expand() {
+			this.expanded = true;
+		}
+
+		collapse() {
+			this.expanded = false;
+		}
+
+		get expanded() {
+			return this.button.ariaExpanded === 'true';
+		}
+
+		set expanded(expanded) {
+			this.button.ariaExpanded = String(expanded);
+			this.content.hidden = expanded ? false : 'until-found';
+		}
+
+		get button() {
+			return this.querySelector('.button');
+		}
+
+		get content() {
+			return this.querySelector('.content');
+		}
+	})
+</script>

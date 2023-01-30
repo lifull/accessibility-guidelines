@@ -1,0 +1,10 @@
+---
+layout: page.webc
+---
+
+<h1>LIFULL アクセシビリティガイドライン</h1>
+
+<ul>
+	<li><a href="/introduction/">はじめに</a></li>
+	<li><a href="/design-contents/">デザイン – コンテンツ</a></li>
+</ul>

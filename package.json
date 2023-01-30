@@ -1,0 +1,13 @@
+{
+	"scripts": {
+		"dev": "run-p dev:*",
+		"dev:11ty": "eleventy --serve",
+		"build": "run-p build:*",
+		"build:11ty": "eleventy"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.0-beta.2",
+		"@11ty/eleventy-plugin-webc": "^0.8.1",
+		"npm-run-all": "^4.1.5"
+	}
+}
