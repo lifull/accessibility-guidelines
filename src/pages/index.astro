@@ -1,0 +1,20 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+---
+<DefaultLayout>
+	<h1 data-controller="hello">Hello, World!</h1>
+</DefaultLayout>
+<script>
+	import { Application, Controller } from '@hotwired/stimulus';
+	const app = Application.start();
+	app.register('hello', class extends Controller {
+		connect() {
+			console.log('Hello!');
+		}
+	});
+</script>
+<style>
+	h1 {
+		color: orange;
+	}
+</style>
