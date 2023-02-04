@@ -1,0 +1,17 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import * as pageTitle from "../content/guidelines/design/page-title.mdx";
+---
+
+<DefaultLayout title="デザイン–コンテンツ">
+
+	<h1>デザイン–コンテンツ</h1>
+
+	<h2>レベル1</h2>
+
+	<Guideline title={pageTitle.frontmatter.title}>
+		<pageTitle.Content/>
+	</Guideline>
+
+</DefaultLayout>

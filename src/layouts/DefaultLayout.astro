@@ -1,11 +1,12 @@
 ---
 const { title } = Astro.props
 ---
-<html lang="ja">
+<html class="no-js" lang="ja">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{title}</title>
+		<script is:inline>document.documentElement.classList.remove("no-js")</script>
 	</head>
 	<body>
 		<header>
@@ -23,7 +24,7 @@ const { title } = Astro.props
 	</body>
 </html>
 
-<style>
+<style is:global>
 	@font-face {
 		font-family: LIFULLFONT;
 		font-style: normal;
@@ -84,3 +85,12 @@ const { title } = Astro.props
 		outline-color: var(--color-focus);
 	}
 </style>
+
+<script>
+	import { Application } from "@hotwired/stimulus";
+	import { Disclosure } from "../client/disclosure.js";
+
+	const app = Application.start();
+
+	app.register("disclosure", Disclosure);
+</script>

@@ -1,0 +1,48 @@
+---
+import { randomId } from "../helpers/string-helpers.js";
+const { title } = Astro.props;
+const id = randomId();
+---
+
+<div class="container" data-controller="disclosure">
+	<h3>
+		<button
+			class="button"
+			type="button"
+			aria-expanded="false"
+			aria-controls={`${id}-content`}
+			data-action="disclosure#toggle"
+			data-disclosure-target="button"
+		>
+			{title}
+		</button>
+	</h3>
+	<div
+		id={`${id}-content`}
+		class="content"
+		hidden="until-found"
+		data-action="beforematch->disclosure#expand"
+		data-disclosure-target="content"
+	>
+		<slot/>
+	</div>
+</div>
+
+<style>
+	.container {
+		border: 1px solid;
+		padding: 1rem;
+	}
+	.button {
+		display: block;
+		width: 100%;
+		border: 0;
+		background: none;
+		padding: 0;
+		font: inherit;
+		text-align: left;
+	}
+	:global(.no-js) .content {
+		content-visibility: visible;
+	}
+</style>
