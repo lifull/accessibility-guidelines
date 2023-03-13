@@ -2,6 +2,7 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Guideline from "../components/Guideline.astro";
 import * as pageTitle from "../content/guidelines/design/page-title.mdx";
+import * as heading from "../content/guidelines/design/heading.mdx";
 ---
 
 <DefaultLayout title="デザイン–コンテンツ">
@@ -9,7 +10,14 @@ import * as pageTitle from "../content/guidelines/design/page-title.mdx";
 
 	<h2>レベル1</h2>
 
-	<Guideline title={pageTitle.frontmatter.title}>
-		<pageTitle.Content />
-	</Guideline>
+	<div class="guidelines">
+		<Guideline guideline={pageTitle} />
+		<Guideline guideline={heading} />
+	</div>
 </DefaultLayout>
+
+<style>
+	.guidelines > :global(* + *) {
+		margin-top: 1.25rem;
+	}
+</style>
