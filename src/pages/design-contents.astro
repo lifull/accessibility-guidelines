@@ -3,6 +3,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Guideline from "../components/Guideline.astro";
 import * as pageTitle from "../content/guidelines/design/page-title.mdx";
 import * as heading from "../content/guidelines/design/heading.mdx";
+import * as imageAlternative from "../content/guidelines/design/image-alternative.mdx";
 ---
 
 <DefaultLayout title="デザイン–コンテンツ">
@@ -13,6 +14,7 @@ import * as heading from "../content/guidelines/design/heading.mdx";
 	<div class="guidelines">
 		<Guideline guideline={pageTitle} />
 		<Guideline guideline={heading} />
+		<Guideline guideline={imageAlternative} />
 	</div>
 </DefaultLayout>
 
