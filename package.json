@@ -6,8 +6,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/mdx": "^0.18.0",
     "@hotwired/stimulus": "^3.2.1",
-    "astro": "^2.0.6"
+    "astro": "^2.1.2"
   }
 }
