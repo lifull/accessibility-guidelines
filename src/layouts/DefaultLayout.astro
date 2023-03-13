@@ -1,5 +1,7 @@
 ---
-const { title } = Astro.props;
+import logo from "../assets/images/lifull-logo.svg";
+
+const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
 <html class="no-js" lang="ja">
@@ -12,18 +14,51 @@ const { title } = Astro.props;
 		</script>
 	</head>
 	<body>
-		<header>
-			<a href="/">LIFULL アクセシビリティガイドライン</a>
-			<hr />
-		</header>
-		<main>
-			<slot />
-		</main>
-		<footer>
-			<hr />
-			<p>© LIFULL Co., Ltd.</p>
-			<p>本ガイドラインは CC-BY 4.0 ライセンスの下に提供されています。</p>
-		</footer>
+		<div class="layout">
+			<header>
+				<a href="/">
+					<img
+						src={logo.src}
+						alt="LIFULL"
+						width={logo.width}
+						height={logo.height}
+					/>
+					Accessibility Guidelines
+				</a>
+				<hr />
+				<nav>
+					<p>ガイドラインについて</p>
+					<ul>
+						<li><a href="/introduction">はじめに</a></li>
+						<li><a href="/usage">利用方法</a></li>
+					</ul>
+					<p>デザイン</p>
+					<ul>
+						<li><a href="/design-contents">コンテンツ</a></li>
+						<li><a href="/design-forms-and-interactions">フォーム・インタラクション</a></li>
+						<li><a href="/design-visual">ビジュアル</a></li>
+					</ul>
+					<p>実装</p>
+					<ul>
+						<li><a href="/impl-markup">マークアップ</a></li>
+						<li><a href="/impl-forms">フォーム</a></li>
+						<li><a href="/impl-interactions">インタラクション</a></li>
+					</ul>
+					<p>更新履歴</p>
+					<a href="#">ver. 0.0.0 (1970-01-01)</a>
+				</nav>
+			</header>
+			<div>
+				<main>
+					<slot />
+				</main>
+				<footer>
+					<hr />
+					<p>© LIFULL Co., Ltd.</p>
+					<p>本ガイドラインは CC-BY 4.0 ライセンスの下に提供されています。</p>
+				</footer>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -34,8 +69,7 @@ const { title } = Astro.props;
 		font-weight: normal;
 		font-display: optional;
 		src: url("https://font.lifull.com/lifullfont/woff2/medium.woff2")
-				format("woff2"),
-			url("https://font.lifull.com/lifullfont/woff/medium.woff") format("woff");
+			format("woff2");
 		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
 			U+2260, U+2264, U+2265;
 	}
@@ -46,8 +80,18 @@ const { title } = Astro.props;
 		font-weight: bold;
 		font-display: optional;
 		src: url("https://font.lifull.com/lifullfont/woff2/bold.woff2")
-				format("woff2"),
-			url("https://font.lifull.com/lifullfont/woff/bold.woff") format("woff");
+			format("woff2");
+		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+			U+2260, U+2264, U+2265;
+	}
+
+	@font-face {
+		font-family: LIFULLFONT;
+		font-style: normal;
+		font-weight: 900;
+		font-display: optional;
+		src: url("https://font.lifull.com/lifullfont/woff2/heavy.woff2")
+			format("woff2");
 		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
 			U+2260, U+2264, U+2265;
 	}
@@ -77,12 +121,13 @@ const { title } = Astro.props;
 	}
 
 	html {
+		--color-primary: #ed6103;
 		--color-focus: #236dda;
 	}
 
 	body {
 		margin: 0;
-		font-size: 1.125rem;
+		line-height: 1.6;
 		font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
 	}
 
@@ -90,6 +135,25 @@ const { title } = Astro.props;
 		outline: 2px solid;
 		outline: 5px auto -webkit-focus-ring-color;
 		outline-color: var(--color-focus);
+	}
+</style>
+
+<style>
+	.layout {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding-inline: 1.5rem;
+	}
+	@media (min-width: 768px) {
+		.layout {
+			padding-inline: 3rem;
+		}
+	}
+	@media (min-width: 1024px) {
+		.layout {
+			grid-template-columns: 240px minmax(0, 736px);
+			column-gap: 56px;
+		}
 	}
 </style>
 
