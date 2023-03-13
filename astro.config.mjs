@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import { defineConfig } from "astro/config";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import addSlugToHeadingIds from "./src/plugins/add-slug-to-heading-ids.mjs";
@@ -12,6 +13,12 @@ export default defineConfig({
 		assets: true,
 	},
 	markdown: {
+		shikiConfig: {
+			theme: JSON.parse(
+				readFileSync("src/assets/syntax.json", { encoding: "utf-8" })
+			),
+			wrap: true,
+		},
 		rehypePlugins: [rehypeHeadingIds, addSlugToHeadingIds],
 	},
 });
