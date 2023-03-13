@@ -1,30 +1,30 @@
 ---
 import { randomId } from "../helpers/string-helpers.js";
 const { guideline } = Astro.props;
-const id = randomId();
+const { title, level, slug } = guideline.frontmatter;
 ---
 
 <article class="container" data-controller="disclosure">
-	<h3>
+	<h3 id={slug}>
 		<button
 			class="button"
 			type="button"
 			aria-expanded="false"
-			aria-controls={`${guideline.frontmatter.slug}-content`}
+			aria-controls={`${slug}-content`}
 			data-action="disclosure#toggle"
 			data-disclosure-target="button"
 		>
-			{guideline.frontmatter.title}
+			{title}
 		</button>
 	</h3>
 	<div
-		id={`${guideline.frontmatter.slug}-content`}
+		id={`${slug}-content`}
 		class="content"
 		hidden="until-found"
 		data-action="beforematch->disclosure#expand"
 		data-disclosure-target="content"
 	>
-		<p>レベル{guideline.frontmatter.level}</p>
+		<p>レベル{level}</p>
 
 		<guideline.Content />
 	</div>
