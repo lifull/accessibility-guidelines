@@ -1,9 +1,20 @@
+---
+const { title } = Astro.props;
+---
+
 <div class="checkpoint">
-	<h5><slot name="title" /></h5>
+	<h5><slot name="title" />{title}</h5>
 	<slot />
 </div>
 
 <style>
+	.checkpoint + .checkpoint {
+		margin-top: 1.25rem;;
+	}
+	
+	.checkpoint h5 {
+		margin-block: 0;
+	}
 	.checkpoint h5::before {
 		content: "✅";
 	}

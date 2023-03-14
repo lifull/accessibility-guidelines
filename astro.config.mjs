@@ -17,7 +17,6 @@ export default defineConfig({
 			theme: JSON.parse(
 				readFileSync("src/assets/syntax.json", { encoding: "utf-8" })
 			),
-			wrap: true,
 		},
 		rehypePlugins: [rehypeHeadingIds, addSlugToHeadingIds],
 	},

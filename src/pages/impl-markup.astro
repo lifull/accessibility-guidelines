@@ -1,0 +1,17 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import * as alternativeText from "../content/guidelines/impl/alternative-text.mdx";
+---
+
+<DefaultLayout title="実装–マークアップ">
+	<h1>実装–マークアップ</h1>
+	<p>マークアップとスタイリングの実装に関するガイドラインです。</p>
+
+	<h2>レベル1 必ず達成</h2>
+
+	<Guidelines>
+		<Guideline guideline={alternativeText} />
+	</Guidelines>
+</DefaultLayout>
