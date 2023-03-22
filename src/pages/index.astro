@@ -65,35 +65,63 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 <style>
 	h1 {
-		font-size: 2.5rem;
+		margin-block: 0;
+		border: 24px solid;
+		border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56"><symbol id="L" viewBox="0 0 22 28"><path d="M.5 0h5.6c.29 0 .52.23.52.5v20.12c0 .42.34.76.76.76h13.5c.27 0 .5.23.5.51v5.6a.5.5 0 0 1-.5.51H2.03A2.04 2.04 0 0 1 0 25.96V.51C0 .23.23 0 .5 0Z" fill="%23ED6103"/></symbol><use xlink:href="%23L" y="28" width="22" height="28"/><use xlink:href="%23L" y="-28" width="22" height="28" transform="rotate(90)"/><use xlink:href="%23L" x="56" y="-28" width="22" height="28" transform="rotate(180 56 0)"/><use xlink:href="%23L" x="56" y="28" width="22" height="28" transform="rotate(-90 56 56)"/></svg>') 28;
 		color: var(--color-primary);
+		text-align: center;
+		font-size: 2.5rem;
+		line-height: 1.6;
 	}
 
 	h2 {
+		margin-top: 3.5rem;
+		margin-bottom: 1.25rem;
 		color: var(--color-primary);
+		font-size: 1.5rem;
+		line-height: 1.4;
 	}
-	
+
 	ul {
 		padding-left: 0;
 	}
-	ul > li + li {
-		margin-top: 1.25rem;
-	}
 	
 	li {
+		margin-block: 1.25rem;
 		list-style-type: none;
 	}
 	
 	a {
 		display: block;
-		border: 1px solid;
-		padding: 1.5rem;
+		border-radius: 0.25rem;;
+		border: 1px solid var(--color-border);
+		padding: 1rem;
 		color: inherit;
 		text-decoration: none;
+	}
+	a:hover {
+		border-color: var(--color-primary);
 	}
 	
 	b {
 		display: block;
 		font-size: 1.125rem;
+	}
+
+	@media (min-width: 768px) {
+		h1 {
+			border-width: 28px;
+			font-size: 2.5rem;
+			line-height: 1.6;
+		}
+		
+		h2 {
+			margin-top: 4.5rem;
+			font-size: 2rem;
+		}
+
+		a {
+			padding: 1.5rem;
+		}
 	}
 </style>

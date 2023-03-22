@@ -2,24 +2,30 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Guideline from "../components/Guideline.astro";
 import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
 import * as pageTitle from "../content/guidelines/design/page-title.mdx";
 import * as heading from "../content/guidelines/design/heading.mdx";
 import * as imageAlternative from "../content/guidelines/design/image-alternative.mdx";
 ---
 
 <DefaultLayout title="デザイン–コンテンツ">
-	<h1>デザイン–コンテンツ</h1>
+	<PageTitle>
+		<span class="hoge" slot="sub">デザイン</span>
+		コンテンツ
+	</PageTitle>
 	<p>
 		ウェブページの情報設計やナビゲーション、メディア、文章、文言に関するガイドラインです。企画とデザイナーの両方に関係する内容です。デザイナーがイニシアチブを握り制作を進めてください。
 	</p>
 
-	<h2>レベル1 必ず達成</h2>
-
-	<Guidelines>
+	<Guidelines level={1}>
 		<Guideline guideline={pageTitle} />
 		<Guideline guideline={heading} />
 		<Guideline guideline={imageAlternative} />
 	</Guidelines>
+
+	<Guidelines level={2} />
+
+	<Guidelines level={3} />
 </DefaultLayout>
 
 <style>

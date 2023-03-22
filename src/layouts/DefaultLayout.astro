@@ -15,7 +15,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 	</head>
 	<body>
 		<div class="layout">
-			<header>
+			<header class="header">
 				<a href="/">
 					<img
 						src={logo.src}
@@ -52,7 +52,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 					<a href="#">ver. 0.0.0 (1970-01-01)</a>
 				</nav>
 			</header>
-			<div>
+			<div class="main">
 				<main>
 					<slot />
 				</main>
@@ -142,27 +142,6 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
 	}
 
-	pre {
-		border-radius: 0.25rem;
-		border: 1px solid var(--color-border);
-		padding: 1rem;
-		line-height: 1.4;
-	}
-
-	code {
-		border-radius: 0.25rem;
-		border: 1px solid var(--color-border);
-		background-color: var(--color-shade);
-		padding-inline: 0.25rem;
-		font-family: Consolas, Menlo, monospace;
-		tab-size: 2;
-	}
-	pre code {
-		border: 0;
-		background: none;
-		padding: 0;
-	}
-
 	:focus-visible {
 		outline: 2px solid;
 		outline: 5px auto -webkit-focus-ring-color;
@@ -181,6 +160,14 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		display: grid;
 		grid-template-columns: 1fr;
 		padding-inline: var(--spacing-viewport-margin);
+	}
+	
+	.header {
+		padding-block: 3rem;
+	}
+	
+	.main {
+		padding-block: 3rem;
 	}
 
 	@media (min-width: 1024px) {

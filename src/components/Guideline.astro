@@ -1,21 +1,25 @@
 ---
+import Prose from "../components/Prose.astro";
+
 const { guideline } = Astro.props;
 const { title, level, slug } = guideline.frontmatter;
 ---
 
 <article class="container" data-controller="disclosure">
-	<h3 id={slug} class="heading">
-		<button
-			class="toggle"
-			type="button"
-			aria-expanded="false"
-			aria-controls={`${slug}-content`}
-			data-action="disclosure#toggle"
-			data-disclosure-target="button"
-		>
-			{title}
-		</button>
-	</h3>
+	<div class="heading">
+		<h3 id={slug}>
+			<button
+				class="toggle"
+				type="button"
+				aria-expanded="false"
+				aria-controls={`${slug}-content`}
+				data-action="disclosure#toggle"
+				data-disclosure-target="button"
+			>
+				{title}
+			</button>
+		</h3>
+	</div>
 	<div
 		id={`${slug}-content`}
 		class="content"
@@ -24,22 +28,36 @@ const { title, level, slug } = guideline.frontmatter;
 		data-disclosure-target="content"
 	>
 		<div class="content-inner">
-			<p>レベル{level}</p>
+			<Prose>
+				<p>レベル{level}</p>
 
-			<guideline.Content />
+				<guideline.Content />
+			</Prose>
 		</div>
 	</div>
 </article>
 
 <style>
-	.container {
-		position: relative;
+	.heading {
+		padding: 1.25rem var(--spacing-viewport-margin);
 	}
 
-	.heading {
-		margin-block: 0;
+	.heading h3 {
+		margin: 0;
+		display: flex;
+		align-items: start;
 		font-size: 1.25rem;
 		line-height: 1.4;
+	}
+	.heading h3::before {
+		margin-top: 0.25em;
+		margin-right: 0.4em;
+		flex-shrink: 0;
+		border-radius: 0.15em;
+		width: 0.3em;
+		height: 0.9em;
+		background-color: var(--color-primary);
+		content: "";
 	}
 
 	.toggle {
@@ -47,20 +65,10 @@ const { title, level, slug } = guideline.frontmatter;
 		align-items: flex-start;
 		width: 100%;
 		border: 0;
+		padding: 0;
 		background: none;
-		padding: 1.25rem var(--spacing-viewport-margin);
 		font: inherit;
 		text-align: left;
-	}
-	.toggle::before {
-		content: "";
-		flex-shrink: 0;
-		margin-top: 0.2em;
-		margin-right: 0.5rem;
-		border-radius: 1rem;
-		background-color: var(--color-primary);
-		width: 0.375rem;
-		height: 1em;
 	}
 
 	:global(.no-js) .content {
@@ -70,52 +78,30 @@ const { title, level, slug } = guideline.frontmatter;
 	.content-inner {
 		position: relative;
 		z-index: 1;
-		padding-block: 1rem;
 		padding-inline: var(--spacing-viewport-margin);
 	}
 
 	.content-inner :global(h4) {
 		color: var(--color-primary);
-		font-size: 1.125rem;
-		line-height: 1.4;
-	}
-
-	.content-inner :global(h5) {
-		font-size: 1rem;
-		line-height: 1.4;
-	}
-
-	.content-inner :global(h6) {
-		font-size: 0.875rem;
-	}
-
-	.content-inner :global(a) {
-		color: inherit;
-		text-underline-offset: 0.15em;
-	}
-	.content-inner :global(a:visited) {
-		color: var(--color-dimmed);
-	}
-	.content-inner :global(a:hover) {
-		color: var(--color-primary);
 	}
 
 	@media (min-width: 768px) {
 		.heading {
-			font-size: 1.5rem;
-		}
-
-		.toggle {
 			padding-block: 2rem;
 		}
-		.toggle::before {
-			margin-right: 0.75rem;
+
+		.heading h3 {
+			font-size: 1.5rem;
+		}
+		.heading h3::before {
+			margin-top: 0.283em;
+			height: 0.833em;
 		}
 	}
 
 	@media (min-width: 1024px) {
-		.toggle {
-			padding: 2rem;
+		.heading {
+			padding-inline: 2rem;
 		}
 
 		.content-inner {
@@ -127,17 +113,5 @@ const { title, level, slug } = guideline.frontmatter;
 		.toggle:hover {
 			color: var(--color-primary);
 		}
-
-		/* あーん
-		@media (min-width: 1024px) {
-			.toggle:hover::after {
-				content: "";
-				position: absolute;
-				inset: -1px;
-				z-index: 1;
-				border: 1px solid var(--color-primary);
-			}
-		}
-		*/
 	}
 </style>
