@@ -6,15 +6,33 @@ const { level } = Astro.props;
 const levelTerm = getLevelTerm(level);
 ---
 
-<div class="guidelines">
+<div
+	id={`level-${level}`}
+	class="guidelines"
+	data-controller="disclosure-group"
+	data-disclosure-group-disclosure-outlet={`#level-${level} [data-controller~='disclosure']`}
+	data-action="disclosure:toggle->disclosure-group#update"
+>
 	<div class="heading">
 		<h2>
 			レベル{level}
 			<span class="sub">{levelTerm}</span>
 		</h2>
-		<button class="expand" type="button">
-			開く
-			<img src={doubleChevronDown.src} alt="" width="12" height="12" />
+		<button
+			type="button"
+			class="expand"
+			aria-expanded="false"
+			data-disclosure-group-target="button"
+			data-action="disclosure-group#toggle"
+		>
+			<span class="expand-label collapsed">
+				開く
+				<img src={doubleChevronDown.src} alt="" width="12" height="12" />
+			</span>
+			<span class="expand-label expanded">
+				閉じる
+				<img src={doubleChevronDown.src} alt="" width="12" height="12" />
+			</span>
 		</button>
 	</div>
 
@@ -47,11 +65,6 @@ const levelTerm = getLevelTerm(level);
 
 	.expand {
 		flex-shrink: 0;
-		display: flex;
-		align-items: center;
-		column-gap: 0.5rem;
-		padding-block: 0.1875rem;
-		padding-inline: 1rem;
 		border-radius: 9999px;
 		border: 1px solid var(--color-border);
 		background: none;
@@ -60,6 +73,28 @@ const levelTerm = getLevelTerm(level);
 	}
 	.expand:hover {
 		border-color: var(--color-primary);
+	}
+
+	.expand-label {
+		display: flex;
+		align-items: center;
+		column-gap: 0.5rem;
+		padding-block: 0.1875rem;
+		padding-inline: 1rem;
+	}
+
+	.expand[aria-expanded="true"] .expand-label.collapsed {
+		display: none;
+	}
+
+	.expand-label.expanded {
+		display: none;
+	}
+	.expand-label.expanded img {
+		transform: rotate(180deg);
+	}
+	.expand[aria-expanded="true"] .expand-label.expanded {
+		display: flex;
 	}
 
 	.container {
@@ -71,7 +106,7 @@ const levelTerm = getLevelTerm(level);
 	.container > :global(* + *) {
 		border-top: 1px solid var(--color-border);
 	}
-	
+
 	@media (min-width: 768px) {
 		.heading {
 			margin-top: 4.5rem;

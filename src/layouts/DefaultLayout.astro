@@ -181,8 +181,10 @@ const { title } = Astro.props.frontmatter || Astro.props;
 <script>
 	import { Application } from "@hotwired/stimulus";
 	import { Disclosure } from "../client/disclosure.js";
+	import { DisclosureGroup } from "../client/disclosure-group.js";
 
 	const app = Application.start();
 
 	app.register("disclosure", Disclosure);
+	app.register("disclosure-group", DisclosureGroup);
 </script>

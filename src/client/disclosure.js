@@ -22,5 +22,6 @@ export class Disclosure extends Controller {
 	set expanded(expanded) {
 		this.buttonTarget.setAttribute("aria-expanded", String(expanded));
 		this.contentTarget.hidden = expanded ? false : "until-found";
+		this.dispatch("toggle", { bubbles: true, detail: expanded });
 	}
 }
