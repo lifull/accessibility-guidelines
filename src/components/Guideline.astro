@@ -17,6 +17,7 @@ const { title, level, slug } = guideline.frontmatter;
 				data-disclosure-target="button"
 			>
 				{title}
+				<span class="toggle-icon"></span>
 			</button>
 		</h3>
 	</div>
@@ -28,9 +29,8 @@ const { title, level, slug } = guideline.frontmatter;
 		data-disclosure-target="content"
 	>
 		<div class="content-inner">
+			<p class="level">優先度：レベル{level}</p>
 			<Prose>
-				<p>レベル{level}</p>
-
 				<guideline.Content />
 			</Prose>
 		</div>
@@ -62,13 +62,27 @@ const { title, level, slug } = guideline.frontmatter;
 
 	.toggle {
 		display: flex;
-		align-items: flex-start;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 1rem;
 		width: 100%;
 		border: 0;
 		padding: 0;
 		background: none;
 		font: inherit;
 		text-align: left;
+	}
+
+	.toggle-icon {
+		width: 1.25rem;
+		height: 1.25rem;
+		background-color: var(--color-icon);
+		-webkit-mask-image: var(--icon-chevron-down);
+		mask-image: var(--icon-chevron-down);
+	}
+
+	.toggle[aria-expanded="true"] .toggle-icon {
+		transform: rotate(180deg);
 	}
 
 	:global(.no-js) .content {
@@ -85,6 +99,11 @@ const { title, level, slug } = guideline.frontmatter;
 		color: var(--color-primary);
 	}
 
+	.level {
+		margin-block: 0;
+		font-weight: bold;
+	}
+
 	@media (min-width: 768px) {
 		.heading {
 			padding-block: 2rem;
@@ -95,6 +114,7 @@ const { title, level, slug } = guideline.frontmatter;
 		}
 		.heading h3::before {
 			margin-top: 0.283em;
+			margin-right: 0.6em;
 			height: 0.833em;
 		}
 	}

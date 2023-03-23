@@ -1,5 +1,15 @@
 ---
-import logo from "../assets/images/lifull-logo.svg";
+import chevronDown from "../assets/images/chevron-down.svg";
+import close from "../assets/images/close.svg";
+import completeFill from "../assets/images/complete-fill.svg";
+import doubleChevronDown from "../assets/images/double-chevron-down.svg";
+import link from "../assets/images/link.svg";
+import menuClose from "../assets/images/menu-close.svg";
+import menuOpen from "../assets/images/menu-open.svg";
+import openLink from "../assets/images/open-link.svg";
+import radioButtonBlank from "../assets/images/radio-button-blank.svg";
+
+import Header from "../components/Header.astro";
 
 const { title } = Astro.props.frontmatter || Astro.props;
 ---
@@ -13,45 +23,21 @@ const { title } = Astro.props.frontmatter || Astro.props;
 			document.documentElement.classList.remove("no-js");
 		</script>
 	</head>
-	<body>
+	<body
+		style={{
+			"--icon-chevron-down": `url(${chevronDown.src})`,
+			"--icon-close": `url(${close.src})`,
+			"--icon-complete-fill": `url(${completeFill.src})`,
+			"--icon-double-chevron-down": `url(${doubleChevronDown.src})`,
+			"--icon-link": `url(${link.src})`,
+			"--icon-menu-close": `url(${menuClose.src})`,
+			"--icon-menu-open": `url(${menuOpen.src})`,
+			"--icon-open-link": `url(${openLink.src})`,
+			"--icon-radio-button-blank": `url(${radioButtonBlank.src})`,
+		}}
+	>
 		<div class="layout">
-			<header class="header">
-				<a href="/">
-					<img
-						src={logo.src}
-						alt="LIFULL"
-						width={logo.width}
-						height={logo.height}
-					/>
-					Accessibility Guidelines
-				</a>
-				<hr />
-				<nav>
-					<p>ガイドラインについて</p>
-					<ul>
-						<li><a href="/introduction">はじめに</a></li>
-						<li><a href="/usage">利用方法</a></li>
-					</ul>
-					<p>デザイン</p>
-					<ul>
-						<li><a href="/design-contents">コンテンツ</a></li>
-						<li>
-							<a href="/design-forms-and-interactions">
-								フォーム・インタラクション
-							</a>
-						</li>
-						<li><a href="/design-visual">ビジュアル</a></li>
-					</ul>
-					<p>実装</p>
-					<ul>
-						<li><a href="/impl-markup">マークアップ</a></li>
-						<li><a href="/impl-forms">フォーム</a></li>
-						<li><a href="/impl-interactions">インタラクション</a></li>
-					</ul>
-					<p>更新履歴</p>
-					<a href="#">ver. 0.0.0 (1970-01-01)</a>
-				</nav>
-			</header>
+			<Header />
 			<div class="main">
 				<main>
 					<slot />
@@ -126,6 +112,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 
 	html {
 		--color-primary: #ed6103;
+		--color-icon: #797979;
 		--color-dimmed: #8f8f8f;
 		--color-border: #d2d2d2;
 		--color-shade: #f4f4f4;
@@ -148,6 +135,11 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		outline-color: var(--color-focus);
 	}
 
+	::selection {
+		color: white;
+		background-color: var(--color-focus);
+	}
+
 	@media (min-width: 768px) {
 		html {
 			--spacing-viewport-margin: 3rem;
@@ -161,11 +153,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		grid-template-columns: 1fr;
 		padding-inline: var(--spacing-viewport-margin);
 	}
-	
-	.header {
-		padding-block: 3rem;
-	}
-	
+
 	.main {
 		padding-block: 3rem;
 	}

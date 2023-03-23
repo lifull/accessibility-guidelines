@@ -1,6 +1,5 @@
 ---
 import { getLevelTerm } from "../helpers/levels";
-import doubleChevronDown from "../assets/images/double-chevron-down.svg";
 
 const { level } = Astro.props;
 const levelTerm = getLevelTerm(level);
@@ -27,11 +26,11 @@ const levelTerm = getLevelTerm(level);
 		>
 			<span class="expand-label collapsed">
 				開く
-				<img src={doubleChevronDown.src} alt="" width="12" height="12" />
+				<span class="expand-icon"></span>
 			</span>
 			<span class="expand-label expanded">
 				閉じる
-				<img src={doubleChevronDown.src} alt="" width="12" height="12" />
+				<span class="expand-icon"></span>
 			</span>
 		</button>
 	</div>
@@ -82,6 +81,14 @@ const levelTerm = getLevelTerm(level);
 		padding-block: 0.1875rem;
 		padding-inline: 1rem;
 	}
+	
+	.expand-icon {
+		width: 0.75rem;
+		height: 0.75rem;
+		background-color: var(--color-icon);
+		-webkit-mask-image: var(--icon-double-chevron-down);
+		mask-image: var(--icon-double-chevron-down);
+	}
 
 	.expand[aria-expanded="true"] .expand-label.collapsed {
 		display: none;
@@ -90,7 +97,7 @@ const levelTerm = getLevelTerm(level);
 	.expand-label.expanded {
 		display: none;
 	}
-	.expand-label.expanded img {
+	.expand-label.expanded .expand-icon {
 		transform: rotate(180deg);
 	}
 	.expand[aria-expanded="true"] .expand-label.expanded {

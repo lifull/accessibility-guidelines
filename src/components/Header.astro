@@ -1,0 +1,163 @@
+---
+import lifullLogo from "../assets/images/lifull-logo.svg";
+import logoH from "../assets/images/logo-h.svg";
+import logoV from "../assets/images/logo-v.svg";
+---
+
+<header class="header">
+	<a class="home-link" href="/">
+		<span class="logo-container">
+			<img
+				class="logo-lifull"
+				src={lifullLogo.src}
+				alt="LIFULL"
+				width={lifullLogo.width}
+				height={lifullLogo.height}
+			/>
+		</span>
+		<picture class="logo">
+			<source
+				media="(min-width: 1024px)"
+				srcset={logoV.src}
+				width={logoV.width}
+				height={logoV.height}
+			/>
+			<img
+				src={logoH.src}
+				alt="Accessibility Guidelines"
+				width={logoH.width}
+				height={logoH.height}
+			/>
+		</picture>
+	</a>
+	<nav id="nav" data-controller="disclosure">
+		<button
+			class="nav-button"
+			type="button"
+			aria-controls="nav-content"
+			aria-expanded="false"
+			aria-label="メニュー"
+			data-disclosure-target="button"
+			data-action="disclosure#toggle"
+		>
+			<span class="nav-button-icon"></span>
+		</button>
+		<div
+			id="nav-content"
+			class="nav-content"
+			hidden
+			data-disclosure-target="content"
+		>
+			<p>ガイドラインについて</p>
+			<ul>
+				<li><a href="/introduction">はじめに</a></li>
+				<li><a href="/usage">利用方法</a></li>
+			</ul>
+			<p>デザイン</p>
+			<ul>
+				<li><a href="/design-contents">コンテンツ</a></li>
+				<li>
+					<a href="/design-forms-and-interactions">
+						フォーム・インタラクション</a
+					>
+				</li>
+				<li><a href="/design-visual">ビジュアル</a></li>
+			</ul>
+			<p>実装</p>
+			<ul>
+				<li><a href="/impl-markup">マークアップ</a></li>
+				<li><a href="/impl-forms">フォーム</a></li>
+				<li><a href="/impl-interactions">インタラクション</a></li>
+			</ul>
+			<p>更新履歴</p>
+			<a href="#">ver. 0.0.0 (1970-01-01)</a>
+		</div>
+	</nav>
+</header>
+
+<style>
+	.header {
+		padding-block: 0.75rem;
+	}
+
+	.home-link {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--color-primary);
+	}
+
+	.logo-container {
+		min-width: 0;
+	}
+
+	.logo-lifull {
+		display: block;
+		width: 130px;
+		height: auto;
+		max-width: 100%;
+		margin: -6.4% 0 -6.4% -6.4%;
+	}
+
+	.logo {
+		min-width: 0;
+		max-width: 100%;
+		height: auto;
+	}
+	.logo img {
+		display: block;
+		max-width: 100%;
+	}
+
+	.nav-button {
+		margin-inline: auto;
+		display: block;
+		width: 3rem;
+		height: 3rem;
+		border: 0;
+		padding: 0.5rem;
+		background: none;
+	}
+
+	.nav-button-icon {
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		background-color: var(--color-icon);
+		-webkit-mask-image: var(--icon-menu-open);
+		mask-image: var(--icon-menu-open);
+	}
+	[aria-expanded="true"] .nav-button-icon {
+		-webkit-mask-image: var(--icon-menu-close);
+		mask-image: var(--icon-menu-close);
+	}
+
+	.nav-content {
+	}
+
+	@media (min-width: 1024px) {
+		.header {
+			padding-block: 3rem;
+		}
+
+		.home-link {
+			display: block;
+		}
+
+		.logo-lifull {
+			width: 208px;
+		}
+
+		.logo img {
+			margin-top: 1.5rem;
+		}
+
+		.nav-button {
+			display: none;
+		}
+
+		.nav-content {
+			display: block;
+		}
+	}
+</style>
