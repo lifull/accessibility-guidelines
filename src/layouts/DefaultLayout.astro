@@ -15,165 +15,165 @@ const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
 <html class="no-js" lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>{title}</title>
-		<script is:inline>
-			document.documentElement.classList.remove("no-js");
-		</script>
-	</head>
-	<body
-		style={{
-			"--icon-chevron-down": `url(${chevronDown.src})`,
-			"--icon-close": `url(${close.src})`,
-			"--icon-complete-fill": `url(${completeFill.src})`,
-			"--icon-double-chevron-down": `url(${doubleChevronDown.src})`,
-			"--icon-link": `url(${link.src})`,
-			"--icon-menu-close": `url(${menuClose.src})`,
-			"--icon-menu-open": `url(${menuOpen.src})`,
-			"--icon-open-link": `url(${openLink.src})`,
-			"--icon-radio-button-blank": `url(${radioButtonBlank.src})`,
-		}}
-	>
-		<div class="layout">
-			<Header />
-			<div class="main">
-				<main>
-					<slot />
-				</main>
-				<footer>
-					<hr />
-					<p>© LIFULL Co., Ltd.</p>
-					<p>本ガイドラインは CC-BY 4.0 ライセンスの下に提供されています。</p>
-				</footer>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <script is:inline>
+      document.documentElement.classList.remove("no-js");
+    </script>
+  </head>
+  <body
+    style={{
+      "--icon-chevron-down": `url(${chevronDown.src})`,
+      "--icon-close": `url(${close.src})`,
+      "--icon-complete-fill": `url(${completeFill.src})`,
+      "--icon-double-chevron-down": `url(${doubleChevronDown.src})`,
+      "--icon-link": `url(${link.src})`,
+      "--icon-menu-close": `url(${menuClose.src})`,
+      "--icon-menu-open": `url(${menuOpen.src})`,
+      "--icon-open-link": `url(${openLink.src})`,
+      "--icon-radio-button-blank": `url(${radioButtonBlank.src})`,
+    }}
+  >
+    <div class="layout">
+      <Header />
+      <div class="main">
+        <main>
+          <slot />
+        </main>
+        <footer>
+          <hr />
+          <p>© LIFULL Co., Ltd.</p>
+          <p>本ガイドラインは CC-BY 4.0 ライセンスの下に提供されています。</p>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>
 
 <style is:global>
-	@font-face {
-		font-family: LIFULLFONT;
-		font-style: normal;
-		font-weight: normal;
-		font-display: optional;
-		src: url("https://font.lifull.com/lifullfont/woff2/medium.woff2")
-			format("woff2");
-		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
-			U+2260, U+2264, U+2265;
-	}
+  @font-face {
+    font-family: LIFULLFONT;
+    font-style: normal;
+    font-weight: normal;
+    font-display: optional;
+    src: url("https://font.lifull.com/lifullfont/woff2/medium.woff2")
+      format("woff2");
+    unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+      U+2260, U+2264, U+2265;
+  }
 
-	@font-face {
-		font-family: LIFULLFONT;
-		font-style: normal;
-		font-weight: bold;
-		font-display: optional;
-		src: url("https://font.lifull.com/lifullfont/woff2/bold.woff2")
-			format("woff2");
-		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
-			U+2260, U+2264, U+2265;
-	}
+  @font-face {
+    font-family: LIFULLFONT;
+    font-style: normal;
+    font-weight: bold;
+    font-display: optional;
+    src: url("https://font.lifull.com/lifullfont/woff2/bold.woff2")
+      format("woff2");
+    unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+      U+2260, U+2264, U+2265;
+  }
 
-	@font-face {
-		font-family: LIFULLFONT;
-		font-style: normal;
-		font-weight: 900;
-		font-display: optional;
-		src: url("https://font.lifull.com/lifullfont/woff2/heavy.woff2")
-			format("woff2");
-		unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
-			U+2260, U+2264, U+2265;
-	}
+  @font-face {
+    font-family: LIFULLFONT;
+    font-style: normal;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://font.lifull.com/lifullfont/woff2/heavy.woff2")
+      format("woff2");
+    unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+      U+2260, U+2264, U+2265;
+  }
 
-	@font-face {
-		font-family: LIFULLYUGO;
-		font-weight: normal;
-		src: local("Yu Gothic Medium"), local("YuGothic Medium");
-	}
+  @font-face {
+    font-family: LIFULLYUGO;
+    font-weight: normal;
+    src: local("Yu Gothic Medium"), local("YuGothic Medium");
+  }
 
-	@font-face {
-		font-family: LIFULLYUGO;
-		font-weight: bold;
-		src: local("Yu Gothic Bold"), local("YuGothic Bold");
-	}
+  @font-face {
+    font-family: LIFULLYUGO;
+    font-weight: bold;
+    src: local("Yu Gothic Bold"), local("YuGothic Bold");
+  }
 
-	@font-face {
-		font-family: LIFULLHIRAGINO;
-		font-weight: normal;
-		src: local("HiraginoSans-W3");
-	}
+  @font-face {
+    font-family: LIFULLHIRAGINO;
+    font-weight: normal;
+    src: local("HiraginoSans-W3");
+  }
 
-	@font-face {
-		font-family: LIFULLHIRAGINO;
-		font-weight: bold;
-		src: local("HiraginoSans-W6");
-	}
+  @font-face {
+    font-family: LIFULLHIRAGINO;
+    font-weight: bold;
+    src: local("HiraginoSans-W6");
+  }
 
-	html {
-		--color-primary: #ed6103;
-		--color-icon: #797979;
-		--color-dimmed: #8f8f8f;
-		--color-border: #d2d2d2;
-		--color-shade: #f4f4f4;
-		--color-ok: #d1352a;
-		--color-ng: #0c9054;
-		--color-focus: #236dda;
+  html {
+    --color-primary: #ed6103;
+    --color-icon: #797979;
+    --color-dimmed: #8f8f8f;
+    --color-border: #d2d2d2;
+    --color-shade: #f4f4f4;
+    --color-ok: #d1352a;
+    --color-ng: #0c9054;
+    --color-focus: #236dda;
 
-		--spacing-viewport-margin: 1.5rem;
-	}
+    --spacing-viewport-margin: 1.5rem;
+  }
 
-	body {
-		margin: 0;
-		line-height: 1.6;
-		font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
-	}
+  body {
+    margin: 0;
+    line-height: 1.6;
+    font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
+  }
 
-	:focus-visible {
-		outline: 2px solid;
-		outline: 5px auto -webkit-focus-ring-color;
-		outline-color: var(--color-focus);
-	}
+  :focus-visible {
+    outline: 2px solid;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-color: var(--color-focus);
+  }
 
-	::selection {
-		color: white;
-		background-color: var(--color-focus);
-	}
+  ::selection {
+    color: white;
+    background-color: var(--color-focus);
+  }
 
-	@media (min-width: 768px) {
-		html {
-			--spacing-viewport-margin: 3rem;
-		}
-	}
+  @media (min-width: 768px) {
+    html {
+      --spacing-viewport-margin: 3rem;
+    }
+  }
 </style>
 
 <style>
-	.layout {
-		display: grid;
-		grid-template-columns: 1fr;
-		justify-content: center;
-		padding-inline: var(--spacing-viewport-margin);
-	}
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding-inline: var(--spacing-viewport-margin);
+  }
 
-	.main {
-		padding-block: 3rem;
-	}
+  .main {
+    padding-block: 3rem;
+  }
 
-	@media (min-width: 1024px) {
-		.layout {
-			grid-template-columns: 240px minmax(0, 736px);
-			column-gap: 56px;
-		}
-	}
+  @media (min-width: 1024px) {
+    .layout {
+      grid-template-columns: 240px minmax(0, 736px);
+      column-gap: 56px;
+    }
+  }
 </style>
 
 <script>
-	import { Application } from "@hotwired/stimulus";
-	import { Disclosure } from "../client/disclosure.js";
-	import { DisclosureGroup } from "../client/disclosure-group.js";
+  import { Application } from "@hotwired/stimulus";
+  import { Disclosure } from "../client/disclosure.js";
+  import { DisclosureGroup } from "../client/disclosure-group.js";
 
-	const app = Application.start();
+  const app = Application.start();
 
-	app.register("disclosure", Disclosure);
-	app.register("disclosure-group", DisclosureGroup);
+  app.register("disclosure", Disclosure);
+  app.register("disclosure-group", DisclosureGroup);
 </script>

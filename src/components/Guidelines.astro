@@ -6,138 +6,138 @@ const levelTerm = getLevelTerm(level);
 ---
 
 <div
-	id={`level-${level}`}
-	class="guidelines"
-	data-controller="disclosure-group"
-	data-disclosure-group-disclosure-outlet={`#level-${level} [data-controller~='disclosure']`}
-	data-action="disclosure:toggle->disclosure-group#update"
+  id={`level-${level}`}
+  class="guidelines"
+  data-controller="disclosure-group"
+  data-disclosure-group-disclosure-outlet={`#level-${level} [data-controller~='disclosure']`}
+  data-action="disclosure:toggle->disclosure-group#update"
 >
-	<div class="heading">
-		<h2>
-			レベル{level}
-			<span class="sub">{levelTerm}</span>
-		</h2>
-		<button
-			type="button"
-			class="expand"
-			aria-expanded="false"
-			data-disclosure-group-target="button"
-			data-action="disclosure-group#toggle"
-		>
-			<span class="expand-label collapsed">
-				開く
-				<span class="expand-icon"></span>
-			</span>
-			<span class="expand-label expanded">
-				閉じる
-				<span class="expand-icon"></span>
-			</span>
-		</button>
-	</div>
+  <div class="heading">
+    <h2>
+      レベル{level}
+      <span class="sub">{levelTerm}</span>
+    </h2>
+    <button
+      type="button"
+      class="expand"
+      aria-expanded="false"
+      data-disclosure-group-target="button"
+      data-action="disclosure-group#toggle"
+    >
+      <span class="expand-label collapsed">
+        開く
+        <span class="expand-icon"></span>
+      </span>
+      <span class="expand-label expanded">
+        閉じる
+        <span class="expand-icon"></span>
+      </span>
+    </button>
+  </div>
 
-	<div class="container">
-		<slot />
-	</div>
+  <div class="container">
+    <slot />
+  </div>
 </div>
 
 <style>
-	.heading {
-		margin-top: 3.5rem;
-		margin-bottom: 0;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		column-gap: 1rem;
-	}
+  .heading {
+    margin-top: 3.5rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+  }
 
-	h2 {
-		margin: 0;
-		color: var(--color-primary);
-		font-size: 1.5rem;
-		line-height: 1.4;
-	}
+  h2 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
 
-	.sub {
-		font-size: 1rem;
-		margin-left: 0.75rem;
-	}
+  .sub {
+    font-size: 1rem;
+    margin-left: 0.75rem;
+  }
 
-	.expand {
-		flex-shrink: 0;
-		border-radius: 9999px;
-		border: 1px solid var(--color-border);
-		background: none;
-		font: inherit;
-		font-size: 0.875rem;
-	}
-	.expand:hover {
-		border-color: var(--color-primary);
-	}
+  .expand {
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background: none;
+    font: inherit;
+    font-size: 0.875rem;
+  }
+  .expand:hover {
+    border-color: var(--color-primary);
+  }
 
-	.expand-label {
-		display: flex;
-		align-items: center;
-		column-gap: 0.5rem;
-		padding-block: 0.1875rem;
-		padding-inline: 1rem;
-	}
-	
-	.expand-icon {
-		width: 0.75rem;
-		height: 0.75rem;
-		background-color: var(--color-icon);
-		-webkit-mask-image: var(--icon-double-chevron-down);
-		mask-image: var(--icon-double-chevron-down);
-	}
+  .expand-label {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding-block: 0.1875rem;
+    padding-inline: 1rem;
+  }
 
-	.expand[aria-expanded="true"] .expand-label.collapsed {
-		display: none;
-	}
+  .expand-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--color-icon);
+    -webkit-mask-image: var(--icon-double-chevron-down);
+    mask-image: var(--icon-double-chevron-down);
+  }
 
-	.expand-label.expanded {
-		display: none;
-	}
-	.expand-label.expanded .expand-icon {
-		transform: rotate(180deg);
-	}
-	.expand[aria-expanded="true"] .expand-label.expanded {
-		display: flex;
-	}
+  .expand[aria-expanded="true"] .expand-label.collapsed {
+    display: none;
+  }
 
-	.container {
-		margin-top: 1rem;
-		margin-inline: calc(var(--spacing-viewport-margin) * -1);
-		border-block: 1px solid var(--color-border);
-	}
+  .expand-label.expanded {
+    display: none;
+  }
+  .expand-label.expanded .expand-icon {
+    transform: rotate(180deg);
+  }
+  .expand[aria-expanded="true"] .expand-label.expanded {
+    display: flex;
+  }
 
-	.container > :global(* + *) {
-		border-top: 1px solid var(--color-border);
-	}
+  .container {
+    margin-top: 1rem;
+    margin-inline: calc(var(--spacing-viewport-margin) * -1);
+    border-block: 1px solid var(--color-border);
+  }
 
-	@media (min-width: 768px) {
-		.heading {
-			margin-top: 4.5rem;
-		}
+  .container > :global(* + *) {
+    border-top: 1px solid var(--color-border);
+  }
 
-		.container {
-			margin-top: 1.25rem;
-		}
+  @media (min-width: 768px) {
+    .heading {
+      margin-top: 4.5rem;
+    }
 
-		h2 {
-			font-size: 2rem;
-		}
+    .container {
+      margin-top: 1.25rem;
+    }
 
-		.sub {
-			font-size: 1.25rem;
-			margin-left: 1rem;
-		}
-	}
+    h2 {
+      font-size: 2rem;
+    }
 
-	@media (min-width: 1024px) {
-		.container {
-			margin-inline: 0;
-			border-radius: 0.5rem;
-			border: 1px solid var(--color-border);
-		}
-	}
+    .sub {
+      font-size: 1.25rem;
+      margin-left: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      margin-inline: 0;
+      border-radius: 0.5rem;
+      border: 1px solid var(--color-border);
+    }
+  }
 </style>

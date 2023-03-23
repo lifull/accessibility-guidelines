@@ -11,28 +11,28 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 #### チェック項目
 
 <Checkpoint>
-	{/* prettier-ignore */}
-	<span slot="title">`img` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
+  {/* prettier-ignore */}
+  <span slot="title">`img` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
-	{/* prettier-ignore */}
-	<span slot="title">`img` 要素を装飾画像とするために空の `alt` 属性を使用する</span>
+  {/* prettier-ignore */}
+  <span slot="title">`img` 要素を装飾画像とするために空の `alt` 属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
-	{/* prettier-ignore */}
-	<span slot="title">`svg` 要素やアイコンフォントに代替テキストを指定するために `role="img"` と `aria-label` 属性を使用する</span>
+  {/* prettier-ignore */}
+  <span slot="title">`svg` 要素やアイコンフォントに代替テキストを指定するために `role="img"` と `aria-label` 属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
-	{/* prettier-ignore */}
-	<span slot="title">`svg` 要素やアイコンフォントを装飾画像とするために `aria-hidden="true"` を使用する</span>
+  {/* prettier-ignore */}
+  <span slot="title">`svg` 要素やアイコンフォントを装飾画像とするために `aria-hidden="true"` を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
-	{/* prettier-ignore */}
-	<span slot="title">イメージマップの `area` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
+  {/* prettier-ignore */}
+  <span slot="title">イメージマップの `area` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
@@ -55,7 +55,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 
 ```html
 <button type="button">
-	<svg viewBox="0 0 64 64" role="img" aria-label="メニュー">…</svg>
+  <svg viewBox="0 0 64 64" role="img" aria-label="メニュー">…</svg>
 </button>
 ```
 
@@ -63,8 +63,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 
 ```html
 <button type="button">
-	<span class="fa-brands fa-twitter" aria-hidden="true"></span>
-	ツイートする
+  <span class="fa-brands fa-twitter" aria-hidden="true"></span>
+  ツイートする
 </button>
 ```
 
@@ -72,20 +72,20 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 
 ```html
 <img
-	src="nihon-chizu.png"
-	alt="日本地図"
-	width="500"
-	height="500"
-	usemap="#map"
+  src="nihon-chizu.png"
+  alt="日本地図"
+  width="500"
+  height="500"
+  usemap="#map"
 />
 <map id="map">
-	<area
-		shape="poly"
-		coords="476,31,492,25,540,85,587,84,590,122,523,161,431,190,427,145,484,91,485,62"
-		href="#hokkaido"
-		alt="北海道"
-	/>
-	…
+  <area
+    shape="poly"
+    coords="476,31,492,25,540,85,587,84,590,122,523,161,431,190,427,145,484,91,485,62"
+    href="#hokkaido"
+    alt="北海道"
+  />
+  …
 </map>
 ```
 

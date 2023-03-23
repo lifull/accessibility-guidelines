@@ -3,32 +3,33 @@ const { title } = Astro.props;
 ---
 
 <div class="checkpoint">
-	<h5>
-		<span class="icon"></span>
-		<slot name="title" />{title}</h5>
-	<slot />
+  <h5>
+    <span class="icon"></span>
+    <slot name="title" />{title}
+  </h5>
+  <slot />
 </div>
 
 <style>
-	.checkpoint + .checkpoint {
-		margin-top: 1.25rem;;
-	}
-	
-	.checkpoint h5 {
-		display: flex;
-		align-items: start;
-		margin-block: 0;
-		font-size: 1rem;
-		line-height: 1.6;
-	}
+  .checkpoint + .checkpoint {
+    margin-top: 1.25rem;
+  }
 
-	.icon {
-		flex-shrink: 0;
-		width: 1.5rem;
-		height: 1.5rem;
-		margin-right: 0.25rem;
-		background-color: var(--color-primary);
-		-webkit-mask-image: var(--icon-complete-fill);
-		mask-image: var(--icon-complete-fill);
-	}
+  .checkpoint h5 {
+    display: flex;
+    align-items: start;
+    margin-block: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.25rem;
+    background-color: var(--color-primary);
+    -webkit-mask-image: var(--icon-complete-fill);
+    mask-image: var(--icon-complete-fill);
+  }
 </style>
