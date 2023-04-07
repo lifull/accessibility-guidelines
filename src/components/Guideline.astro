@@ -48,6 +48,8 @@ const { title, level, slug } = guideline.frontmatter;
     align-items: start;
     font-size: 1.25rem;
     line-height: 1.4;
+    letter-spacing: 0.05em;
+    font-feature-settings: "palt";
   }
   .heading h3::before {
     margin-top: 0.25em;
@@ -71,6 +73,7 @@ const { title, level, slug } = guideline.frontmatter;
     background: none;
     font: inherit;
     text-align: left;
+    letter-spacing: inherit;
   }
 
   .toggle-icon {
