@@ -2,6 +2,7 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Guideline from "../components/Guideline.astro";
 import Guidelines from "../components/Guidelines.astro";
+import Pagination from "../components/Pagination.astro";
 import * as alternativeText from "../content/guidelines/impl/alternative-text.mdx";
 ---
 
@@ -11,7 +12,9 @@ import * as alternativeText from "../content/guidelines/impl/alternative-text.md
 
   <h2>レベル1 必ず達成</h2>
 
-  <Guidelines>
+  <Guidelines level={1}>
     <Guideline guideline={alternativeText} />
   </Guidelines>
+
+  <Pagination current={Astro.url.href} />
 </DefaultLayout>

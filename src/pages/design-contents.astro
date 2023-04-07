@@ -3,6 +3,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Guideline from "../components/Guideline.astro";
 import Guidelines from "../components/Guidelines.astro";
 import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
 import * as pageTitle from "../content/guidelines/design/page-title.mdx";
 import * as heading from "../content/guidelines/design/heading.mdx";
 import * as imageAlternative from "../content/guidelines/design/image-alternative.mdx";
@@ -10,7 +11,7 @@ import * as imageAlternative from "../content/guidelines/design/image-alternativ
 
 <DefaultLayout title="デザイン–コンテンツ">
   <PageTitle>
-    <span class="hoge" slot="sub">デザイン</span>
+    <span slot="sub">デザイン</span>
     コンテンツ
   </PageTitle>
   <p>
@@ -26,6 +27,8 @@ import * as imageAlternative from "../content/guidelines/design/image-alternativ
   <Guidelines level={2} />
 
   <Guidelines level={3} />
+
+  <Pagination current={Astro.url.href} />
 </DefaultLayout>
 
 <style>

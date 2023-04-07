@@ -4,6 +4,7 @@ title: はじめに
 ---
 
 import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
 import Prose from "../components/Prose.astro";
 
 <PageTitle>
@@ -62,3 +63,5 @@ import Prose from "../components/Prose.astro";
   一般に、「害」という漢字にマイナスイメージがあるとして、「障がい者」や「障碍者」と表記するほうが好ましいとする見解があります。一方で「障害者」のほうが好ましいとする見解もあり、人や組織によって意見が分かれます。LIFULL アクセシビリティガイドラインでは中央省庁での表記に沿うかたちで「障害者」に統一しています。なお、表記については会社としての統一見解ではないことに留意ください。
 
 </Prose>
+
+<Pagination current={url} />
