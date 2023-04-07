@@ -9,6 +9,7 @@ import menuOpen from "../assets/images/menu-open.svg";
 import openBlank from "../assets/images/open-blank.svg";
 import radioButtonBlank from "../assets/images/radio-button-blank.svg";
 
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 const { title } = Astro.props.frontmatter || Astro.props;
@@ -42,11 +43,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
         <main>
           <slot />
         </main>
-        <footer>
-          <hr />
-          <p>© LIFULL Co., Ltd.</p>
-          <p>本ガイドラインは CC-BY 4.0 ライセンスの下に提供されています。</p>
-        </footer>
+        <Footer />
       </div>
     </div>
   </body>
@@ -155,7 +152,8 @@ const { title } = Astro.props.frontmatter || Astro.props;
   }
 
   .main {
-    padding-block: 3rem;
+    min-width: 0;
+    padding-top: 3rem;
   }
 
   @media (min-width: 1024px) {
