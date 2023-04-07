@@ -29,7 +29,7 @@ const { summary } = Astro.props;
     align-items: center;
     column-gap: 0.5rem;
     border-radius: 0.5rem;
-    padding: var(--details-padding);
+    padding: calc(var(--details-padding) - 1rem * 0.3) var(--details-padding);
     list-style-type: none;
     font-weight: bold;
     cursor: default;
@@ -67,7 +67,7 @@ const { summary } = Astro.props;
   details > div {
     position: relative;
     padding-inline: var(--details-padding);
-    padding-bottom: var(--details-padding);
+    padding-bottom: calc(var(--details-padding) - 1rem * 0.3);
   }
 
   details > div > :global(:first-child) {

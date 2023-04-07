@@ -4,63 +4,60 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 <DefaultLayout>
   <h1><span>LIFULL</span> <span>Accessibility Guidelines</span></h1>
+
   <h2>ガイドラインについて</h2>
-  <ul>
-    <li>
-      <a href="/introduction">
-        <b>はじめに</b>
-        LIFULLアクセシビリティガイドラインの概要、特色、項目の見方などを説明しています。
-      </a>
-    </li>
-    <li>
-      <a href="/usage">
-        <b>利用方法</b>
-        ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミー
-      </a>
-    </li>
-  </ul>
+  <article>
+    <a href="/introduction">
+      <h3>はじめに</h3>
+      LIFULLアクセシビリティガイドラインの概要、特色、項目の見方などを説明しています。
+    </a>
+  </article>
+  <article>
+    <a href="/usage">
+      <h3>利用方法</h3>
+      ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミー
+    </a>
+  </article>
+
   <h2>デザイン</h2>
-  <ul>
-    <li>
-      <a href="/design-contents">
-        <b>コンテンツ</b>
-        情報設計やナビゲーション、メディア、文章、文言に関するガイドラインです。
-      </a>
-    </li>
-    <li>
-      <a href="/design-forms-and-interactions">
-        <b>フォーム・インタラクション</b>
-        フォームデザインおよびインタラクションデザインに関するガイドラインです。
-      </a>
-    </li>
-    <li>
-      <a href="/design-visual">
-        <b>ビジュアル</b>
-        視覚的なデザインに関するガイドラインです。
-      </a>
-    </li>
-  </ul>
+  <article>
+    <a href="/design-contents">
+      <h3>コンテンツ</h3>
+      情報設計やナビゲーション、メディア、文章、文言に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/design-forms-and-interactions">
+      <h3>フォーム・インタラクション</h3>
+      フォームデザインおよびインタラクションデザインに関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/design-visual">
+      <h3>ビジュアル</h3>
+      視覚的なデザインに関するガイドラインです。
+    </a>
+  </article>
+
   <h2>実装</h2>
-  <ul>
-    <li>
-      <a href="/impl-markup">
-        <b>マークアップ</b>
-        マークアップとスタイリングの実装に関するガイドラインです。
-      </a>
-    </li>
-    <li>
-      <a href="/impl-forms">
-        <b>フォーム</b>
-        フォームの実装に関するガイドラインです。
-      </a>
-    </li>
-    <li>
-      <a href="/impl-interactions">
-        <b>インタラクション</b>
-        インタラクションの実装に関するガイドラインです。
-      </a>
-    </li>
-  </ul>
+  <article>
+    <a href="/impl-markup">
+      <h3>マークアップ</h3>
+      マークアップとスタイリングの実装に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/impl-forms">
+      <h3>フォーム</h3>
+      フォームの実装に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/impl-interactions">
+      <h3>インタラクション</h3>
+      インタラクションの実装に関するガイドラインです。
+    </a>
+  </article>
 </DefaultLayout>
 
 <style>
@@ -84,13 +81,11 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
     color: var(--color-primary);
     font-size: 1.5rem;
     line-height: 1.4;
+    letter-spacing: 0.08em;
+    font-feature-settings: "palt";
   }
 
-  ul {
-    padding-left: 0;
-  }
-
-  li {
+  article {
     margin-block: 1.25rem;
     list-style-type: none;
   }
@@ -126,9 +121,12 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
   a:hover::after {
     background-color: var(--color-primary);
   }
+  a:hover h3 {
+    color: var(--color-primary);
+  }
 
-  b {
-    margin-bottom: calc(0.75rem - 1.125rem * 0.2 - 0.875rem * 0.2);
+  h3 {
+    margin-block: 0 calc(0.75rem - 1.125rem * 0.3 - 0.875rem * 0.3);
     display: block;
     font-size: 1.125rem;
   }
@@ -146,7 +144,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
     }
 
     a {
-      padding: calc(1.5rem - 1.125rem * 0.2) 3rem calc(1.5rem - 1rem * 0.2)
+      padding: calc(1.5rem - 1.125rem * 0.3) 3rem calc(1.5rem - 1rem * 0.3)
         1.5rem;
       font-size: 1rem;
     }
@@ -154,8 +152,8 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
       right: 1.5rem;
     }
 
-    b {
-      margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.2);
+    h3 {
+      margin-bottom: calc(1.25rem - 1.125rem * 0.3 - 1rem * 0.3);
     }
   }
 </style>

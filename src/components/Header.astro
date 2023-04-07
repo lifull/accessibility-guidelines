@@ -2,6 +2,7 @@
 import lifullLogo from "../assets/images/lifull-logo.svg";
 import logoH from "../assets/images/logo-h.svg";
 import logoV from "../assets/images/logo-v.svg";
+import openBlank from "../assets/images/open-blank.svg";
 ---
 
 <header class="header">
@@ -72,7 +73,20 @@ import logoV from "../assets/images/logo-v.svg";
         </ul>
         <p>更新履歴</p>
         <ul>
-          <li><a href="#">ver. 0.0.0 (1970-01-01)</a></li>
+          <li>
+            <a href="#" target="_blank">
+              ver. 0.0.0 (1970-01-01)
+              <img
+                src={openBlank.src}
+                alt="新しいタブで開く"
+                width="20"
+                height="20"
+                loading="lazy"
+                decoding="async"
+                class="open-blank"
+              />
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -163,6 +177,10 @@ import logoV from "../assets/images/logo-v.svg";
   .nav-content a:hover {
     color: var(--color-primary);
   }
+  
+  .open-blank {
+    vertical-align: middle;
+  }
 
   @media (min-width: 1024px) {
     .header {
@@ -176,7 +194,7 @@ import logoV from "../assets/images/logo-v.svg";
       overflow-y: auto;
       padding-block: 3rem;
     }
-    
+
     .header-inner {
       margin-left: auto;
       width: 240px;
