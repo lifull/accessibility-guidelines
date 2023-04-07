@@ -3,6 +3,7 @@ import lifullLogo from "../assets/images/lifull-logo.svg";
 import logoH from "../assets/images/logo-h.svg";
 import logoV from "../assets/images/logo-v.svg";
 import openBlank from "../assets/images/open-blank.svg";
+import { version } from "../../package.json"
 ---
 
 <header class="header">
@@ -74,8 +75,8 @@ import openBlank from "../assets/images/open-blank.svg";
         <p>更新履歴</p>
         <ul>
           <li>
-            <a href="#" target="_blank">
-              ver. 0.0.0 (1970-01-01)
+            <a href="https://github.com/lifull/accessibility-guidelines/releases" target="_blank">
+              ver. {version}
               <img
                 src={openBlank.src}
                 alt="新しいタブで開く"
