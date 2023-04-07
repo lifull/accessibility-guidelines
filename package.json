@@ -9,6 +9,7 @@
     "@astrojs/markdown-remark": "^2.1.0",
     "@astrojs/mdx": "^0.18.0",
     "@hotwired/stimulus": "^3.2.1",
-    "astro": "^2.1.2"
+    "astro": "^2.1.2",
+    "rehype-autolink-headings": "^6.1.1"
   }
 }

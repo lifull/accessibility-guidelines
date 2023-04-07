@@ -132,6 +132,10 @@ const { title } = Astro.props.frontmatter || Astro.props;
     outline-color: var(--color-focus);
   }
 
+  :target {
+    scroll-margin-block: 2rem;
+  }
+
   ::selection {
     color: white;
     background-color: var(--color-focus);
@@ -140,6 +144,10 @@ const { title } = Astro.props.frontmatter || Astro.props;
   @media (min-width: 768px) {
     html {
       --spacing-viewport-margin: 3rem;
+    }
+
+    :target {
+      scroll-margin-block: 3rem;
     }
   }
 </style>

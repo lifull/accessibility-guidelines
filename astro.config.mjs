@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import { defineConfig } from "astro/config";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import addSlugToHeadingIds from "./src/plugins/add-slug-to-heading-ids.mjs";
 
 // https://astro.build/config
@@ -18,6 +19,10 @@ export default defineConfig({
         readFileSync("src/assets/syntax.json", { encoding: "utf-8" })
       ),
     },
-    rehypePlugins: [rehypeHeadingIds, addSlugToHeadingIds],
+    rehypePlugins: [
+      rehypeHeadingIds,
+      addSlugToHeadingIds,
+      rehypeAutolinkHeadings,
+    ],
   },
 });
