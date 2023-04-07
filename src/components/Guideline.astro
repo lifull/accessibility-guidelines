@@ -39,6 +39,7 @@ const { title, level, slug } = guideline.frontmatter;
 
 <style>
   .heading {
+    position: relative;
     padding: 1.25rem var(--spacing-viewport-margin);
   }
 
@@ -76,12 +77,22 @@ const { title, level, slug } = guideline.frontmatter;
     letter-spacing: inherit;
   }
 
+  .toggle::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
   .toggle-icon {
     width: 1.25rem;
     height: 1.25rem;
     background-color: var(--color-icon);
     -webkit-mask-image: var(--icon-chevron-down);
     mask-image: var(--icon-chevron-down);
+  }
+
+  .toggle:hover .toggle-icon {
+    background-color: var(--color-primary);
   }
 
   .toggle[aria-expanded="true"] .toggle-icon {
