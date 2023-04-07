@@ -3,7 +3,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
-  <h1>LIFULL Accessibility Guidelines</h1>
+  <h1><span>LIFULL</span> <span>Accessibility Guidelines</span></h1>
   <h2>ガイドラインについて</h2>
   <ul>
     <li>
@@ -71,8 +71,11 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
       28;
     color: var(--color-primary);
     text-align: center;
-    font-size: 2.5rem;
-    line-height: 1.6;
+    font-size: 1.75rem;
+  }
+
+  h1 span {
+    display: inline-block;
   }
 
   h2 {
@@ -93,18 +96,39 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
   }
 
   a {
+    position: relative;
     display: block;
     border-radius: 0.25rem;
     border: 1px solid var(--color-border);
-    padding: 1rem;
+    padding: calc(1.25rem - 1.125rem * 0.2) 2rem calc(1.25rem - 0.875rem * 0.2)
+      1rem;
     color: inherit;
+    font-size: 0.875rem;
     text-decoration: none;
+  }
+  a::after {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    bottom: 0;
+    margin-block: auto;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-icon);
+    content: "";
+    -webkit-mask-image: var(--icon-chevron-down);
+    mask-image: var(--icon-chevron-down);
+    transform: rotate(-90deg);
   }
   a:hover {
     border-color: var(--color-primary);
   }
+  a:hover::after {
+    background-color: var(--color-primary);
+  }
 
   b {
+    margin-bottom: calc(0.75rem - 1.125rem * 0.2 - 0.875rem * 0.2);
     display: block;
     font-size: 1.125rem;
   }
@@ -112,8 +136,8 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
   @media (min-width: 768px) {
     h1 {
       border-width: 28px;
+      padding: 0.25rem 2rem;
       font-size: 2.5rem;
-      line-height: 1.6;
     }
 
     h2 {
@@ -122,7 +146,16 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
     }
 
     a {
-      padding: 1.5rem;
+      padding: calc(1.5rem - 1.125rem * 0.2) 3rem calc(1.5rem - 1rem * 0.2)
+        1.5rem;
+      font-size: 1rem;
+    }
+    a::after {
+      right: 1.5rem;
+    }
+
+    b {
+      margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.2);
     }
   }
 </style>

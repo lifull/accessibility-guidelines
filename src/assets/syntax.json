@@ -1,4 +1,8 @@
 {
+	"theme": "light",
+	"colors": {
+		"editor.background": "transparent"
+	},
 	"tokenColors": [
 		{
 			"name": "Comment",

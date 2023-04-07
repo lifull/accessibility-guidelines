@@ -4,16 +4,16 @@
 
 <style is:global>
   .prose h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: calc(3.5rem - 1.5rem * 0.2 - 1rem * 0.3);
+    margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.3);
     color: var(--color-primary);
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
   .prose h3 {
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
+    margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.3);
+    margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.3);
     display: flex;
     align-items: start;
     font-size: 1.25rem;
@@ -31,21 +31,21 @@
   }
 
   .prose h4 {
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: calc(2.5rem - 1.125rem * 0.2 - 1rem * 0.3);
+    margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.3);
     font-size: 1.125rem;
     line-height: 1.4;
   }
 
   .prose h5 {
-    margin-top: 2rem;
-    margin-bottom: 1.25rem;
+    margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.3);
+    margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.3);
     font-size: 1.125rem;
     line-height: 1.4;
   }
 
   .prose p {
-    margin-block: 1.25rem;
+    margin-block: calc(1.25rem - 1rem * 0.6);
   }
 
   .prose ul,
@@ -54,7 +54,7 @@
   }
 
   .prose li {
-    margin-block: 1.25rem;
+    margin-block: calc(1.25rem - 1rem * 0.6);
   }
   .prose ul > li {
     list-style-type: none;
@@ -72,6 +72,7 @@
   }
 
   .prose pre {
+    margin-block: calc(1.25rem - 1rem * 0.3);
     border-radius: 0.25rem;
     border: 1px solid var(--color-border);
     padding: 1rem;
@@ -105,12 +106,14 @@
 
   @media (min-width: 768px) {
     .prose h2 {
-      margin-top: 4.5rem;
+      margin-top: calc(4.5rem - 2rem * 0.2 - 1rem * 0.3);
+      margin-bottom: calc(1.25rem - 2rem * 0.2 - 1rem * 0.3);
       font-size: 2rem;
     }
 
     .prose h3 {
-      margin-top: 3.5rem;
+      margin-top: calc(3.5rem - 1.5rem * 0.2 - 1rem * 0.3);
+      margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.3);
       font-size: 1.5rem;
     }
     .prose h3::before {
@@ -118,12 +121,13 @@
     }
 
     .prose h4 {
-      margin-top: 3rem;
+      margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.3);
+      margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.3);
       font-size: 1.25rem;
     }
 
     .prose h5 {
-      margin-top: 2.5rem;
+      margin-top: calc(2.5rem - 1.125rem * 0.2 - 1rem * 0.3);
       font-size: 1.125rem;
     }
   }

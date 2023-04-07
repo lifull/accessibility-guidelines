@@ -151,7 +151,6 @@ const { title } = Astro.props.frontmatter || Astro.props;
   .layout {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
     padding-inline: var(--spacing-viewport-margin);
   }
 
@@ -161,8 +160,15 @@ const { title } = Astro.props.frontmatter || Astro.props;
 
   @media (min-width: 1024px) {
     .layout {
-      grid-template-columns: 240px minmax(0, 736px);
-      column-gap: 56px;
+      grid-template-columns:
+        minmax(var(--spacing-viewport-margin), 1fr)
+        240px 56px minmax(0, 736px)
+        minmax(var(--spacing-viewport-margin), 1fr);
+      padding-inline: 0;
+    }
+
+    .main {
+      grid-column: 4;
     }
   }
 </style>
