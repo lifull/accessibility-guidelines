@@ -8,8 +8,8 @@ import { version } from "../../package.json";
 
 const nav = {
   ガイドラインについて: {
-    "introduction": "はじめに",
-    "usage": "利用方法",
+    introduction: "はじめに",
+    usage: "利用方法",
   },
   デザイン: {
     "design-contents": "コンテンツ",
@@ -78,7 +78,9 @@ const nav = {
                   <li>
                     <a
                       href={`/${slug}.html`}
-                      aria-current={Astro.url.pathname === `/${slug}.html` ? "page" : null}
+                      aria-current={
+                        Astro.url.pathname === `/${slug}.html` ? "page" : null
+                      }
                     >
                       {title}
                     </a>
@@ -197,9 +199,13 @@ const nav = {
     text-decoration: none;
   }
 
-  .nav-content a:hover,
+  .nav-content a:hover {
+    color: var(--color-primary);
+  }
+
   .nav-content a[aria-current] {
     color: var(--color-primary);
+    font-weight: bold;
   }
 
   .open-blank {
