@@ -9,9 +9,8 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx()],
-  experimental: {
-    assets: true,
+  build: {
+    format: "file",
   },
   markdown: {
     shikiConfig: {
@@ -24,5 +23,9 @@ export default defineConfig({
       addSlugToHeadingIds,
       rehypeAutolinkHeadings,
     ],
+  },
+  integrations: [mdx()],
+  experimental: {
+    assets: true,
   },
 });

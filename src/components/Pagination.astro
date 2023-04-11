@@ -13,11 +13,11 @@ const next = getNext(currentSlug);
 ---
 
 <nav class="pagination">
-  <a href={prev && `/${prev.slug}`} class="item prev">
+  <a href={prev && `/${prev.slug}.html`} class="item prev">
     {prev?.title}
   </a>
   <div class="separator"></div>
-  <a href={next && `/${next.slug}`} class="item next">
+  <a href={next && `/${next.slug}.html`} class="item next">
     {next?.title}
   </a>
 </nav>
