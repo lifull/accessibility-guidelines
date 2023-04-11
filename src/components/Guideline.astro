@@ -26,7 +26,7 @@ const { title, level, slug } = guideline.frontmatter;
     id={`${slug}-content`}
     class="content"
     hidden="until-found"
-    data-action="beforematch->disclosure#expand"
+    data-action="beforematch->disclosure#beforematch hashchange@window->disclosure#checkHash"
     data-disclosure-target="content"
   >
     <a href={`#${slug}`} id={slug} class="anchor">

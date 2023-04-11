@@ -5,6 +5,7 @@ export class Disclosure extends Controller {
 
   connect() {
     this.defaultHidden = this.contentTarget.hidden || true;
+    this.checkHash();
   }
 
   toggle() {
@@ -17,6 +18,19 @@ export class Disclosure extends Controller {
 
   collapse() {
     this.expanded = false;
+  }
+
+  checkHash() {
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(hash);
+    if (this.element.contains(target)) {
+      this.expand();
+      target.focus();
+    }
+  }
+
+  beforematch() {
+    this.expand();
   }
 
   get expanded() {
