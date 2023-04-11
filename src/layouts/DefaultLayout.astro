@@ -113,8 +113,8 @@ const { title } = Astro.props.frontmatter || Astro.props;
     --color-dimmed: #8f8f8f;
     --color-border: #d2d2d2;
     --color-shade: #f4f4f4;
-    --color-ok: #d1352a;
-    --color-ng: #0c9054;
+    --color-good: #0c9054;
+    --color-bad: #d1352a;
     --color-focus: #236dda;
 
     --spacing-viewport-margin: 1.5rem;
@@ -124,6 +124,12 @@ const { title } = Astro.props.frontmatter || Astro.props;
     margin: 0;
     line-height: 1.6;
     font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
   }
 
   :focus-visible {

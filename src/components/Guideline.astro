@@ -136,6 +136,12 @@ const { title, level, slug } = guideline.frontmatter;
     z-index: 1;
     padding-inline: var(--spacing-viewport-margin);
   }
+  
+  .content-inner::after {
+    margin-top: calc(1.5rem - 1rem * 0.3);
+    display: block;
+    content: "";
+  }
 
   .content-inner :global(h4) {
     color: var(--color-primary);
@@ -163,6 +169,10 @@ const { title, level, slug } = guideline.frontmatter;
     .anchor {
       top: 2.25rem;
       left: 1.25rem;
+    }
+
+    .content-inner::after {
+      margin-top: calc(2rem - 1rem * 0.3);
     }
   }
 

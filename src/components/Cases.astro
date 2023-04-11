@@ -1,0 +1,12 @@
+<div class="cases">
+  <slot />
+</div>
+
+<style>
+  .cases {
+    margin-top: calc(1.5rem - 1.125rem * 0.3);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+    grid-gap: 1.5rem;
+  }
+</style>

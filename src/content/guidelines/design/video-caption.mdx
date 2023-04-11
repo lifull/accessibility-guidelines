@@ -6,7 +6,10 @@ title: 動画の字幕
 slug: video-caption
 ---
 
+import videoCaption1 from "../../../assets/images/video-caption-1.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
 
 #### チェック項目
 
@@ -16,7 +19,22 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 
 動画に字幕を付けると、聴覚障害者のみならず、音を出せない環境や状況にあるユーザーにとっても動画を利用しやすくなります。
 
-#####
+##### 具体例 動画に字幕を付ける
+
+<Cases>
+  <Case type="good" title="YouTube に動画をアップロードする">
+    <img
+      slot="figure"
+      src={videoCaption1.src}
+      alt=""
+      width={videoCaption1.width}
+      height={videoCaption1.height}
+      loading="lazy"
+      decoding="async"
+    />
+    YouTubeに動画をアップロードすると音声から自動的に字幕が生成されます。生成された字幕をもとに手直しをすると、字幕をつける手間が大幅に省けます。
+  </Case>
+</Cases>
 
 ##### 参考情報
 

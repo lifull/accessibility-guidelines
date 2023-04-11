@@ -7,6 +7,9 @@ import Pagination from "../components/Pagination.astro";
 import * as pageTitle from "../content/guidelines/design/page-title.mdx";
 import * as heading from "../content/guidelines/design/heading.mdx";
 import * as imageAlternative from "../content/guidelines/design/image-alternative.mdx";
+import * as videoCaption from "../content/guidelines/design/video-caption.mdx"
+import * as autostartContent from "../content/guidelines/design/autostart-content.mdx"
+import * as flash from "../content/guidelines/design/flash.mdx"
 ---
 
 <DefaultLayout title="デザイン–コンテンツ">
@@ -22,6 +25,9 @@ import * as imageAlternative from "../content/guidelines/design/image-alternativ
     <Guideline guideline={pageTitle} />
     <Guideline guideline={heading} />
     <Guideline guideline={imageAlternative} />
+    <Guideline guideline={videoCaption} />
+    <Guideline guideline={autostartContent} />
+    <Guideline guideline={flash} />
   </Guidelines>
 
   <Guidelines level={2} />
