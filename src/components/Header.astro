@@ -3,7 +3,25 @@ import lifullLogo from "../assets/images/lifull-logo.svg";
 import logoH from "../assets/images/logo-h.svg";
 import logoV from "../assets/images/logo-v.svg";
 import openBlank from "../assets/images/open-blank.svg";
-import { version } from "../../package.json"
+
+import { version } from "../../package.json";
+
+const nav = {
+  ガイドラインについて: {
+    "/introduction": "はじめに",
+    "/usage": "利用方法",
+  },
+  デザイン: {
+    "/design-contents": "コンテンツ",
+    "/design-forms-and-interactions": "フォーム・インタラクション",
+    "/design-visual": "ビジュアル",
+  },
+  実装: {
+    "/impl-markup": "マークアップ",
+    "/impl-forms": "フォーム",
+    "/impl-interactions": "インタラクション",
+  },
+};
 ---
 
 <header class="header">
@@ -51,31 +69,32 @@ import { version } from "../../package.json"
         hidden
         data-disclosure-target="content"
       >
-        <p>ガイドラインについて</p>
-        <ul>
-          <li><a href="/introduction">はじめに</a></li>
-          <li><a href="/usage">利用方法</a></li>
-        </ul>
-        <p>デザイン</p>
-        <ul>
-          <li><a href="/design-contents">コンテンツ</a></li>
-          <li>
-            <a href="/design-forms-and-interactions">
-              フォーム・インタラクション
-            </a>
-          </li>
-          <li><a href="/design-visual">ビジュアル</a></li>
-        </ul>
-        <p>実装</p>
-        <ul>
-          <li><a href="/impl-markup">マークアップ</a></li>
-          <li><a href="/impl-forms">フォーム</a></li>
-          <li><a href="/impl-interactions">インタラクション</a></li>
-        </ul>
+        {
+          Object.entries(nav).map(([category, pages]) => (
+            <>
+              <p>{category}</p>
+              <ul>
+                {Object.entries(pages).map(([url, title]) => (
+                  <li>
+                    <a
+                      href={url}
+                      aria-current={Astro.url.pathname === url ? "page" : null}
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))
+        }
         <p>更新履歴</p>
         <ul>
           <li>
-            <a href="https://github.com/lifull/accessibility-guidelines/releases" target="_blank">
+            <a
+              href="https://github.com/lifull/accessibility-guidelines/releases"
+              target="_blank"
+            >
               ver. {version}
               <img
                 src={openBlank.src}
@@ -161,12 +180,12 @@ import { version } from "../../package.json"
   }
 
   .nav-content ul {
-    margin-block: 0;
+    margin-block: calc(1rem - 1.125rem * 0.3 - 1rem * 0.3) 0;
     padding-left: 1rem;
   }
 
   .nav-content li {
-    margin-block: calc(1rem * 0.4);
+    margin-block: calc(0.5rem - 1rem * 0.6);
     list-style-type: none;
   }
 
@@ -178,10 +197,11 @@ import { version } from "../../package.json"
     text-decoration: none;
   }
 
-  .nav-content a:hover {
+  .nav-content a:hover,
+  .nav-content a[aria-current] {
     color: var(--color-primary);
   }
-  
+
   .open-blank {
     vertical-align: middle;
   }
