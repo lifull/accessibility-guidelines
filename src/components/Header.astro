@@ -120,6 +120,7 @@ import { version } from "../../package.json"
   }
 
   .logo {
+    margin-top: 1px;
     min-width: 0;
     max-width: 100%;
     height: auto;
@@ -165,12 +166,14 @@ import { version } from "../../package.json"
   }
 
   .nav-content li {
-    margin-block: calc(1.5rem - 1rem * 0.6);
+    margin-block: calc(1rem * 0.4);
     list-style-type: none;
   }
 
   .nav-content a:link,
   .nav-content a:visited {
+    display: block;
+    padding-block: 0.5rem;
     color: inherit;
     text-decoration: none;
   }
@@ -198,7 +201,9 @@ import { version } from "../../package.json"
 
     .header-inner {
       margin-left: auto;
+      box-sizing: border-box;
       width: 240px;
+      padding-right: 4px;
     }
 
     .home-link {
