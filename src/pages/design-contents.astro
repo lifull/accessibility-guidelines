@@ -21,6 +21,11 @@ import * as audioOnly from "../content/guidelines/design/audio-only.mdx";
 import * as videoAndAudio from "../content/guidelines/design/video-and-audio.mdx";
 import * as imageOfText from "../content/guidelines/design/image-of-text.mdx";
 
+// レベル3
+import * as linkText from "../content/guidelines/design/link-text.mdx";
+import * as orderOfContent from "../content/guidelines/design/order-of-content.mdx";
+import * as sitemap from "../content/guidelines/design/sitemap.mdx";
+
 ---
 
 <DefaultLayout title="デザイン–コンテンツ">
@@ -50,7 +55,11 @@ import * as imageOfText from "../content/guidelines/design/image-of-text.mdx";
     <Guideline guideline={imageOfText} />
   </Guidelines>
 
-  <Guidelines level={3} />
+  <Guidelines level={3}>
+    <Guideline guideline={linkText} />
+    <Guideline guideline={orderOfContent} />
+    <Guideline guideline={sitemap} />
+  </Guidelines>
 
   <Pagination current={Astro.url.href} />
 </DefaultLayout>
