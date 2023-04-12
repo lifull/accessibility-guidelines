@@ -1,0 +1,38 @@
+---
+area: design
+category: contents
+level: 2
+title: 動画コンテンツ（音声を含む）
+slug: video-and-audio
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Details from "../../../components/Details.astro";
+
+#### チェック項目
+
+<Checkpoint title="動画にキャプションを提供する" />
+<Checkpoint title="動画に音声解説を提供するか、代替コンテンツを提供する" />
+
+#### 「{frontmatter.title}」とは
+
+音声付きの動画コンテンツは、視覚障害者や聴覚障害者にとって情報取得の障壁になることがあります。
+
+音を出せないユーザーや聴覚障害者は音声から情報を取得できません。会話や音声・音楽に含まれる情報をキャプションとして提供する必要があります。
+
+視覚障害者は映像から情報を取得できません。動画と同等の情報を含む代替コンテンツを提供するか、音声解説を提供する必要があります。
+
+<Details summary="キャプションとは">
+  会話を文字にした字幕（subtitle）に対して、キャプション（caption）は動画の内容を理解するために必要な詳細な情報を含みます。たとえば効果音・音楽・笑い声・話者の特定・位置など。
+</Details>
+
+<Details summary="音声解説とは">
+  主音声のトラックだけでは理解できない重要で視覚的な詳細を説明するために、音声トラックに追加されたナレーション。動作、登場人物、場面の変化、画面上のテキスト、及びその他の視覚的なコンテンツに関する情報など。
+</Details>
+
+##### 参考情報
+
+- [達成基準 1.2.2: キャプション (収録済) を理解する](https://waic.jp/docs/WCAG21/Understanding/captions-prerecorded.html)
+- [達成基準 1.2.3: 音声解説、又はメディアに対する代替 (収録済) を理解する](https://waic.jp/docs/WCAG21/Understanding/audio-description-or-media-alternative-prerecorded.html)
+- [音声・映像コンテンツのアクセシビリティーを確保する](https://a11y-guidelines.freee.co.jp/explanations/multimedia-content-access.html)
+- キャプション・音声解説付き動画の例「[映画『この世界の（さらにいくつもの）片隅に』予告編【日本語字幕･音声ガイド付き】 - YouTube](https://www.youtube.com/watch?v=Qww_dPwArVQ)」

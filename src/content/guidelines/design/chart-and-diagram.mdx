@@ -1,0 +1,37 @@
+---
+area: design
+category: contents
+level: 2
+title: グラフや図
+slug: chart-and-diagram
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="グラフの傾向や要点を簡潔にまとめ、テキストや代替テキストで提供する" />
+<Checkpoint title="グラフの元データをHTMLの表で提供するか、ダウンロードできるようにする（有用な場合）" />
+<Checkpoint title="図が伝えている情報をテキストや代替テキストで提供する" />
+
+#### 「{frontmatter.title}」とは
+
+グラフや図は多くの情報を効率的に伝えられる表現方法ですが、視覚に偏った表現になりがちなため、視覚による情報取得に制約があるユーザーには情報が伝わりづらいことがあります。
+
+グラフや図は複雑になりすぎないようにしてください。グラフや図に含まれる情報量が、本文または代替テキストが伝える情報量を大きく上回ることのないようにしてください。
+
+グラフの元データを利用できるようにしておくと、データの利用性やアクセシビリティが向上します。
+
+##### 具体例 複雑な図と代替テキスト
+
+<Cases>
+  <Case type="bad" title="複雑な図に頂戴な代替テキストを設定している">
+    LIFULLウェブサイト「[健康経営](https://lifull.com/company/healthcare/)」ページにある図。250文字を超える複雑な代替テキストが設定されていて、簡潔とは言えない。この図が表現している情報は本文にテキストで書き、図はあくまでも文章情報を補うことに徹したほうがよい。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.1.1: 非テキストコンテンツを理解する](https://waic.jp/docs/WCAG21/Understanding/non-text-content.html)

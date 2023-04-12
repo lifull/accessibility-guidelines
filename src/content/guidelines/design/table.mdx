@@ -1,0 +1,44 @@
+---
+area: design
+category: contents
+level: 2
+title: 表
+slug: table
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="表は画像ではなくマークアップされるものとしてデザインする" />
+<Checkpoint title="入れ子構造になっている表や、見出しが入り組んでいる表は、より簡潔に表現できないか検討する" />
+
+#### 「{frontmatter.title}」とは
+
+表は画像化せず、HTMLをつかってマークアップされるものとしてデザインしてください。
+
+セルの結合を多用した表や1件のデータが複数行にわたる表、入れ子構造になっている表は、理解しやすさやスクリーンリーダーによる利用性が下がります。多くの情報量を表に含めようとせず、いくつかのシンプルな表に分割できないかどうか検討してください。
+
+##### 具体例① セルを不必要に結合しない
+
+<Cases>
+  <Case type="bad" title="セルが不必要に結合されている例">
+  </Case>
+  <Case type="good" title="セルが結合されていない例">
+  </Case>
+</Cases>
+
+##### 具体例② 入れ子構造の表を分割する
+
+<Cases>
+  <Case type="bad" title="表が入れ子になっている例">
+  </Case>
+  <Case type="good" title="表を分割する対応をとった例">
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [総務省｜報道資料｜統計表における機械判読可能なデータの表記方法の統一ルールの策定](https://www.soumu.go.jp/menu_news/s-news/01toukatsu01_02000186.html)
