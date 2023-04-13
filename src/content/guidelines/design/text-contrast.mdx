@@ -1,0 +1,37 @@
+---
+area: design
+category: visual
+level: 2
+title: テキストの色コントラスト
+slug: text-contrast
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Details from "../../../components/Details.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">記事本文など読みやすさが重要なテキストは[APCA](https://www.myndex.com/APCA/) 75以上の色コントラストを確保する</span>
+</Checkpoint>
+
+<Checkpoint title="記事本文以外の通常のテキストはAPCA 60以上の色コントラストを確保する" />
+
+<Checkpoint title="見出しなど大きいサイズのテキストはAPCA 45以上の色コントラストを確保する" />
+
+#### 「{frontmatter.title}」とは
+
+テキストの読みやすさには色のコントラストが重要です。特にロービジョンのユーザーには十分なコントラストが必要です。
+
+<Details summary="APCAとは">
+  APCA (Accessible Perceptual Contrast Algorithm) は2色のコントラスト比の計算アルゴリズムおよび評価手法です。WCAG 2.1で使われているコントラスト比計算の問題を解消するため開発されました。人間の知覚特性を加味した評価値を算出できることが特徴です。現在パブリックベータ版で、WCAGの次期バージョンにて取り入れられることが検討されています。
+</Details>
+
+<Details summary="LIFULLブランドカラー（#ED6103）について">
+  白背景とLIFULLオレンジの文字色の組み合わせをAPCAでコントラストを計算すると59.7となりAPCA 60を満たしません。これを取りざたして問題視する必要はありません。ただし、文字色はそのままに、白でない色を背景にする場合、コントラストを確保するために文字の色を見直すことを推奨します。
+</Details>
+
+##### 参考情報
+
+- [APCA Contrast Calculator](https://www.myndex.com/APCA/)

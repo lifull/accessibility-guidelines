@@ -1,0 +1,33 @@
+---
+area: design
+category: visual
+level: 1
+title: フォーカスインジケーター
+slug: focus-indicator
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="フォーカスインジケーターを除去しない" />
+<Checkpoint title="アウトライン型のフォーカスインジケーターは、APCA 45以上の色コントラストを確保する" />
+
+#### 「{frontmatter.title}」とは
+
+フォーカスインジケーターを非表示にすると、キーボードユーザーや弱視のユーザーはコンテンツや機能を利用できなくなってしまいます。
+
+##### 具体例 状態が判別できるUIコンポーネント
+
+<Cases>
+  <Case type="bad" title="コントラストが低すぎる"></Case>
+  <Case type="bad" title="フォーカスインジケーターを非表示にしている"></Case>
+  <Case type="bad" title="色の変化のみ"></Case>
+  <Case type="good" title="十分なコントラストのあるフォーカスインジケーター"></Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/docs/WCAG21/Understanding/non-text-contrast.html)
