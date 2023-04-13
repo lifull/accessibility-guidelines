@@ -6,7 +6,6 @@ import PageTitle from "../components/PageTitle.astro";
 import Pagination from "../components/Pagination.astro";
 
 // レベル1
-import * as alternativeText from "../content/guidelines/impl/alternative-text.mdx";
 
 // レベル2
 
@@ -14,18 +13,16 @@ import * as alternativeText from "../content/guidelines/impl/alternative-text.md
 
 ---
 
-<DefaultLayout title="実装–マークアップ">
+<DefaultLayout title="実装–インタラクション">
   <PageTitle>
     <span slot="sub">実装</span>
-    マークアップ
+    インタラクション
   </PageTitle>
   <p>
-    マークアップとスタイリングの実装に関するガイドラインです。
+    インタラクションの実装に関するガイドラインです。
   </p>
 
-  <Guidelines level={1}>
-    <Guideline guideline={alternativeText} />
-  </Guidelines>
+  <Guidelines level={1}></Guidelines>
 
   <Guidelines level={2}></Guidelines>
 

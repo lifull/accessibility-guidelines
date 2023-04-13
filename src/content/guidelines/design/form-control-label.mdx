@@ -1,0 +1,36 @@
+---
+area: design
+category: forms-and-interactions
+level: 2
+title: フォームコントロールのラベル
+slug: form-control-label
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="すべてのフォームコントロールにラベルを設定する" />
+<Checkpoint title="フォームコントロールの付近にラベルを表示する" />
+<Checkpoint title="ラベルを常に表示する" />
+
+#### 「{frontmatter.title}」とは
+
+ユーザーの入力を受け付ける要素（フォームコントロール）のそばに常に表示されるラベルを配置することは、認知障害や弱視をもつユーザーの助けになります。
+
+##### 具体例
+
+<Cases>
+  <Case type="good" title="フォームコントロールの付近にラベルを表示する"></Case>
+  <Case type="bad" title="プレースホルダーでラベルを代用する"></Case>
+  <Case type="bad" title="フォームコントロールとラベルが離れている">
+    ※程度の問題であり、左寄せのラベルを禁止するものではありません。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 2.4.6: 見出し及びラベルを理解する](https://waic.jp/docs/WCAG21/Understanding/headings-and-labels.html)
+- [達成基準 3.3.2: ラベル又は説明を理解する](https://waic.jp/docs/WCAG21/Understanding/labels-or-instructions.html)

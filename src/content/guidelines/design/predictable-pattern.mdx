@@ -1,0 +1,33 @@
+---
+area: design
+category: forms-and-interactions
+level: 3
+title: 予測可能なパターン
+slug: predictable-pattern
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="UIがフォーカスを受取ったときや、フォームコントロール等の値を変更したとき、予測しづらいコンテンツの変化を起こさない" />
+<Checkpoint title="コンテンツを変化させるための確定する操作をユーザーにゆだねる" />
+
+#### 「{frontmatter.title}」とは
+
+予測しづらいことが起きると、支援技術のユーザーや認知障害を持つユーザーは混乱したり、操作ができなくなることがあります。
+
+##### 具体例 予測が難しいパターン
+
+<Cases>
+  <Case span={2} type="bad" title="select要素によるナビゲーション">
+    HTMLの`select`要素で実装された並び順選択UIでは、値が選択されるとページ遷移が行われる。値が選択されたタイミングでページ遷移が起きることは予測が難しい。キーボードユーザーは上下キーを使って値をひとつ変えただけでページ遷移してしまうため、目的の項目を選ぶことができない。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 3.2.1: フォーカス時を理解する](https://waic.jp/docs/WCAG21/Understanding/on-focus.html)
+- [達成基準 3.2.2: 入力時を理解する](https://waic.jp/docs/WCAG21/Understanding/on-input.html)
