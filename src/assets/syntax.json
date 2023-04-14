@@ -1,6 +1,7 @@
 {
 	"theme": "light",
 	"colors": {
+		"editor.foreground": "#1f1f1f",
 		"editor.background": "transparent"
 	},
 	"tokenColors": [
