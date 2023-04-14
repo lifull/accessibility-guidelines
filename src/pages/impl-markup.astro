@@ -13,8 +13,14 @@ import * as heading from "../content/guidelines/impl/heading.mdx";
 import * as languageOfPage from "../content/guidelines/impl/language-of-page.mdx";
 
 // レベル2
+import * as groupedImages from "../content/guidelines/impl/grouped-images.mdx";
+import * as meaningfulSequence from "../content/guidelines/impl/meaningful-sequence.mdx";
+import * as landmarkRegion from "../content/guidelines/impl/landmark-region.mdx";
+import * as whitespaceCharacters from "../content/guidelines/impl/whitespace-character.mdx";
+import * as adjustableTextSize from "../content/guidelines/impl/adjustable-text-size.mdx";
 
 // レベル3
+import * as syntax from "../content/guidelines/impl/syntax.mdx";
 
 ---
 
@@ -35,9 +41,17 @@ import * as languageOfPage from "../content/guidelines/impl/language-of-page.mdx
     <Guideline guideline={languageOfPage} />
   </Guidelines>
 
-  <Guidelines level={2}></Guidelines>
+  <Guidelines level={2}>
+    <Guideline guideline={groupedImages} />
+    <Guideline guideline={meaningfulSequence} />
+    <Guideline guideline={landmarkRegion} />
+    <Guideline guideline={whitespaceCharacters} />
+    <Guideline guideline={adjustableTextSize} />
+  </Guidelines>
 
-  <Guidelines level={3}></Guidelines>
+  <Guidelines level={3}>
+    <Guideline guideline={syntax} />
+  </Guidelines>
 
   <Pagination current={Astro.url.href} />
 </DefaultLayout>

@@ -1,0 +1,36 @@
+---
+
+area: impl
+category: markup
+level: 2
+title: ランドマーク領域
+slug: landmark-region
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">サイト共通ヘッダーを`header`要素を使ってマークアップする</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">サイト共通フッターを`footer`要素を使ってマークアップする</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">ヘッダー、フッターを除く領域を`main`要素を使ってマークアップする</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">パンくずナビゲーションを`nav`要素を使ってマークアップする</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+ページの主たる領域をランドマークとしてマークアップすると、スクリーンリーダー利用者の使い勝手を向上させることができます。
