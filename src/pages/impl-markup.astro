@@ -7,6 +7,10 @@ import Pagination from "../components/Pagination.astro";
 
 // レベル1
 import * as alternativeText from "../content/guidelines/impl/alternative-text.mdx";
+import * as backgroundImage from "../content/guidelines/impl/background-image.mdx";
+import * as pageTitle from "../content/guidelines/impl/page-title.mdx";
+import * as heading from "../content/guidelines/impl/heading.mdx";
+import * as languageOfPage from "../content/guidelines/impl/language-of-page.mdx";
 
 // レベル2
 
@@ -25,6 +29,10 @@ import * as alternativeText from "../content/guidelines/impl/alternative-text.md
 
   <Guidelines level={1}>
     <Guideline guideline={alternativeText} />
+    <Guideline guideline={backgroundImage} />
+    <Guideline guideline={pageTitle} />
+    <Guideline guideline={heading} />
+    <Guideline guideline={languageOfPage} />
   </Guidelines>
 
   <Guidelines level={2}></Guidelines>

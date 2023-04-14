@@ -1,0 +1,25 @@
+---
+area: impl
+category: markup
+level: 1
+title: ページの言語
+slug: language-of-page
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`html`要素に`lang`属性を使ってページ言語を明示する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">部分的に別の言語のテキストが挿入される場合、その部分を囲む要素に`lang`属性を使って言語を明示する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+lang 属性を使うとページの全体や一部分に対して書かれている言語を明示することができます。機械がこれを読み取ることでテキストを適切に処理できるようになります。

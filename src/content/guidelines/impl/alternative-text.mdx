@@ -7,93 +7,128 @@ slug: alternative-text
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
 
 #### チェック項目
 
 <Checkpoint>
   {/* prettier-ignore */}
-  <span slot="title">`img` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
+  <span slot="title">`img`要素に代替テキストを指定するために`alt`属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
   {/* prettier-ignore */}
-  <span slot="title">`img` 要素を装飾画像とするために空の `alt` 属性を使用する</span>
+  <span slot="title">`img`要素を装飾画像とするために空の`alt`属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
   {/* prettier-ignore */}
-  <span slot="title">`svg` 要素やアイコンフォントに代替テキストを指定するために `role="img"` と `aria-label` 属性を使用する</span>
+  <span slot="title">`svg`要素やアイコンフォントに代替テキストを指定するために`role="img"`と`aria-label`属性を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
   {/* prettier-ignore */}
-  <span slot="title">`svg` 要素やアイコンフォントを装飾画像とするために `aria-hidden="true"` を使用する</span>
+  <span slot="title">`svg`要素やアイコンフォントを装飾画像とするために`aria-hidden="true"`を使用する</span>
 </Checkpoint>
 
 <Checkpoint>
   {/* prettier-ignore */}
-  <span slot="title">イメージマップの `area` 要素に代替テキストを指定するために `alt` 属性を使用する</span>
+  <span slot="title">イメージマップの`area`要素に代替テキストを指定するために`alt`属性を使用する</span>
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
 
 画像やアイコンなどの非テキストコンテンツには、適した手段で代替テキストを指定してください。
 
-##### img 要素に代替テキストを指定するために alt 属性を使用する
+##### 具体例① 意味のある`img`要素
 
-```html
-<img src="homes-logo.svg" alt="LIFULL HOME'S" width="300" height="100" />
-```
+<Cases>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img src="homes-logo.svg" alt="LIFULL HOME'S" width="300" height="100" />
+      ```
+    </div>
+    <span slot="title">`img`要素に代替テキストを指定するために`alt`属性を使用する</span>
+  </Case>
+</Cases>
 
-##### img 要素を装飾画像とするために空の alt 属性を使用する
+##### 具体例② 装飾的な`img`要素
 
-```html
-<img src="homes-kun.png" alt="" width="75" height="50" />
-```
+<Cases>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img src="homes-kun.png" alt="" width="75" height="50" />
+      ```
+    </div>
+    <span slot="title">`img`要素を装飾画像とするために空の`alt`属性を使用する</span>
+  </Case>
+</Cases>
 
-##### svg 要素やアイコンフォントに代替テキストを指定するために role="img" と aria-label 属性を使用する
+##### 具体例③ 意味のある`svg`要素
 
-```html
-<button type="button">
-  <svg viewBox="0 0 64 64" role="img" aria-label="メニュー">…</svg>
-</button>
-```
+<Cases>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <button type="button">
+        <svg viewBox="0 0 64 64" role="img" aria-label="メニュー">…</svg>
+      </button>
+      ```
+    </div>
+    <span slot="title">`svg`要素やアイコンフォントに代替テキストを指定するために`role="img"`と`aria-label`属性を使用する</span>
+  </Case>
+</Cases>
 
-##### svg 要素やアイコンフォントを装飾画像とするために aria-hidden="true" を使用する
+##### 具体例④ 装飾的な`svg`要素
 
-```html
-<button type="button">
-  <span class="fa-brands fa-twitter" aria-hidden="true"></span>
-  ツイートする
-</button>
-```
+<Cases>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <button type="button">
+        <span class="fa-brands fa-twitter" aria-hidden="true"></span>
+        ツイートする
+      </button>
+      ```
+    </div>
+    <span slot="title">`svg`要素やアイコンフォントを装飾画像とするために`aria-hidden="true"`を使用する</span>
+  </Case>
+</Cases>
 
-##### イメージマップの area 要素に代替テキストを指定するために alt 属性を使用する
+##### 具体例⑤ イメージマップ
 
-```html
-<img
-  src="nihon-chizu.png"
-  alt="日本地図"
-  width="500"
-  height="500"
-  usemap="#map"
-/>
-<map id="map">
-  <area
-    shape="poly"
-    coords="476,31,492,25,540,85,587,84,590,122,523,161,431,190,427,145,484,91,485,62"
-    href="#hokkaido"
-    alt="北海道"
-  />
-  …
-</map>
-```
+<Cases>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img
+        src="nihon-chizu.png"
+        alt="日本地図"
+        width="500"
+        height="500"
+        usemap="#map"
+      />
+      <map id="map">
+        <area
+          shape="poly"
+          coords="476,31,492,25,540,85,587,84,590,122,523,161,431,190,427,145,484,91,485,62"
+          href="#hokkaido"
+          alt="北海道"
+        />
+        …
+      </map>
+      ```
+    </div>
+    <span slot="title">イメージマップの`area`要素に代替テキストを指定するために`alt`属性を使用する</span>
+  </Case>
+</Cases>
 
 ##### 設計資料に代替テキストが明記されていない場合の対応
 
 代替テキストはコンテンツの一部であるため、コンテンツ設計やデザインの段階で決められることが望ましいです。実装段階で代替テキストが決定していない場合、代替テキスト案を書き、コンテンツオーナーと相談してください。
-
-###### やるべきこと
 
 - [An `alt` Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)（[日本語訳](https://qiita.com/hibikikudo/items/f710933664094632540d)）に沿って画像のタイプを判別する
 - 画像が装飾的な画像ではない場合、[代替テキストの考え方](https://jira.next-group.jp/wiki/pages/viewpage.action?pageId=309380550)を参考に代替テキスト案を書き、コンテンツオーナーと相談する

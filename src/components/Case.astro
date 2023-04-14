@@ -8,7 +8,7 @@ const { span = 1, type, title } = Astro.props;
     <p class="title">
       {type === "good" && <span class="good" role="img" aria-label="Good:" />}
       {type === "bad" && <span class="bad" role="img" aria-label="Bad:" />}
-      {title}
+      <slot name="title" />{title}
     </p>
     <div class="caption"><slot /></div>
   </figcaption>
