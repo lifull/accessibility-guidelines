@@ -13,6 +13,9 @@ import * as focusIndicator from "../content/guidelines/design/focus-indicator.md
 // レベル2
 import * as textContrast from "../content/guidelines/design/text-contrast.mdx";
 import * as uiContrast from "../content/guidelines/design/ui-contrast.mdx";
+import * as targetSize from "../content/guidelines/design/target-size.mdx";
+import * as textJustify from "../content/guidelines/design/text-justify.mdx";
+import * as responsiveDesign from "../content/guidelines/design/responsive-design.mdx";
 
 // レベル3
 ---
@@ -33,9 +36,10 @@ import * as uiContrast from "../content/guidelines/design/ui-contrast.mdx";
   <Guidelines level={2}>
     <Guideline guideline={textContrast} />
     <Guideline guideline={uiContrast} />
+    <Guideline guideline={targetSize} />
+    <Guideline guideline={textJustify} />
+    <Guideline guideline={responsiveDesign} />
   </Guidelines>
-
-  <Guidelines level={3} />
 
   <Pagination current={Astro.url.href} />
 </DefaultLayout>

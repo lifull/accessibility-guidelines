@@ -1,0 +1,40 @@
+---
+area: design
+category: visual
+level: 2
+title: ターゲットサイズ
+slug: target-size
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="リンク、ボタン、フォームコントロール等のポインター操作を受け付けるコンポーネントは、24px四方以上のサイズを確保する"/>
+
+#### 「{frontmatter.title}」とは
+
+小さすぎるターゲットは、タッチ操作するユーザーや細かい操作を苦手とするユーザーにとって使いにくいことがあります。
+
+##### 具体例 ターゲットサイズ
+
+<Cases>
+  <Case type="bad" title="">
+    だめな例
+  </Case>
+  <Case type="good" title="">
+    ターゲット自身が24pxに満たなくとも、隣接する要素との間隔も含めて24pxが確保されていればよい。
+  </Case>
+  <Case type="good" title="">
+    ターゲット自身が24pxに満たなくとも、隣接する要素との間隔も含めて24pxが確保されていればよい。
+  </Case>
+  <Case type="good" title="">
+    ターゲット自身が24pxに満たなくとも、隣接する要素との間隔も含めて24pxが確保されていればよい。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [Understanding Success Criterion 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
