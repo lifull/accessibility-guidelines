@@ -1,6 +1,7 @@
 ---
 import link from "../assets/images/link.svg";
 import Prose from "../components/Prose.astro";
+import { getLevelTerm } from "../helpers/levels";
 
 const { guideline } = Astro.props;
 const { title, level, slug } = guideline.frontmatter;
@@ -40,7 +41,7 @@ const { title, level, slug } = guideline.frontmatter;
       />
     </a>
     <div class="content-inner">
-      <p class="level">優先度：レベル{level}</p>
+      <p class="level">レベル{level}：{getLevelTerm(level)}</p>
       <Prose>
         <guideline.Content />
       </Prose>
@@ -136,7 +137,7 @@ const { title, level, slug } = guideline.frontmatter;
     z-index: 1;
     padding-inline: var(--spacing-viewport-margin);
   }
-  
+
   .content-inner::after {
     margin-top: calc(1.5rem - 1rem * 0.3);
     display: block;
@@ -154,7 +155,7 @@ const { title, level, slug } = guideline.frontmatter;
 
   @media (min-width: 768px) {
     .heading {
-      padding-block: 2rem;
+      padding-block: calc(2rem - 1.5rem * 0.2);
     }
 
     .heading h3 {
@@ -167,7 +168,7 @@ const { title, level, slug } = guideline.frontmatter;
     }
 
     .anchor {
-      top: 2.25rem;
+      top: 2rem;
       left: 1.25rem;
     }
 

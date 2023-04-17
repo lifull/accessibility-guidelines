@@ -56,8 +56,8 @@
 }
 
 html {
-  --color-text: #1f1f1f;
   --color-primary: #ed6103;
+  --color-text: #1f1f1f;
   --color-icon: #797979;
   --color-dimmed: #8f8f8f;
   --color-border: #d2d2d2;
