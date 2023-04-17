@@ -6,6 +6,8 @@ import PageTitle from "../components/PageTitle.astro";
 import Pagination from "../components/Pagination.astro";
 
 // レベル1
+import * as labelForControl from "../content/guidelines/impl/label-for-control.mdx";
+import * as invisibleLabel from "../content/guidelines/impl/invisible-label.mdx";
 
 // レベル2
 
@@ -22,7 +24,10 @@ import Pagination from "../components/Pagination.astro";
     フォームの実装に関するガイドラインです。
   </p>
 
-  <Guidelines level={1}></Guidelines>
+  <Guidelines level={1}>
+    <Guideline guideline={labelForControl} />
+    <Guideline guideline={invisibleLabel} />
+  </Guidelines>
 
   <Guidelines level={2}></Guidelines>
 
