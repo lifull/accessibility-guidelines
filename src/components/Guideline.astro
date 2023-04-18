@@ -147,6 +147,10 @@ const { title, level, slug } = guideline.frontmatter;
   .content-inner :global(h4) {
     color: var(--color-primary);
   }
+  
+  .content-inner :global(h4[id$="とは"]) {
+    text-indent: -0.5em;
+  }
 
   .level {
     margin-block: 0;
