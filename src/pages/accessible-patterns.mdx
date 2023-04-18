@@ -1,0 +1,58 @@
+---
+layout: ../layouts/DefaultLayout.astro
+title: アクセシブルなデザインパターン
+---
+
+import Details from "../components/Details.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Prose from "../components/Prose.astro";
+
+<PageTitle>{frontmatter.title}</PageTitle>
+
+<Prose>
+
+  アクセシブルなデザイン・実装方法が確立された定番のデザインパターンを紹介します。ここでのアクセシビリティへの配慮とは、キーボードで操作でき、スクリーンリーダーに UI の役割や状態が十分に伝わることを指しています。
+
+  ガイドライン「[定番のパターン](/design-forms-and-interactions.html#established-pattern)」にあるように、独自の UI を考案しデザインする前に、ここにラインナップされたパターンを利用して目的が達成できるかどうかを検討してください。
+
+  <Details summary="利用上の注意">
+    ここにラインナップされたUIを採用する前に、**HTMLのみで実現できるかどうかを検討してください**。たとえばDisclosureパターンには`details`要素が使えます。Spinbuttonパターンには`type="number"`を持つ`input`要素が使えます。
+
+    また、**HTMLの要素を本来と違う使い方をすることは避けてください**。たとえば、チェックボックスを領域の開閉に使わないでください。`select`要素をメニュー代わり（ソート順の切り替えなど）に使わないでください。
+  </Details>
+  
+  ## パターン集
+
+  | パターン名                                                                                               | 説明                                                                                                                                                                                                                                          |
+  | :------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | [Accordion (Sections With Show/Hide Functionality)](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/) | アコーディオンは、縦に積み重なったインタラクティブな見出しのセットで、それぞれがコンテンツのセクションを表すタイトル、コンテンツスニペット、サムネイルを含んでいます。                                                                        |
+  | [Alert](https://www.w3.org/WAI/ARIA/apg/patterns/alert/)                                                 | アラートは、ユーザーのタスクを中断させることなく、ユーザーの注意を引くような方法で、簡潔で重要なメッセージを表示する要素です。                                                                                                                |
+  | [Alert and Message Dialogs](https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/)                       | アラートダイアログは、重要なメッセージを伝え、応答を得るためにユーザーのワークフローを中断させるモーダルダイアログである。                                                                                                                    |
+  | [Breadcrumb](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)                                       | パンくずリストとは、現在のページの親ページへのリンクを階層的に並べたものである。                                                                                                                                                              |
+  | [Button](https://www.w3.org/WAI/ARIA/apg/patterns/button/)                                               | **HTML の button 要素を使用することを強く推奨します**。ボタンは、フォームの送信、ダイアログの表示、アクションのキャンセル、削除など、ユーザーがアクションやイベントを実行できるようにするウィジェットです。                                   |
+  | [Carousel (Slide Show or Image Rotator)](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/)             | カルーセルは、1 つまたは複数のスライドのサブセットを順次表示することによって、スライドと呼ばれるアイテムのセットを提示します。                                                                                                                |
+  | [Checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/)                                           | WAI-ARIA は、2 種類のチェックボックスウィジェットをサポートしています。デュアルステートでは、ユーザはチェック済みと未チェックという 2 つの選択肢を切り替えられ、トライステートでは、部分チェック済みという第 3 の状態を追加でサポートします。 |
+  | [Combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/)                                           | コンボボックスは、入力ウィジェットにポップアップがついたもので、ユーザーが可能な値のコレクションからコンボボックスの値を選択することができます。                                                                                              |
+  | [Dialog (Modal)](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/)                                  | ダイアログは、プライマリウィンドウまたは他のダイアログウィンドウにオーバーレイ表示されるウィンドウです。                                                                                                                                      |
+  | [Disclosure (Show/Hide)](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)                           | ディスクロージャーは、コンテンツを折りたたみ（非表示）または展開（表示）することができるウィジェットです。                                                                                                                                    |
+  | [Feed](https://www.w3.org/WAI/ARIA/apg/patterns/feed/)                                                   | フィードは、ユーザーがスクロールすると自動的に新しいコンテンツがロードされるページのセクションです。                                                                                                                                          |
+  | [Grids : Interactive Tabular Data and Layout Containers](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) | グリッドウィジェットは、矢印キー、ホームキー、エンドキーなどのナビゲーションキーを使って、その中に含まれる情報やインタラクティブな要素を移動できるようにするコンテナです。                                                                    |
+  | [Link](https://www.w3.org/WAI/ARIA/apg/patterns/link/)                                                   | **HTML の a 要素を使用することを強く推奨します**。リンクウィジェットは、リソースへのインタラクティブなリファレンスを提供します。                                                                                                              |
+  | [Listbox](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)                                             | リストボックスウィジェットは、オプションのリストを表示し、ユーザがそのうちの 1 つまたは複数を選択できるようにします。                                                                                                                         |
+  | [Menu or Menu bar](https://www.w3.org/WAI/ARIA/apg/patterns/menu/)                                       | メニューは、一連のアクションや機能など、ユーザに選択肢のリストを提供するウィジェットです。                                                                                                                                                    |
+  | [Menu Button](https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/)                                      | メニューボタンは、メニューを開くためのボタンです。                                                                                                                                                                                            |
+  | [Meter](https://www.w3.org/WAI/ARIA/apg/patterns/meter/)                                                 | メーターは、定義された範囲内で変化する数値のグラフィック表示です。                                                                                                                                                                            |
+  | [Radio Group](https://www.w3.org/WAI/ARIA/apg/patterns/radiobutton/)                                     | ラジオグループ ラジオボタンと呼ばれるチェック可能なボタンのセットで、一度に 1 つ以上のボタンをチェックすることができない。                                                                                                                    |
+  | [Slider](https://www.w3.org/WAI/ARIA/apg/patterns/slider/)                                               | スライダーは、ユーザーがある範囲内の値を選択するための入力です。                                                                                                                                                                              |
+  | [Slider (Multi-Thumb)](https://www.w3.org/WAI/ARIA/apg/patterns/slidertwothumb/)                         | マルチサムスライダーは、関連する値のグループ内の値をそれぞれ設定する 2 つ以上のサム（親指）を持つスライダーです。                                                                                                                             |
+  | [Spinbutton](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/)                                       | スピンボタンは、その値を離散的な値のセットまたは範囲に制限する入力ウィジェットです。                                                                                                                                                          |
+  | [Switch](https://www.w3.org/WAI/ARIA/apg/patterns/switch/)                                               | スイッチは、ユーザーがオンとオフの 2 つの値から 1 つを選択できる入力ウィジェットです。                                                                                                                                                        |
+  | [Table](https://www.w3.org/WAI/ARIA/apg/patterns/table/)                                                 | **HTML の table 要素を使用することを強く推奨します**。WAI-ARIA のテーブルは、HTML のテーブル要素と同様に、1 つ以上のセルを含む 1 つ以上の行からなる静的な表形式構造で、対話型ウィジェットではありません。                                     |
+  | [Tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/)                                               | タブは、タブパネルと呼ばれるコンテンツのレイヤーセクションのセットで、一度に 1 つのパネルを表示します。                                                                                                                                       |
+  | [Toolbar](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/)                                             | ツールバーは、ボタン、メニューボタン、チェックボックスなどのコントロール群をグループ化するためのコンテナである。                                                                                                                              |
+  | [Tooltip Widget](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/)                                      | **ツールチップはタッチ端末でのアクセスしにくさがあるため非推奨です**。ツールチップは、キーボードフォーカスが当たったときや、マウスがその要素に重なったときに、その要素に関連する情報を表示するポップアップである。                            |
+  | [Tree View](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/)                                          | ツリービューウィジェットは、階層化されたリストを表示します。                                                                                                                                                                                  |
+  | [Treegrid](https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/)                                           | ツリーグリッドウィジェットは、編集可能な表形式の情報からなる階層的なデータグリッドを表示する。                                                                                                                                                |
+  | [Window Splitter](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/)                              | ウィンドウスプリッターは、ウィンドウの 2 つのセクション（ペイン）間の移動可能なセパレータで、ユーザーがペインの相対的なサイズを変更できるようにするものです。                                                                                 |
+
+</Prose>

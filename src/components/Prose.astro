@@ -116,6 +116,26 @@
     border-top: 1px solid var(--color-border);
   }
   
+  .prose table {
+    border: 1px solid var(--color-border);
+    border-collapse: collapse;
+  }
+  
+  .prose tr + tr,
+  .prose thead + tbody > tr:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .prose th,
+  .prose td {
+    padding: calc(1rem - 1rem * 0.3) 1rem;
+    vertical-align: top;
+  }
+  
+  .prose th {
+    background-color: var(--color-shade);
+  }
+  
   .prose aside {
     margin-block : calc(1.5rem - 1rem * 0.3);
     border: 1px solid var(--color-border);
