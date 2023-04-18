@@ -1,0 +1,38 @@
+---
+area: impl
+category: interactions
+level: 1
+title: ボタンの使用
+slug: use-button
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">トリガーとなるコンポーネントを`button`要素でマークアップする</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+ユーザーのクリックやタップを起点にしてインタラクションが発生する場合、他に適切な要素がなければ、トリガーの要素には`button`要素を使用してください。
+
+`button`要素はデフォルトでキーボードフォーカスを受け取り、スペースバーを含むキーボード操作によってクリックイベントを発生させることができます。`a`要素や`span`要素にJavaScriptでこれらの挙動を模倣して作るのは実装面・テスト面で大きなコストになりえます。
+
+##### ヒント：ボタンが持つデフォルトスタイルをリセットする
+
+```css
+button {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+  font-size: 100%;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: none;
+}
+```

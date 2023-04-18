@@ -1,0 +1,27 @@
+---
+area: impl
+category: interactions
+level: 2
+title: WAI-ARIA
+slug: wai-aria
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">[APG](https://www.w3.org/WAI/ARIA/apg/)を参考に適切な役割、ステート、プロパティの値を設定する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">APGを参考に適切なキーボードインタラクションを実装する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+インタラクションを含むUIはHTMLのセマンティクスに加えてWAI-ARIAを実装することでアクセシビリティを高められることがあります。
+
+WAI-ARIAに定義された役割やステート、プロパティは、想定されていない使われ方をすると逆にアクセシビリティを損なうことがあります。使い方について不明瞭な箇所があれば、社内のエキスパートに相談してください。

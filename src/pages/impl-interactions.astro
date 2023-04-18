@@ -6,11 +6,24 @@ import PageTitle from "../components/PageTitle.astro";
 import Pagination from "../components/Pagination.astro";
 
 // レベル1
+import * as useButton from "../content/guidelines/impl/use-button.mdx";
+import * as insertedContent from "../content/guidelines/impl/inserted-content.mdx";
+import * as focusIndicator from "../content/guidelines/impl/focus-indicator.mdx";
+import * as allowZoom from "../content/guidelines/impl/allow-zoom.mdx";
 
 // レベル2
+import * as contextualFocus from "../content/guidelines/impl/contextual-focus.mdx";
+import * as escapeKey from "../content/guidelines/impl/escape-key.mdx";
+import * as hiddenContent from "../content/guidelines/impl/hidden-content.mdx";
+import * as contentOnHover from "../content/guidelines/impl/content-on-hover.mdx";
+import * as externalContentAndLibrary from "../content/guidelines/impl/external-content-and-library.mdx";
+import * as waiAria from "../content/guidelines/impl/wai-aria.mdx";
 
 // レベル3
-
+import * as backsideContent from "../content/guidelines/impl/backside-content.mdx";
+import * as downEvent from "../content/guidelines/impl/down-event.mdx";
+import * as dragOperationInterruption from "../content/guidelines/impl/drag-operation-interruption.mdx";
+import * as statusAnnouncement from "../content/guidelines/impl/status-announcement.mdx";
 ---
 
 <DefaultLayout title="実装–インタラクション">
@@ -22,11 +35,28 @@ import Pagination from "../components/Pagination.astro";
     インタラクションの実装に関するガイドラインです。
   </p>
 
-  <Guidelines level={1}></Guidelines>
+  <Guidelines level={1}>
+    <Guideline guideline={useButton} />
+    <Guideline guideline={insertedContent} />
+    <Guideline guideline={focusIndicator} />
+    <Guideline guideline={allowZoom} />
+  </Guidelines>
 
-  <Guidelines level={2}></Guidelines>
+  <Guidelines level={2}>
+    <Guideline guideline={contextualFocus} />
+    <Guideline guideline={escapeKey} />
+    <Guideline guideline={hiddenContent} />
+    <Guideline guideline={contentOnHover} />
+    <Guideline guideline={externalContentAndLibrary} />
+    <Guideline guideline={waiAria} />
+  </Guidelines>
 
-  <Guidelines level={3}></Guidelines>
+  <Guidelines level={3}>
+    <Guideline guideline={backsideContent} />
+    <Guideline guideline={downEvent} />
+    <Guideline guideline={dragOperationInterruption} />
+    <Guideline guideline={statusAnnouncement} />
+  </Guidelines>
 
   <Pagination current={Astro.url.href} />
 </DefaultLayout>

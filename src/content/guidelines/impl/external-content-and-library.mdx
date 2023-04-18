@@ -1,0 +1,25 @@
+---
+area: impl
+category: interactions
+level: 2
+title: 外部コンテンツおよびUIライブラリ
+slug: external-content-and-library
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">iframeで埋め込まれる外部コンテンツがアクセシブルなことを確認する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">アクセシビリティに配慮された外部UIライブラリを採用する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+アクセシビリティはページ全体として評価されるため、採用している外部のUIライブラリや、iframeとして埋め込んでいる外部コンテンツもアクセシビリティに配慮したつくりになっている必要があります。
