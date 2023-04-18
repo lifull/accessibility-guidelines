@@ -6,12 +6,15 @@ import PageTitle from "../components/PageTitle.astro";
 import Pagination from "../components/Pagination.astro";
 
 // レベル1
-import * as labelForControl from "../content/guidelines/impl/label-for-control.mdx";
+import * as formControlLabel from "../content/guidelines/impl/form-control-label.mdx";
 import * as invisibleLabel from "../content/guidelines/impl/invisible-label.mdx";
 
 // レベル2
+import * as identifyInputPurpose from "../content/guidelines/impl/identify-input-purpose.mdx";
+import * as groupedFormControl from "../content/guidelines/impl/grouped-form-control.mdx";
 
 // レベル3
+import * as formControlDescription from "../content/guidelines/impl/form-control-description.mdx";
 
 ---
 
@@ -25,13 +28,18 @@ import * as invisibleLabel from "../content/guidelines/impl/invisible-label.mdx"
   </p>
 
   <Guidelines level={1}>
-    <Guideline guideline={labelForControl} />
+    <Guideline guideline={formControlLabel} />
     <Guideline guideline={invisibleLabel} />
   </Guidelines>
 
-  <Guidelines level={2}></Guidelines>
+  <Guidelines level={2}>
+    <Guideline guideline={identifyInputPurpose} />
+    <Guideline guideline={groupedFormControl} />
+  </Guidelines>
 
-  <Guidelines level={3}></Guidelines>
+  <Guidelines level={3}>
+    <Guideline guideline={formControlDescription} />
+  </Guidelines>
 
   <Pagination current={Astro.url.href} />
 </DefaultLayout>

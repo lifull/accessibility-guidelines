@@ -1,0 +1,66 @@
+---
+area: impl
+category: forms
+level: 2
+title: 入力目的の特定
+slug: identify-input-purpose
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`type`属性と`autocomplete`属性を指定する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">数字キーボードを表示するために`inputmode`属性を使用する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+`input`要素の`type`属性や`autocomplete`属性を使用して入力フィールドの目的を特定しておくと、目的に応じたソフトウェアキーボードが表示されたり、ブラウザーに保存された値の補完機能を利用できるようになったりします。
+
+##### 具体例①：クレジットカード番号の入力欄!
+
+<Cases>
+  <Case span={2} type="bad">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="number" />
+      </label>
+      ```
+    </div>
+    <span slot="title">数字キーボードを表示するために`type="number"`を用いる</span>
+    <span>数字キーボードを表示する目的のために`type="number"`や`type="tel"`を用いるのは誤り。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="text" autocomplete="cc-number" />
+      </label>
+      ```
+    </div>
+    <span slot="title">補完種別を指定するために`autocomplete`属性を用いる。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="text" autocomplete="cc-number" inputmode="numeric" />
+      </label>
+      ```
+    </div>
+    <span slot="title">入力方式を指定するために`inputmode`を用いる。</span>
+  </Case>
+</Cases>

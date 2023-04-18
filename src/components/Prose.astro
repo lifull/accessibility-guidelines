@@ -39,8 +39,6 @@
     margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.3);
     font-size: 1.125rem;
     line-height: 1.4;
-    /*letter-spacing: 0.05em;*/
-    /*font-feature-settings: "palt";*/
   }
 
   .prose h5 {
@@ -115,14 +113,19 @@
   }
 
   .prose code {
+    margin-inline: 0.25em;
+    display: inline-block;
     border-radius: 0.25rem;
     border: 1px solid var(--color-border);
     background-color: var(--color-shade);
     padding-inline: 0.25rem;
     font-family: Consolas, Menlo, monospace;
+    line-height: 1.2;
     tab-size: 2;
   }
   .prose pre code {
+    margin-inline: 0;
+    display: block;
     border: 0;
     background: none;
     padding: 0;
