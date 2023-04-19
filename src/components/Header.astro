@@ -25,7 +25,7 @@ const nav = {
 
 <header class="header">
   <div class="header-inner">
-    <a class="home-link" href="/">
+    <a class="home-link" href="/accessibility-guidelines/">
       <span class="logo-container">
         <img
           class="logo-lifull"
@@ -76,7 +76,7 @@ const nav = {
                 {Object.entries(pages).map(([slug, title]) => (
                   <li>
                     <a
-                      href={`/${slug}.html`}
+                      href={`/accessibility-guidelines/${slug}.html`}
                       aria-current={
                         Astro.url.pathname === `/${slug}.html` ? "page" : null
                       }

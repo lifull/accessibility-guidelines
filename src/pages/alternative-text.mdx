@@ -287,7 +287,7 @@ import separator from "../assets/images/alternative-text/separator.png";
   CSS画像は、代替テキストを必要としない装飾的な画像のために使用する必要があります。内容を伝える画像は、一般にCSSで定義すべきではありません。ページコンテンツ内に配置する。CSSや他の背景画像に直接代替テキストを追加することはできないため、背景画像が内容を示す場合は、その内容をページマークアップの中でアクセスできるようにする必要があります。上記の例4のPDFアイコン画像をCSSの背景画像で表示した場合、テキスト置換のテクニックを使って、リンク内のコンテンツを表示させることができます。
 
   ```html
-  <a href="application.pdf">採用応募書類のダウンロード<span class="pdficon"> (PDF)</span></a>
+  <a href="https://webaim.org/techniques/alttext/media/generic_link.htm">採用応募書類のダウンロード<span class="pdficon"> (PDF)</span></a>
   ```
 
   次に、CSSを使用して、「(PDF)」のテキスト（`span class="pdficon"`要素）を[画面外に](https://webaim.org/techniques/css/invisiblecontent/)配置します。視覚ユーザーにはPDFの背景画像が見え、スクリーンリーダー・ユーザーには画面外の「(PDF)」テキストが聞こえます。
