@@ -47,6 +47,10 @@ const { span = 1, type, title } = Astro.props;
     font-size: 1rem;
     font-weight: bold;
   }
+  
+  .title :global(code) {
+    font-weight: 500;
+  }
 
   .good,
   .bad {

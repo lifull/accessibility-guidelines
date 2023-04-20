@@ -1,3 +1,3 @@
 export function getSlugFromUrl(url: string) {
-  return url.replace(/^(?:https?:\/\/[^\/]+)?\/(.+?)(?:\.html)?$/, "$1");
+  return url.replace(/^.*\/([^\/]+?)(?:\.html)?$/, "$1");
 }

@@ -13,11 +13,11 @@ const next = getNext(currentSlug);
 ---
 
 <nav class="pagination">
-  <a href={prev && `/accessibility-guidelines/${prev.slug}.html`} class="item prev">
+  <a href={prev && `/accessibility-guidelines/${prev.slug}.html`} rel="prev" class="item prev">
     {prev?.title}
   </a>
   <div class="separator"></div>
-  <a href={next && `/accessibility-guidelines/${next.slug}.html`} class="item next">
+  <a href={next && `/accessibility-guidelines/${next.slug}.html`} rel="next" class="item next">
     {next?.title}
   </a>
 </nav>

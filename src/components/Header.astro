@@ -78,7 +78,10 @@ const nav = {
                     <a
                       href={`/accessibility-guidelines/${slug}.html`}
                       aria-current={
-                        Astro.url.pathname === `/${slug}.html` ? "page" : null
+                        Astro.url.pathname ===
+                        `/accessibility-guidelines/${slug}.html`
+                          ? "page"
+                          : null
                       }
                     >
                       {title}
@@ -95,9 +98,11 @@ const nav = {
             <a
               href="https://github.com/lifull/accessibility-guidelines/releases"
               target="_blank"
+              rel="external"
             >
               ver. {version}
-              <span class="open-blank" role="img" aria-label="新しいタブで開く"></span>
+              <span class="open-blank" role="img" aria-label="新しいタブで開く"
+              ></span>
             </a>
           </li>
         </ul>
