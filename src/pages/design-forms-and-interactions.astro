@@ -1,0 +1,60 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
+
+// レベル1
+import * as establishedPattern from "../content/guidelines/design/established-pattern.mdx"
+import * as keyboard from "../content/guidelines/design/keyboard.mdx"
+import * as customUiKeyboard from "../content/guidelines/design/custom-ui-keyboard.mdx"
+
+// レベル2
+import * as contentOnHover from "../content/guidelines/design/content-on-hover.mdx"
+import * as simplePointer from "../content/guidelines/design/simple-pointer.mdx"
+import * as formControlLabel from "../content/guidelines/design/form-control-label.mdx"
+import * as errorMessage from "../content/guidelines/design/error-message.mdx"
+import * as errorPresentation from "../content/guidelines/design/error-presentation.mdx"
+
+// レベル3
+import * as deviceOrientation from "../content/guidelines/design/device-orientation.mdx"
+import * as linkOpensInNewTab from "../content/guidelines/design/link-opens-in-new-tab.mdx"
+import * as predictablePattern from "../content/guidelines/design/predictable-pattern.mdx"
+import * as timeLimit from "../content/guidelines/design/time-limit.mdx"
+import * as userAuthentication from "../content/guidelines/design/user-authentication.mdx"
+---
+
+<DefaultLayout title="デザイン–フォーム・インタラクション">
+  <PageTitle>
+    <span slot="sub">デザイン</span>
+    フォーム・インタラクション
+  </PageTitle>
+  <p>
+    ウェブページとユーザーのインタラクションに関するガイドラインです。主としてデザイナーが取り組む内容ですが、内容については企画も把握する必要があります。
+  </p>
+
+  <Guidelines level={1}>
+    <Guideline guideline={establishedPattern} />
+    <Guideline guideline={keyboard} />
+    <Guideline guideline={customUiKeyboard} />
+  </Guidelines>
+
+  <Guidelines level={2}>
+    <Guideline guideline={contentOnHover} />
+    <Guideline guideline={simplePointer} />
+    <Guideline guideline={formControlLabel} />
+    <Guideline guideline={errorMessage} />
+    <Guideline guideline={errorPresentation} />
+  </Guidelines>
+
+  <Guidelines level={3}>
+    <Guideline guideline={deviceOrientation} />
+    <Guideline guideline={linkOpensInNewTab} />
+    <Guideline guideline={predictablePattern} />
+    <Guideline guideline={timeLimit} />
+    <Guideline guideline={userAuthentication} />
+  </Guidelines>
+
+  <Pagination current={Astro.url.href} />
+</DefaultLayout>

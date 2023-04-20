@@ -1,0 +1,254 @@
+<div class="prose">
+  <slot />
+</div>
+
+<style is:global>
+  @layer prose {
+    .prose {
+      line-height: 1.8;
+      line-break: strict;
+    }
+
+    /* セクショニングコンテンツ */
+
+    .prose aside {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: 0.5rem;
+      padding: calc(1.5rem - 1rem * 0.4) 1.5rem;
+    }
+
+    .prose aside > *:first-child {
+      margin-top: 0;
+    }
+    .prose aside > *:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 見出しコンテンツ */
+
+    .prose h2 {
+      margin-top: calc(6rem - 1.5rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.4);
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      font-feature-settings: "palt";
+    }
+
+    .prose h3 {
+      margin-top: calc(4rem - 1.25rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.4);
+      display: flex;
+      align-items: start;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: 0.05em;
+      font-feature-settings: "palt";
+    }
+    .prose h3::before {
+      margin-top: 0.1em;
+      margin-right: 0.4em;
+      flex-shrink: 0;
+      border-radius: 0.15em;
+      width: 0.3em;
+      height: 1.2em;
+      background-color: var(--color-primary);
+      content: "";
+    }
+
+    .prose h4 {
+      margin-top: calc(3rem - 1.125rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.5rem - 1.125rem * 0.2 - 1rem * 0.4);
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    .prose h5 {
+      margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.4);
+      margin-bottom: 0.5rem;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    /* フローコンテンツ */
+
+    .prose p {
+      margin-block: 1.4rem;
+    }
+
+    .prose ul,
+    .prose ol {
+      margin-block: 1.4rem;
+      padding-left: 1.25rem;
+    }
+
+    .prose li {
+      margin-block: calc(1rem - 1rem * 0.8);
+    }
+    .prose ul > li {
+      list-style-type: none;
+    }
+    .prose ul > li::before {
+      float: left;
+      margin-top: 0.6125em;
+      margin-right: 0.5625em;
+      margin-left: -0.9375em;
+      width: 0.375em;
+      height: 0.375em;
+      border-radius: 50%;
+      background-color: currentColor;
+      content: "";
+    }
+
+    .prose dl {
+      margin-block: 1.4rem;
+    }
+
+    .prose dt {
+      margin-top: 1.4rem;
+      font-weight: bold;
+    }
+    
+    .prose dd {
+      margin-inline-start: 0;
+      margin-bottom: 1.4rem;
+    }
+
+    .prose figure {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+    }
+
+    .prose pre {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border-radius: 0.25rem;
+      border: 1px solid var(--color-border);
+      padding: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .prose hr {
+      margin-block: calc(4.5rem - 1rem * 0.8);
+      border: 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .prose table {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border: 1px solid var(--color-border);
+      border-collapse: collapse;
+    }
+
+    .prose tr + tr,
+    .prose thead + tbody > tr:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .prose th,
+    .prose td {
+      padding: calc(1rem - 1rem * 0.4) 1rem;
+      vertical-align: top;
+    }
+
+    .prose th {
+      background-color: var(--color-shade);
+    }
+
+    /* フレージングコンテンツ */
+
+    .prose code {
+      font-family: "Fira Mono", Menlo, LIFULLYUGO, LIFULLHIRAGINO, monospace;
+      line-height: 1.4;
+      tab-size: 2;
+    }
+    .prose code::before,
+    .prose code::after {
+      content: " ";
+      font-size: 0.5em;
+    }
+    .prose pre code::before,
+    .prose pre code::after {
+      content: normal;
+    }
+    
+    /* エンベデッドコンテンツ */
+    
+    .prose img {
+      border-radius: 0.5rem;
+      background-color: #f4f4f4;
+    }
+
+    /* インタラクティブコンテンツ */
+
+    .prose a:link {
+      color: currentColor;
+      text-underline-offset: 0.15em;
+    }
+    .prose a:visited {
+      color: var(--color-dimmed);
+    }
+    .prose a:hover {
+      color: var(--color-primary);
+    }
+
+    .prose details {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+    }
+    .prose details + details {
+      margin-top: calc(1.25rem - 2.6rem + 1rem * 0.4);
+    }
+
+    /* リンクアイコン */
+
+    .prose :is(h1, h2, h3, h4, h5, h6) {
+      position: relative;
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6) > a[href^="#"] {
+      position: absolute;
+      top: calc(0.7em - 0.75rem);
+      right: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+      opacity: 0;
+      background: var(--icon-link) no-repeat 0 / 100%;
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6):hover > a[href^="#"] {
+      opacity: 1;
+    }
+
+    /* 見出し下のアキ調整 */
+
+    .prose :is(h4, h5, h6) + :is(p, ul, ol, dl) {
+      margin-block-start: 0;
+    }
+
+    .prose :is(h4, h5, h6) + :is(aside, details, pre, table) {
+      margin-block-start: calc(0.25rem + 1rem * 0.4);
+    }
+
+    /* 太字の中のcodeのウェイト調整 */
+
+    .prose :is(h1, h2, h3, h4, h5, h6, b, strong, th) code {
+      font-weight: 500;
+    }
+    
+    @media (min-width: 768px) {
+      .prose dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.4rem 1.5rem;
+      }
+      
+      .prose dt {
+        min-width: 4em;
+        margin: 0;
+      }
+      
+      .prose dd {
+        margin: 0;
+      }
+    }
+  }
+</style>

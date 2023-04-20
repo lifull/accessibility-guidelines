@@ -1,0 +1,24 @@
+---
+area: design
+category: forms-and-interactions
+level: 2
+title: シンプルなポインター操作
+slug: simple-pointer
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="タッチジェスチャー・ドラッグ・マウスホイール・右クリックで操作する機能は、シンプルなポインター操作だけでも利用できるようにする" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ピンチ操作やスワイプなどのタッチジェスチャー、ダブルクリックやドラッグなどのマウス操作は、運動機能に障害があるユーザーには利用できないかもしれません。マウスホイールや右クリックなどのデバイス依存の操作は、ユーザーのデバイスが対応していないかもしれません。シングルクリックなどのシンプルなポインター操作だけでも機能を利用できるようにしてください。
+
+##### 参考情報
+
+- [達成基準 2.5.1: ポインタのジェスチャを理解する](https://waic.jp/translations/WCAG21/Understanding/pointer-gestures.html)

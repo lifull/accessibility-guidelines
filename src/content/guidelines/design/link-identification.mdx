@@ -1,0 +1,58 @@
+---
+area: design
+category: visual
+level: 1
+title: リンクの判別
+slug: link-identification
+---
+
+import linkIdentification from "../../../assets/images/design/link-identification.svg";
+import linkIdentification2 from "../../../assets/images/design/link-identification-2.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="インラインリンクには下線を引いたり一貫したアイコンを添えたりしてリンクとわかるようにする" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+本文のような複数行にわたるテキストブロックに含まれるインラインリンクは、リンクとしての手がかりを備えていないと、特にロービジョンや認知障害のあるユーザーは見逃してしまうかもしれません。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：判別できるリンク
+  </div>
+  <Case type="bad" title="リンクを示すのに色だけを使用する">
+    <img
+      slot="figure"
+      src={linkIdentification.src}
+      alt=""
+      width={linkIdentification.width}
+      height={linkIdentification.height}
+      loading="lazy"
+      decoding="async"
+    />
+    本文中の一部のテキストがリンクのため青色で表現されている。
+  </Case>
+  <Case type="good" title="リンクを示すのに色と下線を使用する">
+    <img
+      slot="figure"
+      src={linkIdentification2.src}
+      alt=""
+      width={linkIdentification2.width}
+      height={linkIdentification2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    リンク色のほか下線をつかってリンクであることが表現されている。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-contrast.html)

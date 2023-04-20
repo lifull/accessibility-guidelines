@@ -1,0 +1,113 @@
+@font-face {
+  font-family: LIFULLFONT;
+  font-style: normal;
+  font-weight: normal;
+  font-display: optional;
+  src: url("https://font.lifull.com/lifullfont/woff2/medium.woff2")
+  format("woff2");
+  unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+  U+2260, U+2264, U+2265;
+}
+
+@font-face {
+  font-family: LIFULLFONT;
+  font-style: normal;
+  font-weight: bold;
+  font-display: optional;
+  src: url("https://font.lifull.com/lifullfont/woff2/bold.woff2")
+  format("woff2");
+  unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+  U+2260, U+2264, U+2265;
+}
+
+@font-face {
+  font-family: LIFULLFONT;
+  font-style: normal;
+  font-weight: 900;
+  font-display: optional;
+  src: url("https://font.lifull.com/lifullfont/woff2/heavy.woff2")
+  format("woff2");
+  unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
+  U+2260, U+2264, U+2265;
+}
+
+@font-face {
+  font-family: LIFULLYUGO;
+  font-weight: normal;
+  src: local("Yu Gothic Medium"), local("YuGothic Medium");
+}
+
+@font-face {
+  font-family: LIFULLYUGO;
+  font-weight: bold;
+  src: local("Yu Gothic Bold"), local("YuGothic Bold");
+}
+
+@font-face {
+  font-family: LIFULLHIRAGINO;
+  font-weight: normal;
+  src: local("HiraginoSans-W3");
+}
+
+@font-face {
+  font-family: LIFULLHIRAGINO;
+  font-weight: bold;
+  src: local("HiraginoSans-W6");
+}
+
+@layer base, prose;
+
+@layer base {
+  html {
+    --color-primary: #ed6103;
+    --color-text: #1f1f1f;
+    --color-icon: #797979;
+    --color-dimmed: #8f8f8f;
+    --color-border: #d2d2d2;
+    --color-shade: #f4f4f4;
+    --color-good: #0c9054;
+    --color-bad: #d1352a;
+    --color-focus: #236dda;
+
+    --spacing-viewport-margin: 1.5rem;
+  }
+
+  body {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.6;
+    font-family: LIFULLFONT, LIFULLYUGO, LIFULLHIRAGINO, sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+  :focus-visible {
+    outline: 2px solid;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-color: var(--color-focus);
+  }
+
+  :target {
+    scroll-margin-block: 2rem;
+  }
+
+  ::selection {
+    color: white;
+    background-color: var(--color-focus);
+  }
+
+  @media (min-width: 768px) {
+    html {
+      --spacing-viewport-margin: 3rem;
+      font-size: 112.5%;
+    }
+
+    :target {
+      scroll-margin-block: 3rem;
+    }
+  }
+}

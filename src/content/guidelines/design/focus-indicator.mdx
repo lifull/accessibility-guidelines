@@ -1,0 +1,69 @@
+---
+area: design
+category: visual
+level: 1
+title: フォーカスインジケーター
+slug: focus-indicator
+---
+
+import focusIndicator from "../../../assets/images/design/focus-indicator.svg";
+import focusIndicator2 from "../../../assets/images/design/focus-indicator-2.svg";
+import focusIndicator3 from "../../../assets/images/design/focus-indicator-3.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="フォーカスインジケーターを除去しない" />
+<Checkpoint title="アウトライン型のフォーカスインジケーターは、APCA 45以上の色コントラストを確保する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+フォーカスインジケーターを非表示にすると、キーボードユーザーや弱視のユーザーはコンテンツや機能を利用できなくなってしまいます。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：視認性に配慮したフォーカスインジケーター
+  </div>
+  <Case type="bad" title="コントラストが低すぎる">
+    <img
+      slot="figure"
+      src={focusIndicator.src}
+      alt=""
+      width={focusIndicator.width}
+      height={focusIndicator.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="bad" title="色の変化のみ">
+    <img
+      slot="figure"
+      src={focusIndicator2.src}
+      alt=""
+      width={focusIndicator2.width}
+      height={focusIndicator2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="十分なコントラストのあるフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator3.src}
+      alt=""
+      width={focusIndicator3.width}
+      height={focusIndicator3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-contrast.html)

@@ -1,0 +1,23 @@
+---
+area: impl
+category: interactions
+level: 2
+title: Escapeキー操作
+slug: escape-key
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">Escapeキーでポップアップメニューやダイアログ、ツールチップを閉じられるようにする</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+Escapeキーは「現在のコンテキストから抜ける」ための慣習的に用いられているキー操作です。ポップアップメニューやダイアログ、ツールチップなど、一時的に、ほかのコンテンツより前面に表示されるコンテンツをEscapeキーで閉じられるようにしてください。

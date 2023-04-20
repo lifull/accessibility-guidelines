@@ -1,0 +1,23 @@
+---
+area: impl
+category: markup
+level: 2
+title: 改行と空白文字
+slug: whitespace-character
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">単語内の文字間隔を制御するために、CSS の`letter-spacing`を使用する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ゆったりとした文字間隔を実現するためにスペース文字を文字間に挿入すると、スクリーンリーダーは語句を適切に検出できなくなり、うまく読み上げられなくなってしまいます。

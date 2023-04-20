@@ -1,0 +1,59 @@
+---
+area: design
+category: contents
+level: 2
+title: グラフや図
+slug: chart-and-diagram
+---
+
+import chartAndDiagram from "../../../assets/images/design/chart-and-diagram.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="グラフの傾向や要点を簡潔にまとめ、テキストや代替テキストで提供する" />
+<Checkpoint title="グラフの元データをHTMLの表で提供するか、ダウンロードできるようにする（有用な場合）" />
+<Checkpoint title="図が伝えている情報をテキストや代替テキストで提供する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+グラフや図は多くの情報を効率的に伝えられる表現方法ですが、視覚に偏った表現になりがちなため、視覚による情報取得に制約があるユーザーには情報が伝わりづらいことがあります。
+
+グラフや図は複雑になりすぎないようにしてください。グラフや図に含まれる情報量が、本文または代替テキストが伝える情報量を大きく上回ることのないようにしてください。
+
+グラフの元データを利用できるようにしておくと、データの利用性やアクセシビリティが向上します。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：複雑な概念図
+    
+    <p>
+      <img
+        src={chartAndDiagram.src}
+        alt=""
+        width={chartAndDiagram.width}
+        height={chartAndDiagram.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="bad" title="画像のタイトルのみ指定されている">
+    複雑な概念を説明するための図があり、画像のタイトルが代替テキストに設定されている。スクリーンリーダー利用者には画像の内容が伝わらない。
+  </Case>
+  <Case span={2} type="good" title="複雑な図に具体的な代替テキストを設定する">
+    複雑な概念を説明するための図があり、概念の説明をテキスト化したものが代替テキストに設定されている。
+  </Case>
+  <Case span={2} type="good" title="本文を用いて概念について説明する">
+    図が説明している内容を、本文で取り上げる。見出しや箇条書き等を利用しわかりやすく表現する。図はあくまでも補佐的な役割にとどめるようにする。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.1.1: 非テキストコンテンツを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-content.html)

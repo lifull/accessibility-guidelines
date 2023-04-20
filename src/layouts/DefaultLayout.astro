@@ -1,0 +1,120 @@
+---
+import "../assets/stylesheets/global.css";
+
+import chevronDown from "../assets/images/chevron-down.svg";
+import close from "../assets/images/close.svg";
+import completeFill from "../assets/images/complete-fill.svg";
+import doubleChevronDown from "../assets/images/double-chevron-down.svg";
+import link from "../assets/images/link.svg";
+import menuClose from "../assets/images/menu-close.svg";
+import menuOpen from "../assets/images/menu-open.svg";
+import openBlank from "../assets/images/open-blank.svg";
+import radioButtonBlank from "../assets/images/radio-button-blank.svg";
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
+---
+
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}{titleSuffix && " – LIFULLアクセシビリティガイドライン"}</title>
+    <script is:inline>document.documentElement.classList.remove("no-js")</script>
+    <meta property="og:title" content="LIFULLアクセシビリティガイドライン" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lifull.github.io/accessibility-guidelines/og_image.png" />
+    <meta property="og:image:alt" content="LIFULL Accessibility Guidelines" />
+    <meta property="og:url" content="https://lifull.github.io/accessibility-guidelines/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LIFULLアクセシビリティガイドライン" />
+    <meta name="twitter:site" content="@LIFULL_Corp" />
+    <link rel="shortcut icon" href="/accessibility-guidelines/favicon.ico" />
+    <link rel="license" href="/accessibility-guidelines/LICENSE.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style is:inline>@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=optional")</style>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-YKH9N173K4"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YKH9N173K4');
+    </script>
+  </head>
+  <body>
+    <nav aria-label="スキップリンク">
+      <a class="skip" href="#main">メインコンテンツにスキップ</a>
+    </nav>
+    <div class="layout">
+      <Header />
+      <div class="main">
+        <main id="main">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style
+  define:vars={{
+    "icon-chevron-down": `url(${chevronDown.src})`,
+    "icon-close": `url(${close.src})`,
+    "icon-complete-fill": `url(${completeFill.src})`,
+    "icon-double-chevron-down": `url(${doubleChevronDown.src})`,
+    "icon-link": `url(${link.src})`,
+    "icon-menu-close": `url(${menuClose.src})`,
+    "icon-menu-open": `url(${menuOpen.src})`,
+    "icon-open-blank": `url(${openBlank.src})`,
+    "icon-radio-button-blank": `url(${radioButtonBlank.src})`,
+  }}
+></style>
+
+<style>
+  .skip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5em 1.5em;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transform: translateY(-100%);
+  }
+  .skip:focus {
+    transform: translateY(0%);
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: var(--spacing-viewport-margin);
+  }
+
+  .main {
+    min-width: 0;
+    padding-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .layout {
+      grid-template-columns:
+        minmax(var(--spacing-viewport-margin), 1fr)
+        15rem 56px minmax(0, 736px)
+        minmax(var(--spacing-viewport-margin), 1fr);
+      padding-inline: 0;
+    }
+
+    .main {
+      grid-column: 4;
+      padding-top: 3.5rem;
+    }
+  }
+</style>
+
+<script src="../assets/javascripts/global.js"></script>

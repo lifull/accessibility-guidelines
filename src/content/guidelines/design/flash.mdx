@@ -1,0 +1,28 @@
+---
+area: design
+category: contents
+level: 1
+title: 閃光
+slug: flash
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="閃光を放つコンテンツは避ける" />
+<Checkpoint title="閃光を放つコンテンツは、1秒間に3回より遅く点滅するようにする" />
+<Checkpoint title="1秒間に3回以上点滅する場合は、点滅するコンテンツのサイズを小さくする" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+閃光を放つ（激しく点滅する）コンテンツは可能な限り避けてください。必要な場合は点滅の速度や色差・面積を小さくする対策を講じてください。
+
+光感受性による発作性障害のある人は、閃光を放つコンテンツによって発作を引き起こす恐れがあります。
+
+##### 参考情報
+
+- [達成基準 2.3.1: 3 回の閃光、又は閾値以下を理解する](https://waic.jp/translations/WCAG21/Understanding/three-flashes-or-below-threshold.html)

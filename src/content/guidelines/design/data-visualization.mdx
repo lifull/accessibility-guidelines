@@ -1,0 +1,58 @@
+---
+area: design
+category: contents
+level: 2
+title: データ可視化
+slug: data-visualization
+---
+
+import dataVisualization from "../../../assets/images/design/data-visualization.svg";
+import dataVisualization2 from "../../../assets/images/design/data-visualization-2.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="グラフの視覚的要素と凡例を色以外の手段で紐づけられるようにする" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+グラフを表現している視覚的要素（点や線・面など）と凡例を、色だけを手掛かりに紐づけていると、ロービジョンや色覚特性のあるユーザーにとって利用しづらくなることがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：凡例付きの円グラフ
+  </div>
+  <Case type="bad" title="グラフ面と凡例を色で紐づけている">
+    <img
+      slot="figure"
+      src={dataVisualization.src}
+      alt="グラフ面と凡例を色で紐づけている例"
+      width={dataVisualization.width}
+      height={dataVisualization.height}
+      loading="lazy"
+      decoding="async"
+    />
+    グラフ面と凡例を色だけを手掛かりに紐づけている。P型色覚での見え方をシミュレーションすると色の判別が困難になる。
+  </Case>
+  <Case type="good" title="グラフ面に直接ラベルを配置する">
+    <img
+      slot="figure"
+      src={dataVisualization2.src}
+      alt="グラフ面から線を引きラベルを配置している例"
+      width={dataVisualization2.width}
+      height={dataVisualization2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    グラフ面に直接ラベルを配置することで、色に依存しない必要がなくなる。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.1: 色の使用を理解する](https://waic.jp/translations/WCAG21/Understanding/use-of-color.html)

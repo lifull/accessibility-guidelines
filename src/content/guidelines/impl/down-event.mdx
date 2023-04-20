@@ -1,0 +1,23 @@
+---
+area: impl
+category: interactions
+level: 3
+title: ダウンイベントの使用
+slug: down-event
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`mousedown`, `pointerdown`, `touchstart`を機能実行のトリガーにしない</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ダウンイベント（`mousedown`, `pointerdown`, `touchstart`）を機能実行のトリガーにしていると、細かい動作が苦手なユーザーは意図せず機能を実行してしまうことがあります。かわりにアップイベント（`mouseup`, `pointerup`, `touchend`）や、`click`, `input`, `change`のような、より意図に近いイベントを用いるようにしてください。

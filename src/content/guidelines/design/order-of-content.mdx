@@ -1,0 +1,24 @@
+---
+area: design
+category: contents
+level: 3
+title: コンテンツの順序
+slug: order-of-content
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="コンテンツを意味のある順序で並べる" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+スクリーンリーダーはコーディングされた順番どおりに読み上げます。視覚上の順序とコード上の順序が食い違っていたり、情報のヒエラルキーをうまくコード化できていなかったりすると、スクリーンリーダー利用者が混乱してしまうかもしれません。レイアウトを素直にコード化したときに情報のヒエラルキーが崩れてしまいそうなデザインは避けるか、エンジニアとコミュニケーションをとり意図したとおりに読み上げられるようにしてください。
+
+##### 参考情報
+
+- [達成基準 1.3.2: 意味のある順序を理解する](https://waic.jp/translations/WCAG21/Understanding/meaningful-sequence.html)

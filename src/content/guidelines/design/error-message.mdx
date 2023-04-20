@@ -1,0 +1,91 @@
+---
+area: design
+category: forms-and-interactions
+level: 2
+title: エラーメッセージ
+slug: error-message
+---
+
+import errorMessage from "../../../assets/images/design/error-message.svg";
+import errorMessage2 from "../../../assets/images/design/error-message-2.svg";
+import errorMessage3 from "../../../assets/images/design/error-message-3.svg";
+import errorMessage4 from "../../../assets/images/design/error-message-4.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="エラーの発生箇所と原因を具体的に記述する" />
+<Checkpoint title="エラーの修正方法を説明する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ユーザーの操作によってエラーが発生したとき、エラーについての十分な情報を提示してください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例① エラーの原因を明記する
+  </div>
+  <Case type="bad" title="エラーの原因を明記しない">
+    <img
+      slot="figure"
+      src={errorMessage.src}
+      alt="エラーメッセージ：ログインできませんでした"
+      width={errorMessage.width}
+      height={errorMessage.height}
+      loading="lazy"
+      decoding="async"
+    />
+    なぜログインに失敗したかわからず、ユーザーは修正のためのアクションを起こせない。
+  </Case>
+  <Case type="good" title="エラーの原因を明記する">
+    <img
+      slot="figure"
+      src={errorMessage2.src}
+      alt="エラーメッセージ：ユーザー名またはパスワードが間違っています"
+      width={errorMessage2.width}
+      height={errorMessage2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    なぜログインに失敗したかわかり、ユーザーは修正のためのアクションを起こせる。
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例② エラーの修正方法を説明する
+  </div>
+  <Case type="bad" title="あいまいな修正指示">
+    <img
+      slot="figure"
+      src={errorMessage3.src}
+      alt="エラーメッセージ：ユーザー名を正しい形式で入力してください"
+      width={errorMessage3.width}
+      height={errorMessage3.height}
+      loading="lazy"
+      decoding="async"
+    />
+    正しい形式とは何かが不明瞭で、どのように修正すればよいのかわからない。
+  </Case>
+  <Case type="good" title="具体的で明快な修正指示">
+    <img
+      slot="figure"
+      src={errorMessage4.src}
+      alt="エラーメッセージ：ユーザー名は半角英数で入力してください"
+      width={errorMessage4.width}
+      height={errorMessage4.height}
+      loading="lazy"
+      decoding="async"
+    />
+    要求されている形式や文脈の情報を提供することで、正しい値に修正しやすくなる。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 3.3.3: エラー修正の提案を理解する](https://waic.jp/translations/WCAG21/Understanding/error-suggestion.html)

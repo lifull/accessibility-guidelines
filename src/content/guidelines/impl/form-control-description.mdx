@@ -1,0 +1,63 @@
+---
+area: impl
+category: forms
+level: 3
+title: フォームコントロールの説明文
+slug: form-control-description
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`aria-describedby`属性をつかってフォームコントロールに説明文を指定する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+フォームコントロールと説明文をプログラムが解釈できるように紐づけると、スクリーンリーダー利用者は、フォーカスをフォームコントロールから移動することなく説明の内容を取得できるようになります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：フォームコントロールの説明文
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <div class="form-group">
+        <label for="name">名前</label>
+        <input id="name" aria-labelledby="name-description" />
+        <p id="name-description">例）山田太郎</p>
+      </div>
+      ```
+    </div>
+    <span slot="title">`aria-describedby`属性をつかってコントロールと説明文を紐づける</span>
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：フォームコントロールのエラー
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <div class="form-group">
+        <label for="name">名前</label>
+        <input id="name" aria-labelledby="name-description name-error" />
+        <p id="name-description">例）山田太郎</p>
+        <p id="name-error">名前を入力してください。</p>
+      </div>
+      ```
+    </div>
+    <span slot="title">`aria-describedby`属性をつかってコントロールとエラーメッセージを紐づける</span>
+    <span>複数の`id`値をスペース区切りで指定することで、複数の要素にまたがる説明文およびエラーメッセージをコントロールに紐づけられる。</span>
+  </Case>
+</Cases>

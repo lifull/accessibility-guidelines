@@ -1,0 +1,25 @@
+---
+area: impl
+category: interactions
+level: 1
+title: 挿入されるコンテンツ
+slug: inserted-content
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">動的に追加・表示されるコンテンツのDOMノードをトリガーの直後に配置する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+サブメニューやモーダルダイアログ、ディスクロージャー、「もっと見る」による追加読み込みなど、コンテンツが動的に追加・表示されるUIについて、そのコンテンツのDOMノードは操作の起点（トリガー）の直後になるようにしてください。トリガーの直後にコンテンツが挿入されることで、キーボードやスクリーンリーダーを使用したときに、トリガーの操作後に自然な流れで操作や読み上げを続けることができます。
+
+JavaScriptによってフォーカス位置を制御できる場合、このガイドラインは必須ではありません。

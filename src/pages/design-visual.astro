@@ -1,0 +1,45 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
+
+// レベル1
+import * as linkIdentification from "../content/guidelines/design/link-identification.mdx";
+import * as stateIdentification from "../content/guidelines/design/state-identification.mdx";
+import * as focusIndicator from "../content/guidelines/design/focus-indicator.mdx";
+
+// レベル2
+import * as textContrast from "../content/guidelines/design/text-contrast.mdx";
+import * as uiContrast from "../content/guidelines/design/ui-contrast.mdx";
+import * as targetSize from "../content/guidelines/design/target-size.mdx";
+import * as textJustify from "../content/guidelines/design/text-justify.mdx";
+import * as responsiveDesign from "../content/guidelines/design/responsive-design.mdx";
+
+// レベル3
+---
+
+<DefaultLayout title="デザイン–ビジュアル">
+  <PageTitle>
+    <span slot="sub">デザイン</span>
+    ビジュアル
+  </PageTitle>
+  <p>ウェブページの表現＝ビジュアルデザインに関するガイドラインです。</p>
+
+  <Guidelines level={1}>
+    <Guideline guideline={linkIdentification} />
+    <Guideline guideline={stateIdentification} />
+    <Guideline guideline={focusIndicator} />
+  </Guidelines>
+
+  <Guidelines level={2}>
+    <Guideline guideline={textContrast} />
+    <Guideline guideline={uiContrast} />
+    <Guideline guideline={targetSize} />
+    <Guideline guideline={textJustify} />
+    <Guideline guideline={responsiveDesign} />
+  </Guidelines>
+
+  <Pagination current={Astro.url.href} />
+</DefaultLayout>

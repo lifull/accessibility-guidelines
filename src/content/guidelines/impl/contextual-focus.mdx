@@ -1,0 +1,43 @@
+---
+area: impl
+category: interactions
+level: 2
+title: 文脈に応じたフォーカス
+slug: contextual-focus
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">モーダルコンテンツを開いたとき、開かれたコンテンツにフォーカスを移動する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">モーダルコンテンツを閉じたとき、開くために使用したボタンにフォーカスを戻す</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">コンテンツを追加で読み込む操作をしたとき、読み込まれたコンテンツにフォーカスを移動する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">ページ内リンクを模したスクロール操作をしたとき、スクロール先にフォーカスを移動する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+キーボードやスクリーンリーダーなどのシーケンシャルな操作体系の環境でスムーズに操作を行えるように、ユーザーの操作に応じた適切な位置にフォーカスを移動してください。
+
+##### 参考情報
+
+- [Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)  
+  ダイアログが閉じたときのフォーカス移動先について有用なガイドがあります

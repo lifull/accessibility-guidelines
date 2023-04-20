@@ -1,0 +1,28 @@
+---
+area: impl
+category: interactions
+level: 3
+title: ステータスの通知
+slug: status-announcement
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">ARIAライブリージョンを適切に使用し、状態変化や通知メッセージを支援技術に伝える</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">スクリーンリーダーを使用して動作検証を行う</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+アプリケーションの状態変化や通知メッセージをUIに表示する場合、スクリーンリーダー等の支援技術にも同様の情報を伝える必要があります。WAI-ARIAのライブリージョンを使うことで実現可能です。

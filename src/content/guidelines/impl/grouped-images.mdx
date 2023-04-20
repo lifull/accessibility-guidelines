@@ -1,0 +1,73 @@
+---
+area: impl
+category: markup
+level: 2
+title: グループ化された画像
+slug: grouped-images
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="グループ化された画像に代替テキストを設定する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+複数の画像の並びがひとまとまりの情報を表現する場合、個別の画像に代替テキストを設定すると理解が難しくなる場合があります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：評価メーター
+  </div>
+  <Case span={2} type="bad" title="個別の画像に代替テキストを設定する">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span>
+        <img src="star-full.png" alt="星1">
+        <img src="star-full.png" alt="星1">
+        <img src="star-full.png" alt="星1">
+        <img src="star-half.png" alt="星0.5">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    連続して読み上げると「星1星1星1星0.5」となり、伝えたい情報が伝わらない。
+  </Case>
+  <Case span={2} type="good" title="先頭の画像に代替テキストを設定する">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span>
+        <img src="star-full.png" alt="5つ星のうち3.5">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-half.png" alt="">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    先頭の画像に数値の情報をまとめて設定し、残りの画像には空の文字列を設定する（＝装飾画像とする）ことで、数値の情報を伝えられる。
+  </Case>
+  <Case span={2} type="good" title="画像の並びをひとまとまりの画像として扱う">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span role="img" aria-label="5つ星のうち3.5">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-half.png" alt="">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    `role="img"`属性を使用し、その要素をひとまとまりの画像として扱う。
+  </Case>
+</Cases>

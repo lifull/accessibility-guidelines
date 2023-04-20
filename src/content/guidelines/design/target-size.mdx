@@ -1,0 +1,58 @@
+---
+area: design
+category: visual
+level: 2
+title: ターゲットサイズ
+slug: target-size
+---
+
+import targetSize from "../../../assets/images/design/target-size.svg";
+import targetSize2 from "../../../assets/images/design/target-size-2.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="リンク、ボタン、フォームコントロール等のポインター操作を受け付けるコンポーネントは、24px四方以上のサイズを確保する"/>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+小さすぎるターゲットは、タッチ操作するユーザーや細かい操作を苦手とするユーザーにとって使いにくいことがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ターゲットサイズ
+  </div>
+  <Case span={2} type="bad" title="不十分なターゲットサイズ">
+    <img
+      slot="figure"
+      src={targetSize.src}
+      alt="20pxのターゲットサイズをもつアイコンボタンが2つ間隔なしで並んでいるイラスト"
+      width={targetSize.width}
+      height={targetSize.height}
+      loading="lazy"
+      decoding="async"
+    />
+    ターゲットサイズが24px未満であり、隣接するコンポーネントとの間隔も確保されていない。
+  </Case>
+  <Case span={2} type="good" title="十分なターゲットサイズ">
+    <img
+      slot="figure"
+      src={targetSize2.src}
+      alt="44pxと24pxのターゲットサイズを持つアイコンボタンが2つずつ間隔なしで並んでいるイラストと、20pxのターゲットサイズを持つアイコンボタンが2つ4pxの間隔で並んでいるイラスト"
+      width={targetSize2.width}
+      height={targetSize2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    ターゲットサイズを24px以上以上とする。ターゲットサイズが24px未満となる場合は、ターゲットサイズと隣接するコンポーネントとの間隔を足し合わせた値が24px以上になるようにする。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [Understanding Success Criterion 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)

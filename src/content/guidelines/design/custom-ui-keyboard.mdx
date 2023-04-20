@@ -1,0 +1,30 @@
+---
+area: design
+category: forms-and-interactions
+level: 1
+title: カスタムUIのキーボード操作
+slug: keyboard
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">[ARIAのキーボードガイダンス](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)に従う</span>
+</Checkpoint>
+
+<Checkpoint title="妥当なキーボード操作方法についてエキスパートに相談する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+HTMLや既存のデザインパターンでは賄いきれない独自のUIをデザインする場合であっても、基本的なキーボード操作の慣習に従うようにしてください。
+
+##### 参考情報
+
+- [フォーカスの管理およびキーボードナビゲーションのサポート](https://momdo.github.io/wai-aria-1.2/#managingfocus)
+- [Developing a Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)

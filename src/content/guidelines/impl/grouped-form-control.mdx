@@ -1,0 +1,46 @@
+---
+area: impl
+category: forms
+level: 2
+title: フォームコントロールのグループ化
+slug: grouped-form-control
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">フォームコントロールをグルーピングするために`fieldset`要素を使用する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+意味的にまとまりのある複数のフォームコントロールがある場合、それらをグループとしてマークアップしてください。スクリーンリーダーで当該フォームコントロールを操作するとき、所属するグループの名前も同時に読み上げられるようになり、文脈への理解が進みます。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：性別の回答欄
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <fieldset>
+        <legend>性別</legend>
+        <p>
+          <label><input type="radio" name="gender" checked />未回答</label>
+          <label><input type="radio" name="gender" />男</label>
+          <label><input type="radio" name="gender" />女</label>
+        </p>
+      </fieldset>
+      ```
+    </div>
+    <span slot="title">`fieldset`要素で選択肢を囲う。</span>
+  </Case>
+</Cases>

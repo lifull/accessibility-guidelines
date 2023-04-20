@@ -1,0 +1,190 @@
+---
+import link from "../assets/images/link.svg";
+import Prose from "../components/Prose.astro";
+
+const { guideline } = Astro.props;
+const { title, slug } = guideline.frontmatter;
+---
+
+<article class="container" data-controller="disclosure">
+  <div class="heading">
+    <h3>
+      <button
+        type="button"
+        aria-expanded="false"
+        aria-controls={`${slug}-content`}
+        data-action="disclosure#toggle"
+        data-disclosure-target="button"
+      >
+        {title}
+        <span></span>
+      </button>
+    </h3>
+  </div>
+  <div
+    id={`${slug}-content`}
+    class="content"
+    hidden="until-found"
+    data-action="beforematch->disclosure#beforematch hashchange@window->disclosure#checkHash"
+    data-disclosure-target="content"
+  >
+    <a href={`#${slug}`} id={slug} class="anchor">
+      <img
+        src={link.src}
+        alt="ガイドライン項目へのリンク"
+        width="24"
+        height="24"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <div class="content-inner">
+      <Prose>
+        <guideline.Content />
+      </Prose>
+    </div>
+  </div>
+</article>
+
+<style>
+  .container {
+    position: relative;
+  }
+
+  .heading {
+    position: relative;
+    padding: 1.25rem var(--spacing-viewport-margin);
+  }
+
+  h3 {
+    margin: 0;
+    display: flex;
+    align-items: start;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    font-feature-settings: "palt";
+  }
+  h3::before {
+    margin-top: 0.25em;
+    margin-right: 0.4em;
+    flex-shrink: 0;
+    border-radius: 0.15em;
+    width: 0.3em;
+    height: 0.9em;
+    background-color: var(--color-primary);
+    content: "";
+  }
+
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: none;
+    font: inherit;
+    text-align: left;
+    letter-spacing: inherit;
+  }
+
+  button::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
+
+  button span {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--color-icon);
+    -webkit-mask-image: var(--icon-chevron-down);
+    mask-image: var(--icon-chevron-down);
+  }
+
+  button[aria-expanded="true"] span {
+    transform: rotate(180deg);
+  }
+
+  :global(.no-js) .content {
+    content-visibility: visible;
+  }
+
+  .anchor {
+    position: absolute;
+    top: 1.4rem;
+    left: 0;
+    display: flex;
+    opacity: 0;
+  }
+  .heading:hover ~ .content .anchor,
+  .anchor:hover,
+  .anchor:focus {
+    opacity: 1;
+  }
+
+  .content-inner {
+    position: relative;
+    z-index: 1;
+    padding-inline: var(--spacing-viewport-margin);
+  }
+
+  .content-inner::after {
+    margin-top: calc(1.5rem - 1rem * 0.4);
+    display: block;
+    content: "";
+  }
+
+  .content-inner :global(h4) {
+    color: var(--color-primary);
+  }
+
+  .content-inner :global(h4:first-child) {
+    margin-top: 0;
+  }
+  
+  .content-inner :global(h4[id$="とは"]) {
+    text-indent: -0.5em;
+  }
+
+  @media (min-width: 768px) {
+    .heading {
+      padding-block: calc(2rem - 1.5rem * 0.2);
+    }
+
+    .anchor {
+      top: 2rem;
+      left: 1.25rem;
+    }
+
+    .content-inner::after {
+      margin-top: calc(2rem - 1rem * 0.4);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading {
+      padding-inline: 2rem;
+    }
+
+    .anchor {
+      left: 0.25rem;
+    }
+
+    .content-inner {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (hover: hover) {
+    button:hover {
+      color: var(--color-primary);
+    }
+
+    button:hover span {
+      background-color: var(--color-primary);
+    }
+  }
+</style>

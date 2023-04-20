@@ -1,0 +1,49 @@
+<div class="example">
+  <div class="image">
+    <slot name="image" />
+  </div>
+  {
+    Astro.slots.has("paragraph") && (
+      <div class="paragraph">
+        <slot name="paragraph" />
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .example {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-shade);
+    padding: 1.5rem;
+  }
+  
+  .image {
+    flex-shrink: 0;
+    max-width: 100%;
+    font-size: 0.875rem;
+  }
+  
+  .image :global(img) {
+    display: block;
+  }
+  
+  .image :global(p) {
+    margin-block: 0;
+  }
+  
+  .paragraph {
+    flex: 1 1 12rem;
+  }
+
+  .paragraph :global(p:first-child) {
+    margin-top: 0;
+  }
+  
+  .paragraph :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

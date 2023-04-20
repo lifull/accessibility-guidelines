@@ -1,0 +1,66 @@
+---
+const { span = 1, type, title } = Astro.props;
+---
+
+<figure class={`case span-${span}`}>
+  <slot name="figure" />
+  <figcaption>
+    <p class="title">
+      {type === "good" && <span class="good" role="img" aria-label="Good:" />}
+      {type === "bad" && <span class="bad" role="img" aria-label="Bad:" />}
+      <b><slot name="title" />{title}</b>
+    </p>
+    <div class="caption"><slot /></div>
+  </figcaption>
+</figure>
+
+<style>
+  figure {
+    margin: 0;
+  }
+
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  figcaption:not(:first-child) {
+    margin-top: 0.75rem;
+  }
+
+  .case :global(p) {
+    margin-block: 0;
+  }
+
+  .case :global(pre) {
+    margin-block: 0;
+  }
+
+  .title {
+    display: flex;
+  }
+
+  .good,
+  .bad {
+    flex-shrink: 0;
+    margin-right: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .good {
+    background-color: var(--color-good);
+    -webkit-mask-image: var(--icon-radio-button-blank);
+    mask-image: var(--icon-radio-button-blank);
+  }
+
+  .bad {
+    background-color: var(--color-bad);
+    -webkit-mask-image: var(--icon-menu-close);
+    mask-image: var(--icon-menu-close);
+  }
+
+  .caption {
+    margin-top: calc(0.5rem - 0.875rem * 0.4);
+    font-size: 0.875rem;
+  }
+</style>

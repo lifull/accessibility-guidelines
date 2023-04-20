@@ -1,0 +1,45 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
+
+// レベル1
+import * as formControlLabel from "../content/guidelines/impl/form-control-label.mdx";
+import * as invisibleLabel from "../content/guidelines/impl/invisible-label.mdx";
+
+// レベル2
+import * as identifyInputPurpose from "../content/guidelines/impl/identify-input-purpose.mdx";
+import * as groupedFormControl from "../content/guidelines/impl/grouped-form-control.mdx";
+
+// レベル3
+import * as formControlDescription from "../content/guidelines/impl/form-control-description.mdx";
+
+---
+
+<DefaultLayout title="実装–フォーム">
+  <PageTitle>
+    <span slot="sub">実装</span>
+    フォーム
+  </PageTitle>
+  <p>
+    フォームの実装に関するガイドラインです。
+  </p>
+
+  <Guidelines level={1}>
+    <Guideline guideline={formControlLabel} />
+    <Guideline guideline={invisibleLabel} />
+  </Guidelines>
+
+  <Guidelines level={2}>
+    <Guideline guideline={identifyInputPurpose} />
+    <Guideline guideline={groupedFormControl} />
+  </Guidelines>
+
+  <Guidelines level={3}>
+    <Guideline guideline={formControlDescription} />
+  </Guidelines>
+
+  <Pagination current={Astro.url.href} />
+</DefaultLayout>

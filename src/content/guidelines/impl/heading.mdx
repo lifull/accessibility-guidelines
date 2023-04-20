@@ -1,0 +1,27 @@
+---
+area: impl
+category: markup
+level: 1
+title: 見出し
+slug: heading
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">設計資料に従い、階層構造の深さに応じた見出し要素（`h1`～`h6`）を使って見出しをマークアップする</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ページの情報構造を見出しを使って整理すると、ユーザーが情報を素早く把握できるようになります。特に、スクリーンリーダーの利用者は見出しを拾い読み<sup>※</sup>することでページの全体構造を把握しています。
+
+##### 参考情報
+
+- <sup>※</sup>[スクリーンリーダーによる見出しの拾い読みのデモ](https://www.youtube.com/watch?v=fcLpufoZyx8&t=338s)

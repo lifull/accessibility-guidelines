@@ -1,0 +1,57 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
+
+// レベル1
+import * as imageAlternative from "../content/guidelines/impl/image-alternative.mdx";
+import * as backgroundImage from "../content/guidelines/impl/background-image.mdx";
+import * as pageTitle from "../content/guidelines/impl/page-title.mdx";
+import * as heading from "../content/guidelines/impl/heading.mdx";
+import * as languageOfPage from "../content/guidelines/impl/language-of-page.mdx";
+
+// レベル2
+import * as groupedImages from "../content/guidelines/impl/grouped-images.mdx";
+import * as meaningfulSequence from "../content/guidelines/impl/meaningful-sequence.mdx";
+import * as landmarkRegion from "../content/guidelines/impl/landmark-region.mdx";
+import * as whitespaceCharacters from "../content/guidelines/impl/whitespace-character.mdx";
+import * as adjustableTextSize from "../content/guidelines/impl/adjustable-text-size.mdx";
+
+// レベル3
+import * as syntax from "../content/guidelines/impl/syntax.mdx";
+
+---
+
+<DefaultLayout title="実装–マークアップ">
+  <PageTitle>
+    <span slot="sub">実装</span>
+    マークアップ
+  </PageTitle>
+  <p>
+    マークアップとスタイリングの実装に関するガイドラインです。
+  </p>
+
+  <Guidelines level={1}>
+    <Guideline guideline={imageAlternative} />
+    <Guideline guideline={backgroundImage} />
+    <Guideline guideline={pageTitle} />
+    <Guideline guideline={heading} />
+    <Guideline guideline={languageOfPage} />
+  </Guidelines>
+
+  <Guidelines level={2}>
+    <Guideline guideline={groupedImages} />
+    <Guideline guideline={meaningfulSequence} />
+    <Guideline guideline={landmarkRegion} />
+    <Guideline guideline={whitespaceCharacters} />
+    <Guideline guideline={adjustableTextSize} />
+  </Guidelines>
+
+  <Guidelines level={3}>
+    <Guideline guideline={syntax} />
+  </Guidelines>
+
+  <Pagination current={Astro.url.href} />
+</DefaultLayout>

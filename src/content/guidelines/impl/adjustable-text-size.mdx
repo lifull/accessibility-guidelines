@@ -1,0 +1,25 @@
+---
+area: impl
+category: markup
+level: 2
+title: 調整可能な文字サイズ
+slug: adjustable-text-size
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="ユーザー設定を反映できるようにルート要素への相対（rem）単位で文字サイズを指定する" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ユーザーの視力や認知特性に合わせるために、ブラウザーのデフォルトの文字サイズを大きく設定しているユーザーがいます。ウェブサイトが文字サイズをpx単位で指定していると、ブラウザーの文字サイズの設定が無視されてしまいます。
+
+##### 参考情報
+
+- [拡大表示時のアクセシビリティー — freeeアクセシビリティー・ガイドライン](https://a11y-guidelines.freee.co.jp/explanations/magnification.html)
+- [Pixels vs. Ems: Users DO Change Font Size | by Evan Minto | Medium](https://medium.com/@vamptvo/pixels-vs-ems-users-do-change-font-size-5cfb20831773)

@@ -1,0 +1,34 @@
+---
+area: impl
+category: interactions
+level: 1
+title: フォーカスインジケーター
+slug: focus-indicator
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">フォーカスインジケーターを非表示にしない</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">フォーカスインジケーターを抑制するために`HTMLElement.blur()`を用いない</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+フォーカスインジケーターが不可視にされていると、キーボードユーザーはフォーカスの現在位置がわからず、操作を続けることができなくなってしまいます。
+
+また、フォーカスインジケーターを取り除くために`HTMLElement.blur()`を使用すると、フォーカス位置が失われ、キーボード操作を再度先頭からやり直さなければいけなくなってしまうかもしれません。
+
+##### ヒント：キーボード操作時だけフォーカスのスタイルを適用する
+
+`:focus`疑似クラスを使用すると、マウスやタッチ操作で選択したときにもスタイルが適用されます。キーボード操作時のみスタイルを適用したい場合、かわりに`:focus-visible`疑似クラスを使用します。

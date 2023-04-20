@@ -1,0 +1,49 @@
+---
+area: design
+category: forms-and-interactions
+level: 3
+title: 予測可能なパターン
+slug: predictable-pattern
+---
+
+import predictablePattern from "../../../assets/images/design/predictable-pattern.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="UIがフォーカスを受取ったときや、フォームコントロール等の値を変更したとき、予測しづらいコンテンツの変化を起こさない" />
+<Checkpoint title="コンテンツを変化させるための確定する操作をユーザーにゆだねる" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+予測しづらいことが起きると、支援技術のユーザーや認知障害を持つユーザーは混乱したり、操作ができなくなることがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：プルダウンメニューによるナビゲーション
+    
+    <p>
+      <img
+        src={predictablePattern.src}
+        alt="プルダウンメニューの値を変更する操作をしているイラスト"
+        width={predictablePattern.width}
+        height={predictablePattern.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="bad" title="値を変更するとページ遷移する">
+    HTMLの`select`要素で実装された並び順選択UIでは、値が変更されるとページ遷移が行われる。値が変更されたタイミングでページ遷移が起きることは予測が難しい。キーボードユーザーは上下キーを使って値をひとつ変えただけでページ遷移してしまうため、目的の項目を選ぶことができない。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 3.2.1: フォーカス時を理解する](https://waic.jp/translations/WCAG21/Understanding/on-focus.html)
+- [達成基準 3.2.2: 入力時を理解する](https://waic.jp/translations/WCAG21/Understanding/on-input.html)

@@ -1,0 +1,37 @@
+---
+area: impl
+category: interactions
+level: 3
+title: 背後のコンテンツ
+slug: backside-content
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">背後に隠されたコンテンツにキーボードフォーカスを移せないようにする</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">背後に隠されたコンテンツを支援技術からも隠す</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+ダイアログなどのモーダルコンテンツが表示されているとき、背後に隠されたコンテンツはキーボードや支援技術からアクセスされないようにしてください。
+
+##### 参考情報
+
+- [focus-trap - npm](https://www.npmjs.com/package/focus-trap)  
+  指定した要素の外側にフォーカスできないようにするためのライブラリ
+- [wicg-inert - npm](https://www.npmjs.com/package/wicg-inert)  
+  指定した要素をキーボード操作不能にし、アクセシビリティツリーからも除外する`inert`属性のためのポリフィルライブラリ
+
+※あくまで参考であり、実装方法を指定するものではありません。

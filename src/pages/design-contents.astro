@@ -1,0 +1,64 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Guideline from "../components/Guideline.astro";
+import Guidelines from "../components/Guidelines.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Pagination from "../components/Pagination.astro";
+
+// レベル1
+import * as pageTitle from "../content/guidelines/design/page-title.mdx";
+import * as heading from "../content/guidelines/design/heading.mdx";
+import * as imageAlternative from "../content/guidelines/design/image-alternative.mdx";
+import * as videoCaption from "../content/guidelines/design/video-caption.mdx"
+import * as autostartContent from "../content/guidelines/design/autostart-content.mdx"
+import * as flash from "../content/guidelines/design/flash.mdx"
+
+// レベル2
+import * as chartAndDiagram from "../content/guidelines/design/chart-and-diagram.mdx";
+import * as dataVisualization from "../content/guidelines/design/data-visualization.mdx";
+import * as table from "../content/guidelines/design/table.mdx";
+import * as audioOnly from "../content/guidelines/design/audio-only.mdx";
+import * as videoAndAudio from "../content/guidelines/design/video-and-audio.mdx";
+import * as imageOfText from "../content/guidelines/design/image-of-text.mdx";
+
+// レベル3
+import * as linkText from "../content/guidelines/design/link-text.mdx";
+import * as orderOfContent from "../content/guidelines/design/order-of-content.mdx";
+import * as sitemap from "../content/guidelines/design/sitemap.mdx";
+---
+
+<DefaultLayout title="デザイン–コンテンツ">
+  <PageTitle>
+    <span slot="sub">デザイン</span>
+    コンテンツ
+  </PageTitle>
+  <p>
+    ウェブページの情報設計やナビゲーション、メディア、文章、文言に関するガイドラインです。企画とデザイナーの両方に関係する内容です。デザイナーがイニシアチブを握り制作を進めてください。
+  </p>
+
+  <Guidelines level={1}>
+    <Guideline guideline={pageTitle} />
+    <Guideline guideline={heading} />
+    <Guideline guideline={imageAlternative} />
+    <Guideline guideline={videoCaption} />
+    <Guideline guideline={autostartContent} />
+    <Guideline guideline={flash} />
+  </Guidelines>
+
+  <Guidelines level={2}>
+    <Guideline guideline={chartAndDiagram} />
+    <Guideline guideline={dataVisualization} />
+    <Guideline guideline={table} />
+    <Guideline guideline={audioOnly} />
+    <Guideline guideline={videoAndAudio} />
+    <Guideline guideline={imageOfText} />
+  </Guidelines>
+
+  <Guidelines level={3}>
+    <Guideline guideline={linkText} />
+    <Guideline guideline={orderOfContent} />
+    <Guideline guideline={sitemap} />
+  </Guidelines>
+
+  <Pagination current={Astro.url.href} />
+</DefaultLayout>

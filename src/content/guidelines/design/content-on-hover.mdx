@@ -1,0 +1,59 @@
+---
+area: design
+category: forms-and-interactions
+level: 2
+title: ホバーで表示されるコンテンツ
+slug: content-on-hover
+---
+
+import contentOnHover from "../../../assets/images/design/content-on-hover.svg";
+import contentOnHover2 from "../../../assets/images/design/content-on-hover-2.svg";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="可能なかぎり、ホバーではなく選択でコンテンツを表示する" />
+<Checkpoint title="ユーザーによる明示的な閉じるアクションによって閉じるようにする" />
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+拡大鏡を利用している弱視のユーザーにとって、ポインターホバーで表示されるコンテンツは気づきにくかったり、表示されたコンテンツを読もうとポインターを動かしたとき意図せず閉じてしまうことがあります。ホバーによるコンテンツの表示はできれば避け、明示的な開く・閉じるアクションをトリガーにして表示・非表示をしてください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ツールチップ
+  </div>
+  <Case type="bad" title="マウスオーバーで表示されるツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover.src}
+      alt="「i」アイコンにマウスオーバーしツールチップが表示されているイラスト"
+      width={contentOnHover.width}
+      height={contentOnHover.height}
+      loading="lazy"
+      decoding="async"
+    />
+    マウスオーバーで表示されるツールチップはタッチ端末からのアクセスが良くない。
+  </Case>
+  <Case type="bad" title="拡大鏡に対応していないツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover2.src}
+      alt="ツールチップを拡大鏡とともに利用し、ツールチップが画面外に表示されているイラスト"
+      width={contentOnHover2.width}
+      height={contentOnHover2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    拡大鏡をつかって画面を大きく拡大しているユーザーは、読みたいテキストが画面外に表示され気づけないことがある。気づけたとしても、ツールチップを読むためにアイコンからマウスカーソルを外すと、ツールチップが閉じてしまうかもしれない。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.13: ホバー又はフォーカスで表示されるコンテンツを理解する](https://waic.jp/translations/WCAG21/Understanding/content-on-hover-or-focus.html)
