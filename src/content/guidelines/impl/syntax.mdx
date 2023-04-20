@@ -7,6 +7,7 @@ slug: syntax
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -26,5 +27,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 仕様に定められた文法と用法に準拠して HTML や CSS を記述することで、将来のウェブ技術の拡張や新しいユーザーエージェントに対して堅牢になります。

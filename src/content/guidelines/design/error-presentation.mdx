@@ -9,6 +9,7 @@ slug: error-presentation
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,6 +17,8 @@ import Case from "../../../components/Case.astro";
 <Checkpoint title="エラー箇所に容易にたどり着けるようにする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 視覚障害をもつユーザーは操作箇所から離れた場所に注意喚起が出ても気づかない可能性があります。エラー提示の際にページ遷移を伴う場合、ページの上部に目立つようにエラーメッセージを提示してください。動的にエラーを提示する場合、ポインターやフォーカスの付近にエラーを提示するようにしてください。
 
@@ -35,17 +38,19 @@ import Case from "../../../components/Case.astro";
 - または、エラーがあることをアラートダイアログで表示する。OKボタンを押すとエラーのあるフォームコントロールにフォーカスを移動する
 - または、エラーが発生した箇所に自動的にフォーカスを移動し、フォームコントロールのすぐそばにエラー文言を表示する
 
-##### 具体例①：エラーを含むHTMLをサーバーサイドから返却する
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：エラーを含むHTMLをサーバーサイドから返却する
+  </div>
   <Case span={2} type="good" title="エラーを含むHTMLをサーバーサイドから返却する">
     エラーをページ上部に表示する。各箇所にもエラーの内容を表示する。ページ上部のエラーをクリックすると書く箇所のジャンプできるようになっていると尚よい。
   </Case>
 </Cases>
 
-##### 具体例②：クライアントサイドで動的にエラーを表示する
-
 <Cases>
+  <div slot="title">
+    ##### 具体例②：クライアントサイドで動的にエラーを表示する
+  </div>
   <Case type="bad" title="送信ボタンを押せなくする">
     送信ボタンのコントラストを落とし押せない状態にしていると、ユーザーは送信ボタンが見つけられなかったり、送信できない理由が理解できないことがある。
   </Case>

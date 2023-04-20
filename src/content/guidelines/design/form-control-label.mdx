@@ -9,6 +9,7 @@ slug: form-control-label
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -18,11 +19,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 ユーザーの入力を受け付ける要素（フォームコントロール）のそばに常に表示されるラベルを配置することは、認知障害や弱視をもつユーザーの助けになります。
 
-##### 具体例：フォームコントロールのラベル
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：フォームコントロールのラベル
+  </div>
   <Case type="bad" title="プレースホルダーでラベルを代用する"></Case>
   <Case type="bad" title="フォームコントロールとラベルが離れている">
     ※程度の問題であり、左寄せのラベルを禁止するものではありません。

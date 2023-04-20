@@ -7,6 +7,7 @@ slug: drag-operation-interruption
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,6 +17,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 UIがドラッグアンドドロップ操作を求めるとき、ドラッグの途中で操作を中止する手段を設けてください。中止する手段の例としては次のようなものがあります。
 

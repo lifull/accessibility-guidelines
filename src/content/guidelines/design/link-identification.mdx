@@ -9,6 +9,7 @@ slug: link-identification
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 本文のような複数行にわたるテキストブロックに含まれるインラインリンクは、リンクとしての手がかりを備えていないと、特にロービジョンや認知障害のあるユーザーは見逃してしまうかもしれません。
 
-##### 具体例：判別できるリンク
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：判別できるリンク
+  </div>
   <Case type="bad" title="リンクを示すのに色だけを使用する">
     本文中の一部のテキストがリンクのため青色で表現されている。
   </Case>

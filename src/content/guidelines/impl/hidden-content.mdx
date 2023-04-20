@@ -7,6 +7,7 @@ slug: hidden-content
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,6 +22,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 DOMツリー上には存在するものの非表示にされているコンテンツは、意図的にそうしていない限り、キーボードや支援技術からもアクセスできないようにしてください。
 

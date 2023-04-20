@@ -9,6 +9,7 @@ slug: autostart-content
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -27,15 +28,18 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 画面内に自動再生するコンテンツがあることで、特定のユーザーがウェブページの利用が困難になることがあります。以下はその一例です。
 
 - 注意欠陥障害をもつユーザーは動き続けるコンテンツに注意を取られ、ページのほかの部分を利用できなくなることがあります。
 - 情報の取得に時間がかかる人は、コンテンツを読み終わる前に表示が切り替わってしまうかもしれません。
 - コンテンツの変化に伴い、フォーカスがリセットされたり音声が途切れたりすることによって、スクリーンリーダー利用上の妨げになることがあります。
 
-##### 具体例①：自動再生する映像
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：自動再生する映像
+  </div>
   <Case type="bad" title="演出ビデオが背景で動き続ける">
     ページにアクセスすると背景で映像が流れ始める。映像の前面にはロゴ、ナビゲーション、テキストが表示されている。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
   </Case>
@@ -47,9 +51,11 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例②：自動でスライドが切り替わるカルーセル
 
 <Cases>
+  <div slot="title">
+    ##### 具体例②：自動でスライドが切り替わるカルーセル
+  </div>
   <Case type="bad" title="一時停止できない">
     ページにアクセスするとカルーセルが自動的に再生を始める。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
   </Case>
@@ -61,9 +67,10 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例③：注意喚起のアイコン
-
 <Cases>
+  <div slot="title">
+    ##### 具体例③：注意喚起のアイコン
+  </div>
   <Case type="bad" title="一定周期で動き続ける">
     ユーザーの注意を促すためにヘッダーの通知アイコンが定期的に揺れ動く。ヘッダーはページスクロールに追随し常に表示されている。
   </Case>

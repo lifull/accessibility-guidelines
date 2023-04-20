@@ -7,12 +7,15 @@ slug: audio-only
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
 <Checkpoint title="音声のみコンテンツに、代替コンテンツを提供する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 映像を伴わない音声のみのコンテンツ（例えばポッドキャスト）は、聴覚障害者が利用することができません。書き起こしテキストなどを用いて、音声と同等の情報を含む代替コンテンツを提供してください。
 

@@ -7,6 +7,7 @@ slug: backside-content
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,6 +22,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ダイアログなどのモーダルコンテンツが表示されているとき、背後に隠されたコンテンツはキーボードや支援技術からアクセスされないようにしてください。
 

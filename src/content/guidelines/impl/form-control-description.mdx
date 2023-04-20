@@ -9,6 +9,7 @@ slug: form-control-description
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -19,11 +20,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 フォームコントロールと説明文をプログラムが解釈できるように紐づけると、スクリーンリーダー利用者は、フォーカスをフォームコントロールから移動することなく説明の内容を取得できるようになります。
 
-##### 具体例①：フォームコントロールの説明文
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：フォームコントロールの説明文
+  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html
@@ -38,9 +42,10 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例②：フォームコントロールのエラー
-
 <Cases>
+  <div slot="title">
+    ##### 具体例②：フォームコントロールのエラー
+  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html

@@ -7,6 +7,7 @@ slug: heading
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -17,6 +18,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="メインエリアにひとつのH1見出しを設定する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ページの情報構造を見出しを使って整理すると、ユーザーが情報を素早く把握できるようになります。特に、スクリーンリーダーの利用者は見出しを拾い読みすることでページの全体構造を把握しています。
 

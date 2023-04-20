@@ -9,6 +9,7 @@ slug: image-alternative
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -39,11 +40,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 画像やアイコンなどの非テキストコンテンツには、適した手段で代替テキストを指定してください。
 
-##### 具体例① 意味のある画像
-
 <Cases>
+  <div slot="title">
+    ##### 具体例① 意味のある画像
+  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html
@@ -77,9 +81,10 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例② 装飾的な画像
-
 <Cases>
+  <div slot="title">
+    ##### 具体例② 装飾的な画像
+  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html
@@ -103,9 +108,10 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例③ イメージマップ
-
 <Cases>
+  <div slot="title">
+    ##### 具体例③ イメージマップ
+  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html

@@ -1,10 +1,9 @@
 ---
 import link from "../assets/images/link.svg";
 import Prose from "../components/Prose.astro";
-import { getLevelTerm } from "../helpers/levels";
 
 const { guideline } = Astro.props;
-const { title, level, slug } = guideline.frontmatter;
+const { title, slug } = guideline.frontmatter;
 ---
 
 <article class="container" data-controller="disclosure">
@@ -41,7 +40,6 @@ const { title, level, slug } = guideline.frontmatter;
       />
     </a>
     <div class="content-inner">
-      <p class="level">レベル{level}：{getLevelTerm(level)}</p>
       <Prose>
         <guideline.Content />
       </Prose>
@@ -107,10 +105,6 @@ const { title, level, slug } = guideline.frontmatter;
     mask-image: var(--icon-chevron-down);
   }
 
-  .toggle:hover .toggle-icon {
-    background-color: var(--color-primary);
-  }
-
   .toggle[aria-expanded="true"] .toggle-icon {
     transform: rotate(180deg);
   }
@@ -139,7 +133,7 @@ const { title, level, slug } = guideline.frontmatter;
   }
 
   .content-inner::after {
-    margin-top: calc(1.5rem - 1rem * 0.3);
+    margin-top: calc(1.5rem - 1rem * 0.4);
     display: block;
     content: "";
   }
@@ -147,28 +141,18 @@ const { title, level, slug } = guideline.frontmatter;
   .content-inner :global(h4) {
     color: var(--color-primary);
   }
+
+  .content-inner :global(h4:first-child) {
+    margin-top: 0;
+  }
   
   .content-inner :global(h4[id$="とは"]) {
     text-indent: -0.5em;
   }
 
-  .level {
-    margin-block: 0;
-    font-weight: bold;
-  }
-
   @media (min-width: 768px) {
     .heading {
       padding-block: calc(2rem - 1.5rem * 0.2);
-    }
-
-    .heading h3 {
-      font-size: 1.5rem;
-    }
-    .heading h3::before {
-      margin-top: 0.283em;
-      margin-right: 0.6em;
-      height: 0.833em;
     }
 
     .anchor {
@@ -177,7 +161,7 @@ const { title, level, slug } = guideline.frontmatter;
     }
 
     .content-inner::after {
-      margin-top: calc(2rem - 1rem * 0.3);
+      margin-top: calc(2rem - 1rem * 0.4);
     }
   }
 
@@ -198,6 +182,10 @@ const { title, level, slug } = guideline.frontmatter;
   @media (hover: hover) {
     .toggle:hover {
       color: var(--color-primary);
+    }
+
+    .toggle:hover .toggle-icon {
+      background-color: var(--color-primary);
     }
   }
 </style>

@@ -93,7 +93,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 <style>
   h1 {
     margin-block: 0;
-    border: 24px solid;
+    border: 1.5rem solid;
     border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56"><symbol id="L" viewBox="0 0 22 28"><path d="M.5 0h5.6c.29 0 .52.23.52.5v20.12c0 .42.34.76.76.76h13.5c.27 0 .5.23.5.51v5.6a.5.5 0 0 1-.5.51H2.03A2.04 2.04 0 0 1 0 25.96V.51C0 .23.23 0 .5 0Z" fill="%23ED6103"/></symbol><use xlink:href="%23L" y="28" width="22" height="28"/><use xlink:href="%23L" y="-28" width="22" height="28" transform="rotate(90)"/><use xlink:href="%23L" x="56" y="-28" width="22" height="28" transform="rotate(180 56 0)"/><use xlink:href="%23L" x="56" y="28" width="22" height="28" transform="rotate(-90 56 56)"/></svg>')
       28;
     color: var(--color-primary);
@@ -176,29 +176,20 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 
   @media (min-width: 768px) {
     h1 {
-      border-width: 28px;
       padding: 0.25rem 2rem;
-      font-size: 2.5rem;
     }
 
     h2 {
       flex-flow: row;
       align-items: center;
-      margin-top: 3.5rem;
-      font-size: 2rem;
     }
 
     a {
       padding: calc(1.5rem - 1.125rem * 0.3) 3rem calc(1.5rem - 1rem * 0.3)
         1.5rem;
-      font-size: 1rem;
     }
     a::after {
       right: 1.5rem;
-    }
-
-    h3 {
-      margin-bottom: calc(1.25rem - 1.125rem * 0.3 - 1rem * 0.3);
     }
   }
 </style>

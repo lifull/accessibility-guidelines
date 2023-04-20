@@ -8,6 +8,7 @@ slug: landmark-region
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -32,5 +33,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ページの主たる領域をランドマークとしてマークアップすると、スクリーンリーダー利用者の使い勝手を向上させることができます。

@@ -7,6 +7,7 @@ slug: focus-indicator
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,6 +22,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 フォーカスインジケーターが不可視にされていると、キーボードユーザーはフォーカスの現在位置がわからず、操作を続けることができなくなってしまいます。
 

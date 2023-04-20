@@ -7,6 +7,7 @@ slug: use-button
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,6 +17,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ユーザーのクリックやタップを起点にしてインタラクションが発生する場合、他に適切な要素がなければ、トリガーの要素には`button`要素を使用してください。
 

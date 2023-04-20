@@ -3,9 +3,13 @@
 </div>
 
 <style is:global>
+  .prose {
+    line-height: 1.8;
+  }
+
   .prose h2 {
-    margin-top: calc(3.5rem - 1.5rem * 0.2 - 1rem * 0.3);
-    margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.3);
+    margin-top: calc(4.0rem - 1.5rem * 0.2 - 1rem * 0.4);
+    margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.4);
     color: var(--color-primary);
     font-size: 1.5rem;
     line-height: 1.4;
@@ -14,8 +18,8 @@
   }
 
   .prose h3 {
-    margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.3);
-    margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.3);
+    margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.4);
+    margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.4);
     display: flex;
     align-items: start;
     font-size: 1.25rem;
@@ -35,15 +39,15 @@
   }
 
   .prose h4 {
-    margin-top: calc(2.5rem - 1.125rem * 0.2 - 1rem * 0.3);
-    margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.3);
+    margin-top: calc(3rem - 1.125rem * 0.2 - 1rem * 0.4);
+    margin-bottom: calc(1.5rem - 1.125rem * 0.2 - 1rem * 0.4);
     font-size: 1.125rem;
     line-height: 1.4;
   }
 
   .prose h5 {
-    margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.3);
-    margin-bottom: calc(1.25rem - 1.125rem * 0.2 - 1rem * 0.3);
+    margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.4);
+    margin-bottom: 0;
     font-size: 1.125rem;
     line-height: 1.4;
   }
@@ -65,17 +69,17 @@
   }
 
   .prose p {
-    margin-block: calc(1.25rem - 1rem * 0.6);
+    margin-block: 1.8em;
   }
 
   .prose ul,
   .prose ol {
-    margin-block: calc(1.25rem - 1rem * 0.6);
+    margin-block: 1.8em;
     padding-left: 1.25rem;
   }
 
   .prose li {
-    margin-block: calc(1.25rem - 1rem * 0.6);
+    margin-block: calc(1rem - 1rem * 0.8);
   }
   .prose ul > li {
     list-style-type: none;
@@ -93,16 +97,19 @@
   }
 
   .prose dl {
-    margin-block: calc(1.25rem - 1rem * 0.6);
+    margin-block: 1.8em;
+  }
+  .prose :is(h4, h5, h6) + dl {
+    margin-block-start: 0.9em;
   }
 
   .prose dt {
-    margin-top: calc(1.25rem - 1rem * 0.6);
+    margin-top: calc(1rem - 1rem * 0.8);
     font-weight: bold;
   }
 
   .prose pre {
-    margin-block: calc(1.25rem - 1rem * 0.3);
+    margin-block: calc(1.8em - 1rem * 0.4);
     border-radius: 0.25rem;
     border: 1px solid var(--color-border);
     padding: 1rem;
@@ -111,7 +118,7 @@
   }
 
   .prose hr {
-    margin-block: calc(4.5rem - 1rem * 0.6);
+    margin-block: calc(4.5rem - 1rem * 0.8);
     border: 0;
     border-top: 1px solid var(--color-border);
   }
@@ -128,7 +135,7 @@
 
   .prose th,
   .prose td {
-    padding: calc(1rem - 1rem * 0.3) 1rem;
+    padding: calc(1rem - 1rem * 0.4) 1rem;
     vertical-align: top;
   }
 
@@ -136,11 +143,15 @@
     background-color: var(--color-shade);
   }
 
+  .prose :is(h4, h5, h6) + :is(p, ul, ol, dl) {
+    margin-block-start: 0.25em;
+  }
+
   .prose aside {
-    margin-block: calc(1.5rem - 1rem * 0.3);
+    margin-block: calc(1.8em - 1rem * 0.4);
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    padding: calc(1.5rem - 1rem * 0.3) 1.5rem;
+    padding: calc(1.5rem - 1rem * 0.4) 1.5rem;
   }
 
   .prose aside > *:first-child {
@@ -162,16 +173,14 @@
   }
 
   .prose code {
-    margin-inline: 0.25em;
-    display: inline-block;
-    border-radius: 0.25rem;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-shade);
-    padding-inline: 0.25rem;
-    font-size: 0.875rem;
     font-family: "Fira Mono", Menlo, LIFULLYUGO, LIFULLHIRAGINO, monospace;
     line-height: 1.4;
     tab-size: 2;
+  }
+  .prose code::before,
+  .prose code::after {
+    content: " ";
+    font-size: 0.5em;
   }
   .prose pre code {
     margin-inline: 0;
@@ -180,32 +189,8 @@
     background: none;
     padding: 0;
   }
-
-  @media (min-width: 768px) {
-    .prose h2 {
-      margin-top: calc(4.5rem - 2rem * 0.2 - 1rem * 0.3);
-      margin-bottom: calc(1.25rem - 2rem * 0.2 - 1rem * 0.3);
-      font-size: 2rem;
-    }
-
-    .prose h3 {
-      margin-top: calc(3.5rem - 1.5rem * 0.2 - 1rem * 0.3);
-      margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.3);
-      font-size: 1.5rem;
-    }
-    .prose h3::before {
-      margin-right: 0.5em;
-    }
-
-    .prose h4 {
-      margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.3);
-      margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.3);
-      font-size: 1.25rem;
-    }
-
-    .prose h5 {
-      margin-top: calc(2.5rem - 1.125rem * 0.2 - 1rem * 0.3);
-      font-size: 1.125rem;
-    }
+  .prose pre code::before,
+  .prose pre code::after {
+    content: normal;
   }
 </style>

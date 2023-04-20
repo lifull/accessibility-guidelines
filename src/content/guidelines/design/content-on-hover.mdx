@@ -9,6 +9,7 @@ slug: content-on-hover
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -17,11 +18,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 拡大鏡を利用している弱視のユーザーにとって、ポインターホバーで表示されるコンテンツは気づきにくかったり、表示されたコンテンツを読もうとポインターを動かしたとき意図せず閉じてしまうことがあります。ホバーによるコンテンツの表示はできれば避け、明示的な開く・閉じるアクションをトリガーにして表示・非表示をしてください。
 
-##### 具体例：ツールチップ
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：ツールチップ
+  </div>
   <Case type="bad" title="マウスオーバーで表示されるツールチップ">
     マウスオーバーで表示されるツールチップはタッチ端末からのアクセスが良くない。
   </Case>
