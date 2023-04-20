@@ -33,15 +33,16 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
     <meta name="twitter:site" content="@LIFULL_Corp" />
     <link rel="shortcut icon" href="/accessibility-guidelines/favicon.ico" />
     <link rel="license" href="/accessibility-guidelines/LICENSE.html" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style is:inline>@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=optional")</style>
   </head>
   <body>
+    <a class="skip" href="#main">メインコンテンツにスキップ</a>
     <div class="layout">
       <Header />
       <div class="main">
-        <main>
+        <main id="main">
           <slot />
         </main>
         <Footer />
@@ -65,6 +66,21 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
 ></style>
 
 <style>
+  .skip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5em 1.5em;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transform: translateY(-100%);
+  }
+  .skip:focus {
+    transform: translateY(0%);
+  }
+
   .layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -91,5 +107,5 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
     }
   }
 </style>
-      
+
 <script src="../assets/javascripts/global.js"></script>
