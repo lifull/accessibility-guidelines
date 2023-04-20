@@ -1,0 +1,261 @@
+---
+import lifullLogo from "../assets/images/lifull-logo.svg";
+import logoH from "../assets/images/logo-h.svg";
+import logoV from "../assets/images/logo-v.svg";
+
+import { version } from "../../package.json";
+
+const nav = {
+  ガイドラインについて: {
+    introduction: "はじめに",
+    usage: "利用方法",
+  },
+  デザイン: {
+    "design-contents": "コンテンツ",
+    "design-forms-and-interactions": "フォーム・インタラクション",
+    "design-visual": "ビジュアル",
+  },
+  実装: {
+    "impl-markup": "マークアップ",
+    "impl-forms": "フォーム",
+    "impl-interactions": "インタラクション",
+  },
+};
+---
+
+<header class="header">
+  <div class="header-inner">
+    <a class="home-link" href="/accessibility-guidelines/">
+      <span class="logo-container">
+        <img
+          class="logo-lifull"
+          src={lifullLogo.src}
+          alt="LIFULL"
+          width={lifullLogo.width}
+          height={lifullLogo.height}
+        />
+      </span>
+      <picture class="logo">
+        <source
+          media="(min-width: 1024px)"
+          srcset={logoV.src}
+          width={logoV.width}
+          height={logoV.height}
+        />
+        <img
+          src={logoH.src}
+          alt="Accessibility Guidelines"
+          width={logoH.width}
+          height={logoH.height}
+        />
+      </picture>
+    </a>
+    <nav id="nav" data-controller="disclosure">
+      <button
+        class="nav-button"
+        type="button"
+        aria-controls="nav-content"
+        aria-expanded="false"
+        aria-label="メニュー"
+        data-disclosure-target="button"
+        data-action="disclosure#toggle"
+      >
+        <span class="nav-button-icon"></span>
+      </button>
+      <div
+        id="nav-content"
+        class="nav-content"
+        hidden
+        data-disclosure-target="content"
+      >
+        {
+          Object.entries(nav).map(([category, pages]) => (
+            <>
+              <p>{category}</p>
+              <ul>
+                {Object.entries(pages).map(([slug, title]) => (
+                  <li>
+                    <a
+                      href={`/accessibility-guidelines/${slug}.html`}
+                      aria-current={
+                        Astro.url.pathname ===
+                        `/accessibility-guidelines/${slug}.html`
+                          ? "page"
+                          : null
+                      }
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))
+        }
+        <p>更新履歴</p>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/lifull/accessibility-guidelines/releases"
+              target="_blank"
+              rel="external"
+            >
+              ver. {version}
+              <span class="open-blank" role="img" aria-label="新しいタブで開く"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .home-link {
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90.5%;
+    color: var(--color-primary);
+  }
+
+  .logo-container {
+    width: 33.9%;
+  }
+
+  .logo-lifull {
+    margin: -6.5%;
+    display: block;
+    width: 113%;
+    max-width: none;
+  }
+
+  .logo {
+    margin-top: 0.5%;
+    width: 61.5%;
+  }
+  .logo img {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-button {
+    margin-inline: auto;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    padding: 0.5rem;
+    background: none;
+  }
+
+  .nav-button-icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-icon);
+    -webkit-mask-image: var(--icon-menu-open);
+    mask-image: var(--icon-menu-open);
+  }
+  [aria-expanded="true"] .nav-button-icon {
+    -webkit-mask-image: var(--icon-menu-close);
+    mask-image: var(--icon-menu-close);
+  }
+
+  .nav-content p {
+    margin-top: calc(2rem - 1.125rem * 0.3 - 1rem * 0.3);
+    margin-bottom: 0;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+  .nav-content ul {
+    margin-block: calc(1rem - 1.125rem * 0.3 - 1rem * 0.3) 0;
+    padding-left: 1rem;
+  }
+
+  .nav-content li {
+    margin-block: calc(0.5rem - 1rem * 0.6);
+    list-style-type: none;
+  }
+
+  .nav-content a:link,
+  .nav-content a:visited {
+    display: block;
+    padding-block: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-content a:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-content a[aria-current] {
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .open-blank {
+    display: inline-block;
+    vertical-align: calc(-0.75rem + 36%);
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--color-icon);
+    -webkit-mask-image: var(--icon-open-blank);
+    mask-image: var(--icon-open-blank);
+  }
+  .nav-content a:hover .open-blank {
+    background-color: var(--color-primary);
+  }
+
+  @media (min-width: 1024px) {
+    .header {
+      grid-column: 1 / 3;
+      position: sticky;
+      top: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      height: 100vh;
+      height: 100dvh;
+      overflow-y: auto;
+      padding-block: 3rem;
+    }
+
+    .header-inner {
+      margin-left: auto;
+      box-sizing: border-box;
+      width: 240px;
+      padding-right: 4px;
+    }
+
+    .home-link {
+      display: block;
+    }
+
+    .logo-lifull {
+      width: 208px;
+    }
+
+    .logo img {
+      margin-top: 1.5rem;
+    }
+
+    .nav-button {
+      display: none;
+    }
+
+    .nav-content {
+      display: block;
+      margin-top: 3rem;
+      color: #626262;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+layout: ../layouts/DefaultLayout.astro
+title: ライセンス情報
+---
+
+import PageTitle from "../components/PageTitle.astro";
+import Prose from "../components/Prose.astro";
+
+<PageTitle>
+  {frontmatter.title}
+</PageTitle>
+
+<Prose>
+
+  ## ウェブサイトのコンテンツのライセンス
+
+  このウェブサイトのコンテンツは、[クリエイティブ・コモンズ 表示 4.0 国際 ライセンス (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.ja)でライセンスされています。これは、適切なクレジットを表示し、ライセンスへのリンクを提供し、変更があった場合はその旨を示すことを条件に、コンテンツを共有および改変できることを意味します。
+
+  ## オープンソースソフトウェアのライセンス
+
+  このウェブサイトでは、以下のオープンソースソフトウェアを使用しています:
+
+  <dl>
+    <dt>Stimulus</dt>
+    <dd>
+      37signalsが開発したJavaScriptフレームワーク。Stimulusは[MITライセンス](https://opensource.org/licenses/mit)でライセンスされています。ソースコードや詳細情報は、[StimulusのGitHubリポジトリ](https://github.com/hotwired/stimulus)で確認できます。
+    </dd>
+  </dl>
+
+</Prose>

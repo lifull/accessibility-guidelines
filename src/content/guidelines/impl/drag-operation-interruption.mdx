@@ -1,0 +1,24 @@
+---
+area: impl
+category: interactions
+level: 3
+title: ドラッグ操作の中断
+slug: drag-operation-interruption
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">ドラッグ操作を中止できるようにする</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+UIがドラッグアンドドロップ操作を求めるとき、ドラッグの途中で操作を中止する手段を設けてください。中止する手段の例としては次のようなものがあります。
+
+- ドロップエリアは画面の中の一部分であり、それ以外の箇所にドロップしても何も起こらない
+- ドロップ操作をした後、簡単な操作で元に戻すことができる
+- ドラッグ中にEscapeキーを押すとドラッグ操作を中止できる

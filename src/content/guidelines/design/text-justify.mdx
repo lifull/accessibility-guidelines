@@ -1,0 +1,30 @@
+---
+area: design
+category: visual
+level: 2
+title: テキストの均等割付
+slug: text-justify
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="複数行にわたるテキストを均等割り付けにせず、左寄せもしくは右寄せにする"/>
+
+#### 「{frontmatter.title}」とは
+
+特定の認知障害のあるユーザーは、均等割付されたテキストを読むことに苦労することがあります。
+
+##### 具体例：フォームコントロールのラベル
+
+<Cases>
+  <Case type="bad" title="均等割付する"/>
+  <Case type="good" title="均等割付しない"/>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.8: 視覚的提示を理解する](https://waic.jp/translations/WCAG21/Understanding/visual-presentation.html)

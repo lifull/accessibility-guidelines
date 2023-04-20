@@ -1,0 +1,32 @@
+---
+area: impl
+category: interactions
+level: 2
+title: 隠されているコンテンツ
+slug: hidden-content
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">非表示コンテンツに`display: none`や`visibility: hidden`も併用する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`display: none`や`visibility: hidden`が指定できない場合、非表示コンテンツに`aria-hidden="true"`を指定し、非表示コンテンツが含むインタラクティブ要素に`tabindex="-1"`を指定する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+DOMツリー上には存在するものの非表示にされているコンテンツは、意図的にそうしていない限り、キーボードや支援技術からもアクセスできないようにしてください。
+
+キーボードや支援技術からもアクセスできてしまう非表示コンテンツとは、例えば次ような方法で非表示にしたコンテンツです。
+
+- `opacity`を`0`にする
+- `overflow: hidden`と`width`や`height`、`clip`を使ってコンテンツの一部分または全部を切り取る
+- `position`や`transform`などを使って画面外ないし親要素の範囲外に追いやる
+

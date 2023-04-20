@@ -1,0 +1,96 @@
+---
+import { getNext, getPrev } from "../pages/nav.ts";
+import { getSlugFromUrl } from "../helpers/urls";
+interface Props {
+  current: string;
+}
+
+const { current } = Astro.props;
+const currentSlug = getSlugFromUrl(current);
+
+const prev = getPrev(currentSlug);
+const next = getNext(currentSlug);
+---
+
+<nav class="pagination">
+  <a href={prev && `/accessibility-guidelines/${prev.slug}.html`} rel="prev" class="item prev">
+    {prev?.title}
+  </a>
+  <div class="separator"></div>
+  <a href={next && `/accessibility-guidelines/${next.slug}.html`} rel="next" class="item next">
+    {next?.title}
+  </a>
+</nav>
+
+<style>
+  .pagination {
+    margin-top: 3rem;
+    display: flex;
+  }
+
+  .item {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    color: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .item[href]::before {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-icon);
+    -webkit-mask-image: var(--icon-chevron-down);
+    mask-image: var(--icon-chevron-down);
+    content: "";
+  }
+  .prev {
+    text-align: left;
+  }
+  .prev::before {
+    transform: rotate(90deg);
+  }
+  .next {
+    flex-flow: row-reverse;
+  }
+  .next::before {
+    transform: rotate(-90deg);
+  }
+
+  .item:hover {
+    color: var(--color-primary);
+  }
+  .item:hover::before {
+    background-color: var(--color-primary);
+  }
+
+  .separator {
+    flex-shrink: 0;
+    margin-inline: 0.75rem;
+    width: 1px;
+    background-color: var(--color-border);
+  }
+
+  @media (min-width: 768px) {
+    .pagination {
+      margin-top: 3.5rem;
+    }
+
+    .item {
+      column-gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+    .item::before {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .separator {
+      margin-inline: 1.25rem;
+      width: 0;
+    }
+  }
+</style>

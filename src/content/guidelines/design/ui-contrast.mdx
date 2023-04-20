@@ -1,0 +1,31 @@
+---
+area: design
+category: visual
+level: 2
+title: アイコンやUIコンポーネントの色コントラスト
+slug: ui-contrast
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint title="UIコンポーネントやグラフィックが表している情報・機能・状態を判別するために、視覚的要素のどの部分が必要かを特定する">
+  上記例では、白地`#FFFFFF`に対して`#AAAAAA`(Lc 45.8)、グレー地`#D9D9D9`に対して`#7F7F7F`(Lc 45.1)を確保しています。
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">必要とされた視覚的要素を、周囲の色に対して[APCA](https://www.myndex.com/APCA/) 45以上の色コントラストを確保する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+フォームコントロールなどのユーザーが操作するUIコンポーネントや、アイコンやグラフなどの情報を持つグラフィックは、情報・機能・状態を判別し操作するために、充分なコントラストが必要です。
+
+ただし、UIコンポーネントがアクティブではないときはコントラストの確保は不要です。
+
+##### 参考情報
+
+- [APCA Contrast Calculator](https://www.myndex.com/APCA/)
+- [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-contrast.html)

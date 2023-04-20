@@ -1,0 +1,46 @@
+---
+area: design
+category: forms-and-interactions
+level: 2
+title: エラーメッセージ
+slug: error-message
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="エラーの発生箇所と原因を具体的に記述する" />
+<Checkpoint title="エラーの修正方法を説明する" />
+
+#### 「{frontmatter.title}」とは
+
+ユーザーの操作によってエラーが発生したとき、エラーについての十分な情報を提示してください。
+
+##### 具体例① エラーの原因を明記する
+
+<Cases>
+  <Case type="bad" title="エラーの原因を明記しない">
+    なぜログインに失敗したかわからず、ユーザーは修正のためのアクションを起こせない。
+  </Case>
+  <Case type="good" title="エラーの原因を明記する">
+    なぜログインに失敗したかわかり、ユーザーは修正のためのアクションを起こせる。
+  </Case>
+</Cases>
+
+##### 具体例② エラーの修正方法を説明する
+
+<Cases>
+  <Case type="bad" title="あいまいな修正指示">
+    正しい形式とは何かが不明瞭で、どのように修正すればよいのかわからない。
+  </Case>
+  <Case type="good" title="具体的で明快な修正指示">
+    要求されている形式や文脈の情報を提供することで、正しい値に修正しやすくなる。
+  </Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 3.3.3: エラー修正の提案を理解する](https://waic.jp/translations/WCAG21/Understanding/error-suggestion.html)

@@ -1,0 +1,25 @@
+---
+area: impl
+category: markup
+level: 1
+title: ページタイトル
+slug: page-title
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">設計資料に記載されたタイトルを`title`要素に指定する</span>
+</Checkpoint>
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">設計資料にタイトルが記載されていない場合、サイト内で一意になるタイトル案を作成し、コンテンツオーナーと相談する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+ページタイトルはブラウザーのタブや検索結果に表示されたり、スクリーンリーダーによって読み上げられます。ページの内容を把握するための重要な手がかりとしてページタイトルは重要です。

@@ -1,0 +1,74 @@
+---
+area: impl
+category: forms
+level: 1
+title: フォームコントロールのラベル
+slug: label-for-control
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`label`要素をつかってフォームコントロールとラベルを関連付ける</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+テキスト入力欄やチェックボックス、`select`要素など、HTMLに定義されているユーザーの入力を受け付ける要素（フォームコントロール）は全て名前を持つ必要があります。名前は、スクリーンリーダー利用者がフォームコントロールにフォーカスを合わせたときに読み上げられます。
+
+`label`要素を使うと、フォームコントロールに名前を付けられると同時にクリックやタップで選択できる範囲が広がるため、ユーザビリティ面にもメリットがあります。
+
+##### 具体例①：テキスト入力欄
+
+<Cases>
+  <Case span={2} type="good" title="ラベルとテキスト入力欄を一つのlabel要素に含める">
+    <div slot="figure">
+      ```html
+      <label>
+        お名前
+        <input type="text" name="full-name" />
+      </label>
+      ```
+    </div>
+    ラベルと入力欄を`label`要素で囲むと、入力欄の名前が「お名前」に設定されます。
+  </Case>
+  <Case span={2} type="good" title="テキスト入力欄にidを付与し、label要素のfor属性で参照する">
+    <div slot="figure">
+      ```html
+      <label for="full-name">お名前</label>
+      <input id="full-name" type="text" name="full-name" />
+      ```
+    </div>
+    テキスト入力欄に`id`を付与し、`label`要素の`for`属性で参照することで、入力欄の名前が「お名前」に設定されます。ラベルとコントロールを隣同士に置けない場合などに便利です。
+  </Case>
+</Cases>
+
+##### 具体例②：チェックボックス
+
+<Cases>
+  <Case span={2} type="good" title="チェックボックスとラベルを一つのlabel要素に含める">
+    <div slot="figure">
+      ```html
+      <label>
+        <input type="checkbox" name="receive-email" value="1" />
+        メールを受取る
+      </label>
+      ```
+    </div>
+    チェックボックスラベルを`label`要素で囲むと、チェックボックスの名前が「メールを受取る」に設定されます。
+  </Case>
+  <Case span={2} type="good" title="チェックボックスにidを付与し、label要素のfor属性で参照する">
+    <div slot="figure">
+      ```html
+      <input id="receive-email" type="checkbox" name="receive-email" value="1" />
+      <label for="receive-email">メールを受取る</label>
+      ```
+    </div>
+    チェックボックスに`id`を付与し、`label`要素の`for`属性で参照することで、チェックボックスの名前が「メールを受取る」に設定されます。ラベルとコントロールを隣同士に置けない場合などに便利です。
+  </Case>
+</Cases>

@@ -1,0 +1,79 @@
+---
+const { span = 1, type, title } = Astro.props;
+---
+
+<figure class={`case span-${span}`}>
+  <slot name="figure" />
+  <figcaption>
+    <p class="title">
+      {type === "good" && <span class="good" role="img" aria-label="Good:" />}
+      {type === "bad" && <span class="bad" role="img" aria-label="Bad:" />}
+      <slot name="title" />{title}
+    </p>
+    <div class="caption"><slot /></div>
+  </figcaption>
+</figure>
+
+<style is:global>
+  .case img {
+    border-radius: 0.5rem;
+    background-color: #f4f4f4;
+  }
+  
+  .case p {
+    margin-block: 0;
+  }
+
+  .case pre {
+    margin-block: 0;
+  }
+</style>
+
+<style>
+  .case {
+    margin: 0;
+  }
+
+  .span-2 {
+    grid-column: span 2;
+  }
+
+  figcaption:not(:first-child) {
+    margin-top: 0.75rem;
+  }
+
+  .title {
+    display: flex;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .title :global(code) {
+    font-weight: 500;
+  }
+
+  .good,
+  .bad {
+    flex-shrink: 0;
+    margin-right: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .good {
+    background-color: var(--color-good);
+    -webkit-mask-image: var(--icon-radio-button-blank);
+    mask-image: var(--icon-radio-button-blank);
+  }
+
+  .bad {
+    background-color: var(--color-bad);
+    -webkit-mask-image: var(--icon-menu-close);
+    mask-image: var(--icon-menu-close);
+  }
+
+  .caption {
+    margin-top: calc(0.75rem - 0.875rem * 0.3);
+    font-size: 0.875rem;
+  }
+</style>

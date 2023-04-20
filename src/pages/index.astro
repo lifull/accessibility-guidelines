@@ -1,0 +1,204 @@
+---
+import design from "../assets/images/design.svg";
+import develop from "../assets/images/develop.svg";
+import intro from "../assets/images/intro.svg";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="LIFULL Accessibility Guidelines" titleSuffix={false}>
+  <h1><span>LIFULL</span> <span>Accessibility Guidelines</span></h1>
+
+  <h2>
+    <span>ガイドラインについて</span>
+    <img
+      src={intro.src}
+      alt=""
+      width={intro.width}
+      height={intro.height}
+      decoding="async"
+    />
+  </h2>
+  <article>
+    <a href="/accessibility-guidelines/introduction.html">
+      <h3>はじめに</h3>
+      LIFULLアクセシビリティガイドラインの概要、特色、項目の見方などを説明しています。
+    </a>
+  </article>
+  <article>
+    <a href="/accessibility-guidelines/usage.html">
+      <h3>利用方法</h3>
+      プロダクト毎の目標とするレベルの選び方について説明しています。
+    </a>
+  </article>
+
+  <h2>
+    <span>デザイン</span>
+    <img
+      src={design.src}
+      alt=""
+      width={design.width}
+      height={design.height}
+      decoding="async"
+    />
+  </h2>
+  <article>
+    <a href="/accessibility-guidelines/design-contents.html">
+      <h3>コンテンツ</h3>
+      情報設計やナビゲーション、メディア、文章、文言に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/accessibility-guidelines/design-forms-and-interactions.html">
+      <h3>フォーム・インタラクション</h3>
+      フォームデザインおよびインタラクションデザインに関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/accessibility-guidelines/design-visual.html">
+      <h3>ビジュアル</h3>
+      視覚的なデザインに関するガイドラインです。
+    </a>
+  </article>
+
+  <h2>
+    <span>実装</span>
+    <img
+      src={develop.src}
+      alt=""
+      width={develop.width}
+      height={develop.height}
+      decoding="async"
+    />
+  </h2>
+  <article>
+    <a href="/accessibility-guidelines/impl-markup.html">
+      <h3>マークアップ</h3>
+      マークアップとスタイリングの実装に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/accessibility-guidelines/impl-forms.html">
+      <h3>フォーム</h3>
+      フォームの実装に関するガイドラインです。
+    </a>
+  </article>
+  <article>
+    <a href="/accessibility-guidelines/impl-interactions.html">
+      <h3>インタラクション</h3>
+      インタラクションの実装に関するガイドラインです。
+    </a>
+  </article>
+</DefaultLayout>
+
+<style>
+  h1 {
+    margin-block: 0;
+    border: 24px solid;
+    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56"><symbol id="L" viewBox="0 0 22 28"><path d="M.5 0h5.6c.29 0 .52.23.52.5v20.12c0 .42.34.76.76.76h13.5c.27 0 .5.23.5.51v5.6a.5.5 0 0 1-.5.51H2.03A2.04 2.04 0 0 1 0 25.96V.51C0 .23.23 0 .5 0Z" fill="%23ED6103"/></symbol><use xlink:href="%23L" y="28" width="22" height="28"/><use xlink:href="%23L" y="-28" width="22" height="28" transform="rotate(90)"/><use xlink:href="%23L" x="56" y="-28" width="22" height="28" transform="rotate(180 56 0)"/><use xlink:href="%23L" x="56" y="28" width="22" height="28" transform="rotate(-90 56 56)"/></svg>')
+      28;
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+  h1 span {
+    display: inline-block;
+  }
+
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    justify-content: space-between;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    font-feature-settings: "palt";
+  }
+  h2 span {
+    flex-shrink: 0;
+  }
+  h2 img {
+    align-self: center;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+  }
+
+  article {
+    margin-block: 1.25rem;
+    list-style-type: none;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+    padding: calc(1.25rem - 1.125rem * 0.2) 2rem calc(1.25rem - 0.875rem * 0.2)
+      1rem;
+    color: inherit;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  a::after {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    bottom: 0;
+    margin-block: auto;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-icon);
+    content: "";
+    -webkit-mask-image: var(--icon-chevron-down);
+    mask-image: var(--icon-chevron-down);
+    transform: rotate(-90deg);
+  }
+  a:hover {
+    border-color: var(--color-primary);
+  }
+  a:hover::after {
+    background-color: var(--color-primary);
+  }
+  a:hover h3 {
+    color: var(--color-primary);
+  }
+
+  h3 {
+    margin-block: 0 calc(0.75rem - 1.125rem * 0.3 - 0.875rem * 0.3);
+    display: block;
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      border-width: 28px;
+      padding: 0.25rem 2rem;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      flex-flow: row;
+      align-items: center;
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    a {
+      padding: calc(1.5rem - 1.125rem * 0.3) 3rem calc(1.5rem - 1rem * 0.3)
+        1.5rem;
+      font-size: 1rem;
+    }
+    a::after {
+      right: 1.5rem;
+    }
+
+    h3 {
+      margin-bottom: calc(1.25rem - 1.125rem * 0.3 - 1rem * 0.3);
+    }
+  }
+</style>

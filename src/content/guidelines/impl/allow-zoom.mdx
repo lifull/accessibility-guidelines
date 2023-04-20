@@ -1,0 +1,26 @@
+---
+area: impl
+category: interactions
+level: 1
+title: ズームの許容
+slug: allow-zoom
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`viewport`メタデータに`user-scalable=no`や`maximum-scale`を指定しない</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+ロービジョンのユーザーを含む一部のユーザーにとっては、画面を任意の大きさにズームして表示できることは極めて重要です。そのような人にとって、ウェブサイトがズームを禁止しているとウェブサイトを利用できなくなることがあります。ズームされると大多数のユーザーに致命的な問題が起きない限り、ズームを許容してください。
+
+##### ヒント：入力フィールドにフォーカスしたときに画面がズームしないようにする
+
+iOS Safariにおいて、ユーザーが入力フィールドにフォーカスすると画面が自動的にズームすることがあります。入力フィールドの文字サイズを16px以上にすることでこの挙動を抑止できます。
+
+

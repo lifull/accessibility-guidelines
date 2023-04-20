@@ -1,0 +1,104 @@
+---
+import ccBy from "../assets/images/cc-by.svg";
+import lifullLogo from "../assets/images/lifull-logo.svg";
+---
+
+<footer class="footer">
+  <p class="license">
+    <img src={ccBy.src} alt="CC BY" width="88" height="31" class="cc-by" />
+    <span>
+      本ガイドラインは
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" rel="license">
+        CC-BY 4.0 ライセンス
+      </a>
+      の下に提供されています
+    </span>
+  </p>
+  <p class="lifull">
+    <a href="https://lifull.com/" rel="external" class="logo-link">
+      <img
+        class="logo"
+        src={lifullLogo.src}
+        alt="LIFULL"
+        width={lifullLogo.width}
+        height={lifullLogo.height}
+      />
+    </a>
+    © LIFULL Co., Ltd.
+  </p>
+</footer>
+
+<style>
+  .footer {
+    margin-block: 4rem 2rem;
+  }
+
+  .license {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+
+  .license a {
+    color: inherit;
+  }
+  .license a:hover {
+    color: var(--color-primary);
+  }
+
+  .cc-by {
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+  }
+
+  .lifull {
+    margin-block: 2rem 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+
+  .logo-link {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    margin: -6.6%;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      margin-block: 4.5rem 3.5rem;
+    }
+
+    .license {
+      justify-content: flex-start;
+      font-size: 0.875rem;
+    }
+
+    .cc-by {
+      margin-right: 1rem;
+    }
+
+    .lifull {
+      margin-top: 3.5rem;
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    .logo-link {
+      margin-bottom: 0;
+    }
+
+    .logo {
+      width: 233px;
+      height: auto;
+    }
+  }
+</style>

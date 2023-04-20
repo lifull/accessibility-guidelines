@@ -1,0 +1,20 @@
+---
+area: impl
+category: markup
+level: 1
+title: 背景画像
+slug: background-image
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">情報を伝えている画像には`img`要素を使い、代替テキストを設定する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+情報を伝えている画像を CSS で背景画像として設定すると、テキストから情報を得ているユーザーに情報が伝わらなくなってしまいます。背景画像には代替テキストが設定できません。また背景画像は印刷に表示されません。

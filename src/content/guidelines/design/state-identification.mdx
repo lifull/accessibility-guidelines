@@ -1,0 +1,33 @@
+---
+area: design
+category: visual
+level: 1
+title: 状態の判別
+slug: state-identification
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+
+#### チェック項目
+
+<Checkpoint title="UIが状態を表現するとき、テキストや形状の変化で状態を判別できるようにする" />
+
+#### 「{frontmatter.title}」とは
+
+フォーカス・選択・ホバー・押下・展開・チェックなど、状態をもつUIコンポーネントは、状態の変化を視覚的に判別できるようにしてください。色に変化を持たせるだけでなく、色以外の手がかり（テキストや形状）を変化させることで状態を表現するようにしてください。ホバーのように状態の変化が装飾的なものであれば、テキストや形状の変化は必要ではありません。
+
+##### 具体例：状態が判別できるUIコンポーネント
+
+<Cases>
+  <Case type="good" title="押下状態がアイコンの変化でわかる"></Case>
+  <Case type="good" title="チェック状態がアイコンの変化でわかる"></Case>
+  <Case type="good" title="展開状態がアイコンの変化でわかる"></Case>
+  <Case type="good" title="フォーカス状態が枠線の変化でわかる"></Case>
+  <Case type="good" title="選択状態が塗りの変化でわかる"></Case>
+</Cases>
+
+##### 参考情報
+
+- [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-contrast.html)
