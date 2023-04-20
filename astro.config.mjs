@@ -13,6 +13,7 @@ export default defineConfig({
   base: "/accessibility-guidelines",
   build: {
     format: "file",
+    assets: "assets",
   },
   markdown: {
     shikiConfig: {

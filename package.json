@@ -1,4 +1,6 @@
 {
+  "name": "lifull-accessibility-guidelines",
+  "private": true,
   "version": "1.0.1",
   "scripts": {
     "dev": "astro dev",
