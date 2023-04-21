@@ -3,194 +3,222 @@
 </div>
 
 <style is:global>
-  .prose {
-    line-height: 1.8;
-  }
+  @layer prose {
+    .prose {
+      line-height: 1.8;
+    }
 
-  .prose h2 {
-    margin-top: calc(4.0rem - 1.5rem * 0.2 - 1rem * 0.4);
-    margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.4);
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    line-height: 1.4;
-    letter-spacing: 0.08em;
-    font-feature-settings: "palt";
-  }
+    /* セクショニングコンテンツ */
 
-  .prose h3 {
-    margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.4);
-    margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.4);
-    display: flex;
-    align-items: start;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    letter-spacing: 0.05em;
-    font-feature-settings: "palt";
-  }
-  .prose h3::before {
-    margin-top: 0.1em;
-    margin-right: 0.4em;
-    flex-shrink: 0;
-    border-radius: 0.15em;
-    width: 0.3em;
-    height: 1.2em;
-    background-color: var(--color-primary);
-    content: "";
-  }
+    .prose aside {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: 0.5rem;
+      padding: calc(1.5rem - 1rem * 0.4) 1.5rem;
+    }
 
-  .prose h4 {
-    margin-top: calc(3rem - 1.125rem * 0.2 - 1rem * 0.4);
-    margin-bottom: calc(1.5rem - 1.125rem * 0.2 - 1rem * 0.4);
-    font-size: 1.125rem;
-    line-height: 1.4;
-  }
+    .prose aside > *:first-child {
+      margin-top: 0;
+    }
+    .prose aside > *:last-child {
+      margin-bottom: 0;
+    }
 
-  .prose h5 {
-    margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.4);
-    margin-bottom: 0;
-    font-size: 1.125rem;
-    line-height: 1.4;
-  }
+    /* 見出しコンテンツ */
 
-  .prose :is(h1, h2, h3, h4, h5, h6) {
-    position: relative;
-  }
-  .prose :is(h1, h2, h3, h4, h5, h6) > a[aria-hidden="true"] {
-    position: absolute;
-    top: calc(0.7em - 0.75rem);
-    right: 100%;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0;
-    background: var(--icon-link) no-repeat 0 / 100%;
-  }
-  .prose :is(h1, h2, h3, h4, h5, h6):hover > a[aria-hidden="true"] {
-    opacity: 1;
-  }
+    .prose h2 {
+      margin-top: calc(4rem - 1.5rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.25rem - 1.5rem * 0.2 - 1rem * 0.4);
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      font-feature-settings: "palt";
+    }
 
-  .prose p {
-    margin-block: 1.8em;
-  }
+    .prose h3 {
+      margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.4);
+      display: flex;
+      align-items: start;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: 0.05em;
+      font-feature-settings: "palt";
+    }
+    .prose h3::before {
+      margin-top: 0.1em;
+      margin-right: 0.4em;
+      flex-shrink: 0;
+      border-radius: 0.15em;
+      width: 0.3em;
+      height: 1.2em;
+      background-color: var(--color-primary);
+      content: "";
+    }
 
-  .prose ul,
-  .prose ol {
-    margin-block: 1.8em;
-    padding-left: 1.25rem;
-  }
+    .prose h4 {
+      margin-top: calc(3rem - 1.125rem * 0.2 - 1rem * 0.4);
+      margin-bottom: calc(1.5rem - 1.125rem * 0.2 - 1rem * 0.4);
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
 
-  .prose li {
-    margin-block: calc(1rem - 1rem * 0.8);
-  }
-  .prose ul > li {
-    list-style-type: none;
-  }
-  .prose ul > li::before {
-    float: left;
-    margin-top: 0.6125em;
-    margin-right: 0.5625em;
-    margin-left: -0.9375em;
-    width: 0.375em;
-    height: 0.375em;
-    border-radius: 50%;
-    background-color: currentColor;
-    content: "";
-  }
+    .prose h5 {
+      margin-top: calc(2rem - 1.125rem * 0.2 - 1rem * 0.4);
+      margin-bottom: 0.25rem;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
 
-  .prose dl {
-    margin-block: 1.8em;
-  }
-  .prose :is(h4, h5, h6) + dl {
-    margin-block-start: 0.9em;
-  }
+    /* フローコンテンツ */
 
-  .prose dt {
-    margin-top: calc(1rem - 1rem * 0.8);
-    font-weight: bold;
-  }
+    .prose p {
+      margin-block: 1.8rem;
+    }
 
-  .prose pre {
-    margin-block: calc(1.8em - 1rem * 0.4);
-    border-radius: 0.25rem;
-    border: 1px solid var(--color-border);
-    padding: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.4;
-  }
+    .prose ul,
+    .prose ol {
+      margin-block: 1.8rem;
+      padding-left: 1.25rem;
+    }
 
-  .prose hr {
-    margin-block: calc(4.5rem - 1rem * 0.8);
-    border: 0;
-    border-top: 1px solid var(--color-border);
-  }
+    .prose li {
+      margin-block: calc(1rem - 1rem * 0.8);
+    }
+    .prose ul > li {
+      list-style-type: none;
+    }
+    .prose ul > li::before {
+      float: left;
+      margin-top: 0.6125em;
+      margin-right: 0.5625em;
+      margin-left: -0.9375em;
+      width: 0.375em;
+      height: 0.375em;
+      border-radius: 50%;
+      background-color: currentColor;
+      content: "";
+    }
 
-  .prose table {
-    border: 1px solid var(--color-border);
-    border-collapse: collapse;
-  }
+    .prose dl {
+      margin-block: 1.8rem;
+    }
 
-  .prose tr + tr,
-  .prose thead + tbody > tr:first-child {
-    border-top: 1px solid var(--color-border);
-  }
+    .prose dt {
+      margin-top: calc(1rem - 1rem * 0.8);
+      font-weight: bold;
+    }
 
-  .prose th,
-  .prose td {
-    padding: calc(1rem - 1rem * 0.4) 1rem;
-    vertical-align: top;
-  }
+    .prose figure {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+    }
 
-  .prose th {
-    background-color: var(--color-shade);
-  }
+    .prose pre {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border-radius: 0.25rem;
+      border: 1px solid var(--color-border);
+      padding: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
 
-  .prose :is(h4, h5, h6) + :is(p, ul, ol, dl) {
-    margin-block-start: 0.25em;
-  }
+    .prose hr {
+      margin-block: calc(4.5rem - 1rem * 0.8);
+      border: 0;
+      border-top: 1px solid var(--color-border);
+    }
 
-  .prose aside {
-    margin-block: calc(1.8em - 1rem * 0.4);
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
-    padding: calc(1.5rem - 1rem * 0.4) 1.5rem;
-  }
+    .prose table {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+      border: 1px solid var(--color-border);
+      border-collapse: collapse;
+    }
 
-  .prose aside > *:first-child {
-    margin-top: 0;
-  }
-  .prose aside > *:last-child {
-    margin-bottom: 0;
-  }
+    .prose tr + tr,
+    .prose thead + tbody > tr:first-child {
+      border-top: 1px solid var(--color-border);
+    }
 
-  .prose a:link {
-    color: currentColor;
-    text-underline-offset: 0.15em;
-  }
-  .prose a:visited {
-    color: var(--color-dimmed);
-  }
-  .prose a:hover {
-    color: var(--color-primary);
-  }
+    .prose th,
+    .prose td {
+      padding: calc(1rem - 1rem * 0.4) 1rem;
+      vertical-align: top;
+    }
 
-  .prose code {
-    font-family: "Fira Mono", Menlo, LIFULLYUGO, LIFULLHIRAGINO, monospace;
-    line-height: 1.4;
-    tab-size: 2;
-  }
-  .prose code::before,
-  .prose code::after {
-    content: " ";
-    font-size: 0.5em;
-  }
-  .prose pre code {
-    margin-inline: 0;
-    display: block;
-    border: 0;
-    background: none;
-    padding: 0;
-  }
-  .prose pre code::before,
-  .prose pre code::after {
-    content: normal;
+    .prose th {
+      background-color: var(--color-shade);
+    }
+
+    /* フレージングコンテンツ */
+
+    .prose code {
+      font-family: "Fira Mono", Menlo, LIFULLYUGO, LIFULLHIRAGINO, monospace;
+      line-height: 1.4;
+      tab-size: 2;
+    }
+    .prose code::before,
+    .prose code::after {
+      content: " ";
+      font-size: 0.5em;
+    }
+    .prose pre code::before,
+    .prose pre code::after {
+      content: normal;
+    }
+
+    /* インタラクティブコンテンツ */
+
+    .prose a:link {
+      color: currentColor;
+      text-underline-offset: 0.15em;
+    }
+    .prose a:visited {
+      color: var(--color-dimmed);
+    }
+    .prose a:hover {
+      color: var(--color-primary);
+    }
+
+    .prose details {
+      margin-block: calc(2.6rem - 1rem * 0.4);
+    }
+    .prose details + details {
+      margin-top: calc(1.25rem - 2.6rem + 1rem * 0.4);
+    }
+
+    /* リンクアイコン */
+
+    .prose :is(h1, h2, h3, h4, h5, h6) {
+      position: relative;
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6) > a[href^="#"] {
+      position: absolute;
+      top: calc(0.7em - 0.75rem);
+      right: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+      opacity: 0;
+      background: var(--icon-link) no-repeat 0 / 100%;
+    }
+    .prose :is(h1, h2, h3, h4, h5, h6):hover > a[href^="#"] {
+      opacity: 1;
+    }
+
+    /* 見出し下のアキ調整 */
+
+    .prose :is(h4, h5, h6) + :is(p, ul, ol, dl) {
+      margin-block-start: 0;
+    }
+
+    .prose :is(h4, h5, h6) + :is(aside, details, pre, table) {
+      margin-block-start: calc(0.25rem + 1rem * 0.4);
+    }
+
+    /* 太字の中のcodeのウェイト調整 */
+
+    .prose :is(h1, h2, h3, h4, h5, h6, b, strong, th) code {
+      font-weight: 500;
+    }
   }
 </style>

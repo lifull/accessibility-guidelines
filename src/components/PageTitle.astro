@@ -1,7 +1,7 @@
 <h1>
   {
     Astro.slots.has("sub") && (
-      <span class="sub">
+      <span>
         <slot name="sub" />
       </span>
     )
@@ -23,7 +23,7 @@
     font-feature-settings: "palt";
   }
 
-  .sub {
+  span {
     display: block;
     font-size: 1.125rem;
     letter-spacing: 0.05em;

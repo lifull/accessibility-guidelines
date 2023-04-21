@@ -10,7 +10,6 @@ const { title, slug } = guideline.frontmatter;
   <div class="heading">
     <h3>
       <button
-        class="toggle"
         type="button"
         aria-expanded="false"
         aria-controls={`${slug}-content`}
@@ -18,7 +17,7 @@ const { title, slug } = guideline.frontmatter;
         data-disclosure-target="button"
       >
         {title}
-        <span class="toggle-icon"></span>
+        <span></span>
       </button>
     </h3>
   </div>
@@ -57,7 +56,7 @@ const { title, slug } = guideline.frontmatter;
     padding: 1.25rem var(--spacing-viewport-margin);
   }
 
-  .heading h3 {
+  h3 {
     margin: 0;
     display: flex;
     align-items: start;
@@ -66,7 +65,7 @@ const { title, slug } = guideline.frontmatter;
     letter-spacing: 0.05em;
     font-feature-settings: "palt";
   }
-  .heading h3::before {
+  h3::before {
     margin-top: 0.25em;
     margin-right: 0.4em;
     flex-shrink: 0;
@@ -77,7 +76,7 @@ const { title, slug } = guideline.frontmatter;
     content: "";
   }
 
-  .toggle {
+  button {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,13 +90,13 @@ const { title, slug } = guideline.frontmatter;
     letter-spacing: inherit;
   }
 
-  .toggle::before {
+  button::before {
     position: absolute;
     inset: 0;
     content: "";
   }
 
-  .toggle-icon {
+  button span {
     width: 1.25rem;
     height: 1.25rem;
     background-color: var(--color-icon);
@@ -105,7 +104,7 @@ const { title, slug } = guideline.frontmatter;
     mask-image: var(--icon-chevron-down);
   }
 
-  .toggle[aria-expanded="true"] .toggle-icon {
+  button[aria-expanded="true"] span {
     transform: rotate(180deg);
   }
 
@@ -180,11 +179,11 @@ const { title, slug } = guideline.frontmatter;
   }
 
   @media (hover: hover) {
-    .toggle:hover {
+    button:hover {
       color: var(--color-primary);
     }
 
-    .toggle:hover .toggle-icon {
+    button:hover span {
       background-color: var(--color-primary);
     }
   }

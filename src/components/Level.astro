@@ -4,15 +4,14 @@ import { getLevelTerm } from "../helpers/levels";
 const { level } = Astro.props;
 ---
 
-<p class="level">レベル{level}：{getLevelTerm(level)}</p>
+<p><b>レベル{level}：{getLevelTerm(level)}</b></p>
 
 <style>
-  .level {
-    margin-bottom: 0 !important;
-    font-weight: bold;
+  p {
+    margin-bottom: 0;
   }
 
-	.level + :global(p) {
+  p + :global(p) {
     margin-top: 0;
-	}
+  }
 </style>
