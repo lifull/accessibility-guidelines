@@ -3,7 +3,7 @@ import lifullLogo from "../assets/images/lifull-logo.svg";
 import logoH from "../assets/images/logo-h.svg";
 import logoV from "../assets/images/logo-v.svg";
 
-import { version } from "../../package.json";
+import version from "../../VERSION.json"
 
 const nav = {
   ガイドラインについて: {
@@ -100,7 +100,7 @@ const nav = {
               target="_blank"
               rel="external"
             >
-              ver. {version}
+              {version}
               <span class="open-blank" role="img" aria-label="新しいタブで開く"
               ></span>
             </a>
@@ -170,7 +170,7 @@ const nav = {
   }
 
   .nav-content p {
-    margin-top: calc(2rem - 1.125rem * 0.3 - 1rem * 0.3);
+    margin-top: calc(2.25rem - 1.125rem * 0.3 - 1rem * 0.3);
     margin-bottom: 0;
     font-size: 1.125rem;
     font-weight: bold;
@@ -189,7 +189,7 @@ const nav = {
   .nav-content a:link,
   .nav-content a:visited {
     display: block;
-    padding-block: 0.5rem;
+    padding-block: calc(0.67rem - 1rem * 0.3);
     color: inherit;
     text-decoration: none;
   }
@@ -232,20 +232,26 @@ const nav = {
     .header-inner {
       margin-left: auto;
       box-sizing: border-box;
-      width: 240px;
+      width: 15rem;
       padding-right: 4px;
     }
 
     .home-link {
       display: block;
+      width: auto;
+    }
+
+    .logo-container {
+      width: auto;
     }
 
     .logo-lifull {
-      width: 208px;
+      width: 13rem;
     }
 
     .logo img {
       margin-top: 1.5rem;
+      width: 11.4rem;
     }
 
     .nav-button {
@@ -254,7 +260,7 @@ const nav = {
 
     .nav-content {
       display: block;
-      margin-top: 3rem;
+      margin-top: 2.75rem;
       color: #626262;
     }
   }

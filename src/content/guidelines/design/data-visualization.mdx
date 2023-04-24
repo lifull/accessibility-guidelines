@@ -9,6 +9,7 @@ slug: data-visualization
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 グラフを表現している視覚的要素（点や線・面など）と凡例を、色だけを手掛かりに紐づけていると、ロービジョンや色覚特性のあるユーザーにとって利用しづらくなることがあります。
 
-##### 具体例：凡例付きの円グラフ
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：凡例付きの円グラフ
+  </div>
   <Case type="bad" title="グラフ面と凡例を色で紐づけている">
     グラフ面と凡例を色だけを手掛かりに紐づけている。P型色覚での見え方をシミュレーションすると色の判別が困難になる。
   </Case>

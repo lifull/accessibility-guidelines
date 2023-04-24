@@ -7,6 +7,7 @@ slug: allow-zoom
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,6 +17,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ロービジョンのユーザーを含む一部のユーザーにとっては、画面を任意の大きさにズームして表示できることは極めて重要です。そのような人にとって、ウェブサイトがズームを禁止しているとウェブサイトを利用できなくなることがあります。ズームされると大多数のユーザーに致命的な問題が起きない限り、ズームを許容してください。
 

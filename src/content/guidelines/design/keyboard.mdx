@@ -8,12 +8,15 @@ slug: keyboard
 
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Details from "../../../components/Details.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
 <Checkpoint title="キーボードですべてのコンテンツや機能を利用できるようにする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ポインター操作やタッチ操作が使えない人のために、キーボード操作ですべてのコンテンツや機能を利用できるようにしてください。項目の選択・右クリック・ダブルクリック・ホバー・ホイール・ドラッグ＆ドロップ・タッチジェスチャーなどに依存している操作を見つけ、キーボード操作のみで完結できるようにデザインしてください。
 

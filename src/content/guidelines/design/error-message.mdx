@@ -9,6 +9,7 @@ slug: error-message
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -17,11 +18,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 ユーザーの操作によってエラーが発生したとき、エラーについての十分な情報を提示してください。
 
-##### 具体例① エラーの原因を明記する
-
 <Cases>
+  <div slot="title">
+    ##### 具体例① エラーの原因を明記する
+  </div>
   <Case type="bad" title="エラーの原因を明記しない">
     なぜログインに失敗したかわからず、ユーザーは修正のためのアクションを起こせない。
   </Case>
@@ -30,9 +34,10 @@ import Case from "../../../components/Case.astro";
   </Case>
 </Cases>
 
-##### 具体例② エラーの修正方法を説明する
-
 <Cases>
+  <div slot="title">
+    ##### 具体例② エラーの修正方法を説明する
+  </div>
   <Case type="bad" title="あいまいな修正指示">
     正しい形式とは何かが不明瞭で、どのように修正すればよいのかわからない。
   </Case>

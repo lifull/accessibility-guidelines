@@ -7,6 +7,7 @@ slug: contextual-focus
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -31,6 +32,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 キーボードやスクリーンリーダーなどのシーケンシャルな操作体系の環境でスムーズに操作を行えるように、ユーザーの操作に応じた適切な位置にフォーカスを移動してください。
 

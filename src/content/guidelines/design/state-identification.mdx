@@ -9,6 +9,7 @@ slug: state-identification
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 フォーカス・選択・ホバー・押下・展開・チェックなど、状態をもつUIコンポーネントは、状態の変化を視覚的に判別できるようにしてください。色に変化を持たせるだけでなく、色以外の手がかり（テキストや形状）を変化させることで状態を表現するようにしてください。ホバーのように状態の変化が装飾的なものであれば、テキストや形状の変化は必要ではありません。
 
-##### 具体例：状態が判別できるUIコンポーネント
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：状態が判別できるUIコンポーネント
+  </div>
   <Case type="good" title="押下状態がアイコンの変化でわかる"></Case>
   <Case type="good" title="チェック状態がアイコンの変化でわかる"></Case>
   <Case type="good" title="展開状態がアイコンの変化でわかる"></Case>

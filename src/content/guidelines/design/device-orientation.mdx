@@ -7,6 +7,7 @@ slug: device-orientation
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -14,6 +15,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="デバイスの回転なしですべてのコンテンツや機能を利用できるようにする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 運動機能障害を持つユーザーはデバイスの向きを固定して利用していることがあり、デバイスの向きが制限されたコンテンツや機能は利用できないかもしれません。
 

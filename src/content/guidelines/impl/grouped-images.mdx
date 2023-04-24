@@ -9,6 +9,7 @@ slug: grouped-images
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 複数の画像の並びがひとまとまりの情報を表現する場合、個別の画像に代替テキストを設定すると理解が難しくなる場合があります。
 
-##### 具体例①：評価メーター
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：評価メーター
+  </div>
   <Case span={2} type="bad" title="個別の画像に代替テキストを設定する">
     <div slot="figure">
       ```html

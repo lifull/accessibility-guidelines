@@ -7,6 +7,7 @@ slug: escape-key
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,5 +17,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 Escapeキーは「現在のコンテキストから抜ける」ための慣習的に用いられているキー操作です。ポップアップメニューやダイアログ、ツールチップなど、一時的に、ほかのコンテンツより前面に表示されるコンテンツをEscapeキーで閉じられるようにしてください。

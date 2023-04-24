@@ -7,6 +7,7 @@ slug: page-title
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -15,6 +16,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="ページごとに異なるユニークなページタイトルにする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 視覚障害者はスクリーンリーダーを通じて代替テキストを合成音声または点字で読むことになります。ネットワーク状況によって画像がうまく読み込まれなかったときにも代替テキストが使われます。代替テキストが不十分だったり指定されていなかったりすると、必要な情報が伝わらなくなってしまいます。
 

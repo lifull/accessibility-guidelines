@@ -8,29 +8,14 @@ const { span = 1, type, title } = Astro.props;
     <p class="title">
       {type === "good" && <span class="good" role="img" aria-label="Good:" />}
       {type === "bad" && <span class="bad" role="img" aria-label="Bad:" />}
-      <slot name="title" />{title}
+      <b><slot name="title" />{title}</b>
     </p>
     <div class="caption"><slot /></div>
   </figcaption>
 </figure>
 
-<style is:global>
-  .case img {
-    border-radius: 0.5rem;
-    background-color: #f4f4f4;
-  }
-  
-  .case p {
-    margin-block: 0;
-  }
-
-  .case pre {
-    margin-block: 0;
-  }
-</style>
-
 <style>
-  .case {
+  figure {
     margin: 0;
   }
 
@@ -42,14 +27,21 @@ const { span = 1, type, title } = Astro.props;
     margin-top: 0.75rem;
   }
 
+  .case :global(img) {
+    border-radius: 0.5rem;
+    background-color: #f4f4f4;
+  }
+
+  .case :global(p) {
+    margin-block: 0;
+  }
+
+  .case :global(pre) {
+    margin-block: 0;
+  }
+
   .title {
     display: flex;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .title :global(code) {
-    font-weight: 500;
   }
 
   .good,
@@ -73,7 +65,7 @@ const { span = 1, type, title } = Astro.props;
   }
 
   .caption {
-    margin-top: calc(0.75rem - 0.875rem * 0.3);
+    margin-top: calc(0.5rem - 0.875rem * 0.4);
     font-size: 0.875rem;
   }
 </style>

@@ -7,6 +7,7 @@ slug: external-content-and-library
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,5 +22,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 アクセシビリティはページ全体として評価されるため、採用している外部のUIライブラリや、iframeとして埋め込んでいる外部コンテンツもアクセシビリティに配慮したつくりになっている必要があります。

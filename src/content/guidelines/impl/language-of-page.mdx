@@ -7,6 +7,7 @@ slug: language-of-page
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,5 +22,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 lang 属性を使うとページの全体や一部分に対して書かれている言語を明示することができます。機械がこれを読み取ることでテキストを適切に処理できるようになります。

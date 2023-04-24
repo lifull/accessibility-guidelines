@@ -1,0 +1,17 @@
+---
+import { getLevelTerm } from "../helpers/levels";
+
+const { level } = Astro.props;
+---
+
+<p><b>レベル{level}：{getLevelTerm(level)}</b></p>
+
+<style>
+  p {
+    margin-bottom: 0;
+  }
+
+  p + :global(p) {
+    margin-top: 0;
+  }
+</style>

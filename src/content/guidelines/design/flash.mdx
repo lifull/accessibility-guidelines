@@ -7,6 +7,7 @@ slug: flash
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -15,6 +16,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="1秒間に3回以上点滅する場合は、点滅するコンテンツのサイズを小さくする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 閃光を放つ（激しく点滅する）コンテンツは可能な限り避けてください。必要な場合は点滅の速度や色差・面積を小さくする対策を講じてください。
 

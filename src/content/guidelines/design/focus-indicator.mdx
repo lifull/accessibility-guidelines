@@ -9,6 +9,7 @@ slug: focus-indicator
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -17,11 +18,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 フォーカスインジケーターを非表示にすると、キーボードユーザーや弱視のユーザーはコンテンツや機能を利用できなくなってしまいます。
 
-##### 具体例：視認性に配慮したフォーカスインジケーター
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：視認性に配慮したフォーカスインジケーター
+  </div>
   <Case type="bad" title="コントラストが低すぎる"></Case>
   <Case type="bad" title="フォーカスインジケーターを非表示にしている"></Case>
   <Case type="bad" title="色の変化のみ"></Case>

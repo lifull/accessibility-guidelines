@@ -7,6 +7,7 @@ slug: content-on-hover
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,6 +17,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ホバーやフォーカスがコンテンツ表示のトリガーとなっている場合、ユーザーによって明示的に閉じられるまでそのコンテンツを表示し続けてください。トリガーからポインターやフォーカスが外れた時点でコンテンツを非表示にしたり、時限式に閉じることは避けてください。
 

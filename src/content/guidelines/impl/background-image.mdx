@@ -7,6 +7,7 @@ slug: background-image
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,5 +17,7 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 </Checkpoint>
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 情報を伝えている画像を CSS で背景画像として設定すると、テキストから情報を得ているユーザーに情報が伝わらなくなってしまいます。背景画像には代替テキストが設定できません。また背景画像は印刷に表示されません。

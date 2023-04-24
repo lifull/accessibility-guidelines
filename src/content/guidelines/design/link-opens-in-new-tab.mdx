@@ -7,6 +7,7 @@ slug: link-opens-in-new-tab
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -14,6 +15,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="新しいタブまたはウィンドウで開く場合、ユーザーに事前に知らせる" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 特に視覚的なコンテンツを知覚するのに困難を伴うユーザーをはじめ、ユーザーにとっては、リンクやフォーム送信を新しいタブで開くことは混乱の原因となりえます。
 

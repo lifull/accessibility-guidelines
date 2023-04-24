@@ -7,6 +7,7 @@ slug: link-text
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -15,6 +16,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="ファイルの種別を明示する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 リンクテキストは遷移先のページタイトルにするなど、遷移先が理解しやすいテキストにしてください。「ここをクリック」といったテキストは単体では遷移先が理解できないため、リンクの前後のテキストを読むまで遷移先が不明瞭な状態になります。
 

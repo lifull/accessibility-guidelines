@@ -7,6 +7,7 @@ slug: time-limit
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -14,6 +15,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="制限時間が必要な場合、利用者が事前に制限時間を延長・無効化できるようにするか、制限時間を 20 時間以上とする" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 認知障害をもつユーザーやコンテンツの言語に堪能でないユーザーは、コンテンツを利用するのに時間がかかることがあり、設けられた制限時間では足りないかもしれません。リアルタイムイベント等の制限時間を変更することが不可能な理由がある場合を除いて、制限時間は設けないようにしてください。
 

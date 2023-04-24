@@ -12,23 +12,23 @@ const prev = getPrev(currentSlug);
 const next = getNext(currentSlug);
 ---
 
-<nav class="pagination">
-  <a href={prev && `/accessibility-guidelines/${prev.slug}.html`} rel="prev" class="item prev">
+<nav>
+  <a href={prev && `/accessibility-guidelines/${prev.slug}.html`} rel="prev" class="prev">
     {prev?.title}
   </a>
   <div class="separator"></div>
-  <a href={next && `/accessibility-guidelines/${next.slug}.html`} rel="next" class="item next">
+  <a href={next && `/accessibility-guidelines/${next.slug}.html`} rel="next" class="next">
     {next?.title}
   </a>
 </nav>
 
 <style>
-  .pagination {
+  nav {
     margin-top: 3rem;
     display: flex;
   }
 
-  .item {
+  a {
     flex-basis: 50%;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ const next = getNext(currentSlug);
     font-weight: bold;
     text-decoration: none;
   }
-  .item[href]::before {
+  a[href]::before {
     flex-shrink: 0;
     width: 1rem;
     height: 1rem;
@@ -60,10 +60,10 @@ const next = getNext(currentSlug);
     transform: rotate(-90deg);
   }
 
-  .item:hover {
+  a:hover {
     color: var(--color-primary);
   }
-  .item:hover::before {
+  a:hover::before {
     background-color: var(--color-primary);
   }
 
@@ -75,15 +75,15 @@ const next = getNext(currentSlug);
   }
 
   @media (min-width: 768px) {
-    .pagination {
+    nav {
       margin-top: 3.5rem;
     }
 
-    .item {
+    a {
       column-gap: 0.5rem;
-      font-size: 0.875rem;
+      font-size: 0.778rem;
     }
-    .item::before {
+    a::before {
       width: 1.25rem;
       height: 1.25rem;
     }

@@ -13,14 +13,10 @@ const { summary } = Astro.props;
   details {
     position: relative;
     z-index: 0;
-    margin-block: calc(1.25rem - 1rem * 0.3);
     border-radius: 0.5rem;
     border: 1px solid var(--color-border);
 
     --details-padding: 1rem;
-  }
-  details + details {
-    margin-top: 1.25rem;
   }
 
   summary {
@@ -29,7 +25,7 @@ const { summary } = Astro.props;
     align-items: center;
     column-gap: 0.5rem;
     border-radius: 0.5rem;
-    padding: calc(var(--details-padding) - 1rem * 0.3) var(--details-padding);
+    padding: calc(var(--details-padding) - 1rem * 0.4) var(--details-padding);
     list-style-type: none;
     font-weight: bold;
     cursor: default;
@@ -64,16 +60,16 @@ const { summary } = Astro.props;
     transform: rotate(180deg);
   }
 
-  details > div {
+  div {
     position: relative;
     padding-inline: var(--details-padding);
-    padding-bottom: calc(var(--details-padding) - 1rem * 0.3);
+    padding-bottom: calc(var(--details-padding) - 1rem * 0.4);
   }
 
-  details > div > :global(:first-child) {
+  div > :global(:first-child) {
     margin-top: 0;
   }
-  details > div > :global(:last-child) {
+  div > :global(:last-child) {
     margin-bottom: 0;
   }
 

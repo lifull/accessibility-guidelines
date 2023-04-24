@@ -9,6 +9,7 @@ slug: table
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -17,22 +18,26 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 表は画像化せず、HTMLをつかってマークアップされるものとしてデザインしてください。
 
 セルの結合を多用した表や1件のデータが複数行にわたる表、入れ子構造になっている表は、理解しやすさやスクリーンリーダーによる利用性が下がります。多くの情報量を表に含めようとせず、いくつかのシンプルな表に分割できないかどうか検討してください。
 
-##### 具体例①：セルの結合のある表
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：セルの結合のある表
+  </div>
   <Case type="bad" title="セルを不必要に結合している">
   </Case>
   <Case type="good" title="列を有効活用する">
   </Case>
 </Cases>
 
-##### 具体例②：入れ子になった表
-
 <Cases>
+  <div slot="title">
+    ##### 具体例②：入れ子になった表
+  </div>
   <Case type="bad" title="表が入れ子になっている">
   </Case>
   <Case type="good" title="表を分割する">

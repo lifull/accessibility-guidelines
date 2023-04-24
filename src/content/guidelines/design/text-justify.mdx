@@ -9,6 +9,7 @@ slug: text-justify
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 特定の認知障害のあるユーザーは、均等割付されたテキストを読むことに苦労することがあります。
 
-##### 具体例：フォームコントロールのラベル
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：フォームコントロールのラベル
+  </div>
   <Case type="bad" title="均等割付する"/>
   <Case type="good" title="均等割付しない"/>
 </Cases>

@@ -8,6 +8,7 @@ slug: video-and-audio
 
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Details from "../../../components/Details.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -15,6 +16,8 @@ import Details from "../../../components/Details.astro";
 <Checkpoint title="動画に音声解説を提供するか、代替コンテンツを提供する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 音声付きの動画コンテンツは、視覚障害者や聴覚障害者にとって情報取得の障壁になることがあります。
 

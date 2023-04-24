@@ -7,12 +7,15 @@ slug: sitemap
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
 <Checkpoint title="必要に応じて目次とサイトマップを提供する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 目次やサイトマップは、ページやウェブサイト全体がどのような構造になっているかを把握するのに役立ちます。
 

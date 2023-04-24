@@ -7,12 +7,15 @@ slug: image-of-text
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
 <Checkpoint title="テキスト画像を使用しない" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 ロービジョンのユーザーはテキストを自分の読みやすい配色に変換する支援技術を使っていることがあります。テキストが画像化されていると、この変換が行われなくなります。ロゴやアプリケーションのスクリーンショットなど、テキストが画像と一体化している場合は例外です。
 

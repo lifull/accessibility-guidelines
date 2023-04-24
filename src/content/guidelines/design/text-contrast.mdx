@@ -8,6 +8,7 @@ slug: text-contrast
 
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Details from "../../../components/Details.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,6 +22,8 @@ import Details from "../../../components/Details.astro";
 <Checkpoint title="見出しなど大きいサイズのテキストはAPCA 45以上の色コントラストを確保する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 テキストの読みやすさには色のコントラストが重要です。特にロービジョンのユーザーには十分なコントラストが必要です。
 

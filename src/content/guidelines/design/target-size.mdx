@@ -9,6 +9,7 @@ slug: target-size
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -16,11 +17,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 小さすぎるターゲットは、タッチ操作するユーザーや細かい操作を苦手とするユーザーにとって使いにくいことがあります。
 
-##### 具体例：ターゲットサイズ
-
 <Cases>
+  <div slot="title">
+    ##### 具体例：ターゲットサイズ
+  </div>
   <Case span={2} type="bad" title="不十分なターゲットサイズ">
     ターゲットサイズが24px未満であり、隣接するコンポーネントとの間隔も確保されていない。
   </Case>

@@ -16,10 +16,10 @@ const { title } = Astro.props;
   }
   
   .checkpoint + .checkpoint {
-    margin-top: calc(1.25rem - 1rem * 0.6);
+    margin-top: calc(1.25rem - 1rem * 0.8);
   }
 
-  .checkpoint h5 {
+  h5 {
     display: flex;
     align-items: start;
     margin-block: 0;
@@ -27,11 +27,11 @@ const { title } = Astro.props;
     font-size: 1rem;
     line-height: 1.6;
   }
-  
-  .checkpoint :global(code) {
-    font-weight: 500;
-  }
 
+  .checkpoint :global(:is(p, ul, ol, dl)) {
+    margin-block: 0.9em;
+  }
+  
   .icon {
     flex-shrink: 0;
     width: 1.5rem;

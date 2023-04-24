@@ -7,6 +7,7 @@ slug: keyboard
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -18,6 +19,8 @@ import Checkpoint from "../../../components/Checkpoint.astro";
 <Checkpoint title="妥当なキーボード操作方法についてエキスパートに相談する" />
 
 #### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
 
 HTMLや既存のデザインパターンでは賄いきれない独自のUIをデザインする場合であっても、基本的なキーボード操作の慣習に従うようにしてください。
 

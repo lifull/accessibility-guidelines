@@ -9,6 +9,7 @@ slug: invisible-label
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -21,16 +22,19 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 デザイン上の理由でフォームコントロールのラベルが画面上に表示されていない場合でも、フォームコントロールは名前を持つ必要があります。
 
 可視ラベルのないコントロールに名前を付ける方法は2通りあります。`aria-labelledby`を使うと、ページ中の任意の要素のテキストをコントロールの名前として使用できます。`aria-label`属性はコントロールに直接名前を指定できます。
 
 `aria-labelledby`属性を優先して使用するようにしてください。`aria-label`属性は利用状況によってはうまく機能しません。たとえばウェブページを機械翻訳にかけたときに翻訳されないといった場合があります。
 
-##### 具体例①：可視ラベルのない検索フィールド
-
 <Cases>
-  <Case span={2} type="good" title="aria-labelledby属性を使用する">
+  <div slot="title">
+    ##### 具体例①：可視ラベルのない検索フィールド
+  </div>
+  <Case span={2} type="good">
     <div slot="figure">
       ```html
       <form>
@@ -40,14 +44,16 @@ import Case from "../../../components/Case.astro";
       </form>
       ```
     </div>
-    コントロールに`aria-labelledby`属性を付与し、ラベルの要素（不可視でも構わない）の`id`を指定します。
+    <span slot="title">`aria-labelledby`属性を使用する</span>
+    <span>コントロールに`aria-labelledby`属性を付与し、ラベルの要素（不可視でも構わない）の`id`を指定します。</span>
   </Case>
 </Cases>
 
-##### 具体例②：分割された郵便番号フィールド
-
 <Cases>
-  <Case span={2} type="good" title="aria-label属性を使用する">
+  <div slot="title">
+    ##### 具体例②：分割された郵便番号フィールド
+  </div>
+  <Case span={2} type="good">
     <div slot="figure">
       ```html
       <fieldset>
@@ -60,6 +66,7 @@ import Case from "../../../components/Case.astro";
       </fieldset>
       ```
     </div>
-    `aria-label`属性を使うとコントロールに名前を直接指定できます。
+    <span slot="title">`aria-label`属性を使用する</span>
+    <span>`aria-label`属性を使うとコントロールに名前を直接指定できます。</span>
   </Case>
 </Cases>

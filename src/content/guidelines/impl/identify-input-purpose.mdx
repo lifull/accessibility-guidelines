@@ -9,6 +9,7 @@ slug: identify-input-purpose
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
@@ -24,11 +25,14 @@ import Case from "../../../components/Case.astro";
 
 #### 「{frontmatter.title}」とは
 
+<Level level={frontmatter.level} />
+
 `input`要素の`type`属性や`autocomplete`属性を使用して入力フィールドの目的を特定しておくと、目的に応じたソフトウェアキーボードが表示されたり、ブラウザーに保存された値の補完機能を利用できるようになったりします。
 
-##### 具体例①：クレジットカード番号の入力欄!
-
 <Cases>
+  <div slot="title">
+    ##### 具体例①：クレジットカード番号の入力欄!
+  </div>
   <Case span={2} type="bad">
     <div slot="figure">
       ```html

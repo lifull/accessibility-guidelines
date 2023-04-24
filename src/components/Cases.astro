@@ -1,10 +1,18 @@
 <div class="cases">
-  <slot />
+  <slot name="title" />
+  <div class="cases-inner">
+    <slot />
+  </div>
 </div>
 
 <style>
   .cases {
-    margin-top: calc(1.5rem - 1.125rem * 0.3);
+    margin-block: calc(3.33em - 1.125rem * 0.2 - 1rem * 0.2)
+      calc(3.33em - 1rem * 0.4);
+  }
+
+  .cases-inner {
+    margin-top: calc(1.5rem - 1.125rem * 0.4);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
     grid-gap: 1.5rem;
