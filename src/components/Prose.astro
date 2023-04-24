@@ -38,7 +38,7 @@
     }
 
     .prose h3 {
-      margin-top: calc(3rem - 1.25rem * 0.2 - 1rem * 0.4);
+      margin-top: calc(3.35rem - 1.25rem * 0.2 - 1rem * 0.4);
       margin-bottom: calc(1.25rem - 1.25rem * 0.2 - 1rem * 0.4);
       display: flex;
       align-items: start;
@@ -75,12 +75,12 @@
     /* フローコンテンツ */
 
     .prose p {
-      margin-block: 1.8rem;
+      margin-block: 1.4rem;
     }
 
     .prose ul,
     .prose ol {
-      margin-block: 1.8rem;
+      margin-block: 1.4rem;
       padding-left: 1.25rem;
     }
 
@@ -103,12 +103,17 @@
     }
 
     .prose dl {
-      margin-block: 1.8rem;
+      margin-block: 1.4rem;
     }
 
     .prose dt {
-      margin-top: calc(1rem - 1rem * 0.8);
+      margin-top: 1.4rem;
       font-weight: bold;
+    }
+    
+    .prose dd {
+      margin-inline-start: 0;
+      margin-bottom: 1.4rem;
     }
 
     .prose figure {
@@ -220,6 +225,23 @@
 
     .prose :is(h1, h2, h3, h4, h5, h6, b, strong, th) code {
       font-weight: 500;
+    }
+    
+    @media (min-width: 768px) {
+      .prose dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.4rem 1.5rem;
+      }
+      
+      .prose dt {
+        min-width: 4em;
+        margin: 0;
+      }
+      
+      .prose dd {
+        margin: 0;
+      }
     }
   }
 </style>
