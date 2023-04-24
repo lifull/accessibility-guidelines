@@ -45,7 +45,9 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
     </script>
   </head>
   <body>
-    <a class="skip" href="#main">メインコンテンツにスキップ</a>
+    <nav aria-label="スキップリンク">
+      <a class="skip" href="#main">メインコンテンツにスキップ</a>
+    </nav>
     <div class="layout">
       <Header />
       <div class="main">
