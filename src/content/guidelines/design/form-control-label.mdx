@@ -6,6 +6,9 @@ title: フォームコントロールのラベル
 slug: form-control-label
 ---
 
+import formControlLabel from "../../../assets/images/design/form-control-label.svg";
+import formControlLabel2 from "../../../assets/images/design/form-control-label-2.svg";
+import formControlLabel3 from "../../../assets/images/design/form-control-label-3.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -27,11 +30,40 @@ import Level from "../../../components/Level.astro";
   <div slot="title">
     ##### 具体例：フォームコントロールのラベル
   </div>
-  <Case type="bad" title="プレースホルダーでラベルを代用する"></Case>
-  <Case type="bad" title="フォームコントロールとラベルが離れている">
-    ※程度の問題であり、左寄せのラベルを禁止するものではありません。
+  <Case type="bad" title="プレースホルダーでラベルを代用する">
+    <img
+      slot="figure"
+      src={formControlLabel.src}
+      alt=""
+      width={formControlLabel.width}
+      height={formControlLabel.height}
+      loading="lazy"
+      decoding="async"
+    />
   </Case>
-  <Case type="good" title="フォームコントロールの付近にラベルを表示する"></Case>
+  <Case type="bad" title="フォームコントロールとラベルが離れている">
+    <img
+      slot="figure"
+      src={formControlLabel2.src}
+      alt=""
+      width={formControlLabel2.width}
+      height={formControlLabel2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    <span>※程度の問題であり、左寄せのラベルを禁止するものではありません。</span>
+  </Case>
+  <Case type="good" title="フォームコントロールの付近にラベルを表示する">
+    <img
+      slot="figure"
+      src={formControlLabel3.src}
+      alt="フォームコントロールとラベルのセットの例：テキスト入力欄、チェックボックス、ラジオボタン、トグルボタン"
+      width={formControlLabel3.width}
+      height={formControlLabel3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
 </Cases>
 
 ##### 参考情報

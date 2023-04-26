@@ -6,6 +6,7 @@ title: 自動再生するコンテンツ
 slug: autostart-content
 ---
 
+import autostartContent from "../../../assets/images/design/autostart-content.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -40,13 +41,22 @@ import Level from "../../../components/Level.astro";
   <div slot="title">
     ##### 具体例①：自動再生する映像
   </div>
-  <Case type="bad" title="演出ビデオが背景で動き続ける">
+  <Case span={2} type="bad" title="演出ビデオが背景で動き続ける">
     ページにアクセスすると背景で映像が流れ始める。映像の前面にはロゴ、ナビゲーション、テキストが表示されている。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
   </Case>
-  <Case type="good" title="再生を一時停止できるようにする">
+  <Case span={2} type="good" title="再生を一時停止できるようにする">
+    <img
+      slot="figure"
+      src={autostartContent.src}
+      alt=""
+      width={autostartContent.width}
+      height={autostartContent.height}
+      loading="lazy"
+      decoding="async"
+    />
     目立つ場所に一時停止ボタンを配置する。ユーザーは一時停止ボタンを押すことで再生を止めることができる。
   </Case>
-  <Case type="good" title="再生を5秒以内に停止する">
+  <Case span={2} type="good" title="再生を5秒以内に停止する">
     ページにアクセスすると背景で映像が流れるが、映像は5秒以内に終了し再生が止まる。
   </Case>
 </Cases>

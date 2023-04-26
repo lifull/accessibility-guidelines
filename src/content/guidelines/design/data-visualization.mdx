@@ -6,6 +6,8 @@ title: データ可視化
 slug: data-visualization
 ---
 
+import dataVisualization from "../../../assets/images/design/data-visualization.svg";
+import dataVisualization2 from "../../../assets/images/design/data-visualization-2.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -26,9 +28,27 @@ import Level from "../../../components/Level.astro";
     ##### 具体例：凡例付きの円グラフ
   </div>
   <Case type="bad" title="グラフ面と凡例を色で紐づけている">
+    <img
+      slot="figure"
+      src={dataVisualization.src}
+      alt="グラフ面と凡例を色で紐づけている例"
+      width={dataVisualization.width}
+      height={dataVisualization.height}
+      loading="lazy"
+      decoding="async"
+    />
     グラフ面と凡例を色だけを手掛かりに紐づけている。P型色覚での見え方をシミュレーションすると色の判別が困難になる。
   </Case>
   <Case type="good" title="グラフ面に直接ラベルを配置する">
+    <img
+      slot="figure"
+      src={dataVisualization2.src}
+      alt="グラフ面から線を引きラベルを配置している例"
+      width={dataVisualization2.width}
+      height={dataVisualization2.height}
+      loading="lazy"
+      decoding="async"
+    />
     グラフ面に直接ラベルを配置することで、色に依存しない必要がなくなる。
   </Case>
 </Cases>

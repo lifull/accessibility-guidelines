@@ -6,12 +6,24 @@ title: アイコンやUIコンポーネントの色コントラスト
 slug: ui-contrast
 ---
 
+import uiContrast from "../../../assets/images/design/ui-contrast.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
 <Checkpoint title="UIコンポーネントやグラフィックが表している情報・機能・状態を判別するために、視覚的要素のどの部分が必要かを特定する">
+  <p>
+    <img
+      src={uiContrast.src}
+      alt=""
+      width={uiContrast.width}
+      height={uiContrast.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </p>
+
   上記例では、白地`#FFFFFF`に対して`#AAAAAA`(Lc 45.8)、グレー地`#D9D9D9`に対して`#7F7F7F`(Lc 45.1)を確保しています。
 </Checkpoint>
 

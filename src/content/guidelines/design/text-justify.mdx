@@ -6,6 +6,8 @@ title: テキストの均等割付
 slug: text-justify
 ---
 
+import textJustify from "../../../assets/images/design/text-justify.svg";
+import textJustify2 from "../../../assets/images/design/text-justify-2.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -25,8 +27,28 @@ import Level from "../../../components/Level.astro";
   <div slot="title">
     ##### 具体例：フォームコントロールのラベル
   </div>
-  <Case type="bad" title="均等割付する"/>
-  <Case type="good" title="均等割付しない"/>
+  <Case type="bad" title="均等割付する">
+    <img
+      slot="figure"
+      src={textJustify.src}
+      alt=""
+      width={textJustify.width}
+      height={textJustify.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="均等割付しない">
+    <img
+      slot="figure"
+      src={textJustify2.src}
+      alt=""
+      width={textJustify2.width}
+      height={textJustify2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
 </Cases>
 
 ##### 参考情報

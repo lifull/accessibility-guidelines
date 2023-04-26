@@ -6,7 +6,7 @@ title: 動画の字幕
 slug: video-caption
 ---
 
-import videoCaption1 from "../../../assets/images/design/video-caption-1.svg";
+import videoCaption from "../../../assets/images/design/video-caption.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -29,10 +29,10 @@ import Level from "../../../components/Level.astro";
   <Case span={2} type="good" title="YouTubeに動画をアップロードする">
     <img
       slot="figure"
-      src={videoCaption1.src}
-      alt=""
-      width={videoCaption1.width}
-      height={videoCaption1.height}
+      src={videoCaption.src}
+      alt="字幕付き動画のイラスト"
+      width={videoCaption.width}
+      height={videoCaption.height}
       loading="lazy"
       decoding="async"
     />
