@@ -6,6 +6,9 @@ title: フォーカスインジケーター
 slug: focus-indicator
 ---
 
+import focusIndicator from "../../../assets/images/design/focus-indicator.svg";
+import focusIndicator2 from "../../../assets/images/design/focus-indicator-2.svg";
+import focusIndicator3 from "../../../assets/images/design/focus-indicator-3.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -26,10 +29,39 @@ import Level from "../../../components/Level.astro";
   <div slot="title">
     ##### 具体例：視認性に配慮したフォーカスインジケーター
   </div>
-  <Case type="bad" title="コントラストが低すぎる"></Case>
-  <Case type="bad" title="フォーカスインジケーターを非表示にしている"></Case>
-  <Case type="bad" title="色の変化のみ"></Case>
-  <Case type="good" title="十分なコントラストのあるフォーカスインジケーター"></Case>
+  <Case type="bad" title="コントラストが低すぎる">
+    <img
+      slot="figure"
+      src={focusIndicator.src}
+      alt=""
+      width={focusIndicator.width}
+      height={focusIndicator.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="bad" title="色の変化のみ">
+    <img
+      slot="figure"
+      src={focusIndicator2.src}
+      alt=""
+      width={focusIndicator2.width}
+      height={focusIndicator2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="十分なコントラストのあるフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator3.src}
+      alt=""
+      width={focusIndicator3.width}
+      height={focusIndicator3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
 </Cases>
 
 ##### 参考情報

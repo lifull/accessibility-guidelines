@@ -6,6 +6,7 @@ title: エラーメッセージの提示
 slug: error-presentation
 ---
 
+import errorPresentation from "../../../assets/images/design/error-presentaion.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -43,6 +44,15 @@ import Level from "../../../components/Level.astro";
     ##### 具体例①：エラーを含むHTMLをサーバーサイドから返却する
   </div>
   <Case span={2} type="good" title="エラーを含むHTMLをサーバーサイドから返却する">
+    <img
+      slot="figure"
+      src={errorPresentation.src}
+      alt="フォームのエラー画面のイラスト。画面要素が次の順に並んでいる：①「お問合せ」見出し、②「未入力の必須項目があります：氏名」エラー概要文、③「氏名」ラベル、④「エラー：氏名が入力されていません」エラーメッセージ、⑤氏名入力欄、⑥送信ボタン（アクティブ状態）"
+      width={errorPresentation.width}
+      height={errorPresentation.height}
+      loading="lazy"
+      decoding="async"
+    />
     エラーをページ上部に表示する。各箇所にもエラーの内容を表示する。ページ上部のエラーをクリックすると書く箇所のジャンプできるようになっていると尚よい。
   </Case>
 </Cases>

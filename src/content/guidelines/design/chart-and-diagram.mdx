@@ -6,6 +6,7 @@ title: グラフや図
 slug: chart-and-diagram
 ---
 
+import chartAndDiagram from "../../../assets/images/design/chart-and-diagram.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -31,13 +32,22 @@ import Level from "../../../components/Level.astro";
   <div slot="title">
     ##### 具体例：複雑な概念図
   </div>
-  <Case type="bad" title="画像のタイトルのみ指定されている">
+  <Case span={2} type="bad" title="画像のタイトルのみ指定されている">
     複雑な概念を説明するための図があり、画像のタイトルが代替テキストに設定されている。スクリーンリーダー利用者には画像の内容が伝わらない。
   </Case>
-  <Case type="good" title="複雑な図に具体的な代替テキストを設定する">
+  <Case span={2} type="good" title="複雑な図に具体的な代替テキストを設定する">
+    <img
+      slot="figure"
+      src={chartAndDiagram.src}
+      alt=""
+      width={chartAndDiagram.width}
+      height={chartAndDiagram.height}
+      loading="lazy"
+      decoding="async"
+    />
     複雑な概念を説明するための図があり、概念の説明をテキスト化したものが代替テキストに設定されている。
   </Case>
-  <Case type="good" title="本文を用いて概念について説明する">
+  <Case span={2} type="good" title="本文を用いて概念について説明する">
     図が説明している内容を、本文で取り上げる。見出しや箇条書き等を利用しわかりやすく表現する。図はあくまでも補佐的な役割にとどめるようにする。
   </Case>
 </Cases>

@@ -6,6 +6,8 @@ title: ホバーで表示されるコンテンツ
 slug: content-on-hover
 ---
 
+import contentOnHover from "../../../assets/images/design/content-on-hover.svg";
+import contentOnHover2 from "../../../assets/images/design/content-on-hover-2.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -27,9 +29,27 @@ import Level from "../../../components/Level.astro";
     ##### 具体例：ツールチップ
   </div>
   <Case type="bad" title="マウスオーバーで表示されるツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover.src}
+      alt="「i」アイコンにマウスオーバーしツールチップが表示されているイラスト"
+      width={contentOnHover.width}
+      height={contentOnHover.height}
+      loading="lazy"
+      decoding="async"
+    />
     マウスオーバーで表示されるツールチップはタッチ端末からのアクセスが良くない。
   </Case>
   <Case type="bad" title="拡大鏡に対応していないツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover2.src}
+      alt="ツールチップを拡大鏡とともに利用し、ツールチップが画面外に表示されているイラスト"
+      width={contentOnHover2.width}
+      height={contentOnHover2.height}
+      loading="lazy"
+      decoding="async"
+    />
     拡大鏡をつかって画面を大きく拡大しているユーザーは、読みたいテキストが画面外に表示され気づけないことがある。気づけたとしても、ツールチップを読むためにアイコンからマウスカーソルを外すと、ツールチップが閉じてしまうかもしれない。
   </Case>
 </Cases>

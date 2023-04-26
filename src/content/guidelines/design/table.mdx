@@ -6,6 +6,10 @@ title: 表
 slug: table
 ---
 
+import table from "../../../assets/images/design/table.svg";
+import table2 from "../../../assets/images/design/table-2.svg";
+import table3 from "../../../assets/images/design/table-3.svg";
+import table4 from "../../../assets/images/design/table-4.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -29,8 +33,26 @@ import Level from "../../../components/Level.astro";
     ##### 具体例①：セルの結合のある表
   </div>
   <Case type="bad" title="セルを不必要に結合している">
+    <img
+      slot="figure"
+      src={table.src}
+      alt=""
+      width={table.width}
+      height={table.height}
+      loading="lazy"
+      decoding="async"
+    />
   </Case>
   <Case type="good" title="列を有効活用する">
+    <img
+      slot="figure"
+      src={table2.src}
+      alt=""
+      width={table2.width}
+      height={table2.height}
+      loading="lazy"
+      decoding="async"
+    />
   </Case>
 </Cases>
 
@@ -39,8 +61,26 @@ import Level from "../../../components/Level.astro";
     ##### 具体例②：入れ子になった表
   </div>
   <Case type="bad" title="表が入れ子になっている">
+    <img
+      slot="figure"
+      src={table3.src}
+      alt=""
+      width={table3.width}
+      height={table3.height}
+      loading="lazy"
+      decoding="async"
+    />
   </Case>
   <Case type="good" title="表を分割する">
+    <img
+      slot="figure"
+      src={table4.src}
+      alt=""
+      width={table4.width}
+      height={table4.height}
+      loading="lazy"
+      decoding="async"
+    />
   </Case>
 </Cases>
 
