@@ -11,7 +11,6 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: "https://lifull.github.io",
   base: "/accessibility-guidelines",
-  outDir: "dist/accessibility-guidelines",
   build: {
     format: "file",
     assets: "assets",
