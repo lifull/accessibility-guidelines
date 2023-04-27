@@ -31,20 +31,22 @@ import Level from "../../../components/Level.astro";
 <Cases>
   <div slot="title">
     ##### 具体例：複雑な概念図
+    
+    <p>
+      <img
+        src={chartAndDiagram.src}
+        alt=""
+        width={chartAndDiagram.width}
+        height={chartAndDiagram.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
   </div>
   <Case span={2} type="bad" title="画像のタイトルのみ指定されている">
     複雑な概念を説明するための図があり、画像のタイトルが代替テキストに設定されている。スクリーンリーダー利用者には画像の内容が伝わらない。
   </Case>
   <Case span={2} type="good" title="複雑な図に具体的な代替テキストを設定する">
-    <img
-      slot="figure"
-      src={chartAndDiagram.src}
-      alt=""
-      width={chartAndDiagram.width}
-      height={chartAndDiagram.height}
-      loading="lazy"
-      decoding="async"
-    />
     複雑な概念を説明するための図があり、概念の説明をテキスト化したものが代替テキストに設定されている。
   </Case>
   <Case span={2} type="good" title="本文を用いて概念について説明する">

@@ -25,17 +25,19 @@ import Level from "../../../components/Level.astro";
 <Cases>
   <div slot="title">
     ##### 具体例：字幕付きの動画
+
+    <p>
+      <img
+        src={videoCaption.src}
+        alt="字幕付き動画のイラスト"
+        width={videoCaption.width}
+        height={videoCaption.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
   </div>
   <Case span={2} type="good" title="YouTubeに動画をアップロードする">
-    <img
-      slot="figure"
-      src={videoCaption.src}
-      alt="字幕付き動画のイラスト"
-      width={videoCaption.width}
-      height={videoCaption.height}
-      loading="lazy"
-      decoding="async"
-    />
     YouTubeに動画をアップロードすると自動的に音声が文字起こしされます。生成された字幕をもとに手直しをすると、字幕をつける手間が大幅に省けます。
   </Case>
 </Cases>

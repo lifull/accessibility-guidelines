@@ -26,17 +26,19 @@ import Level from "../../../components/Level.astro";
 <Cases>
   <div slot="title">
     ##### 具体例：プルダウンメニューによるナビゲーション
+    
+    <p>
+      <img
+        src={predictablePattern.src}
+        alt="プルダウンメニューの値を変更する操作をしているイラスト"
+        width={predictablePattern.width}
+        height={predictablePattern.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
   </div>
   <Case span={2} type="bad" title="値を変更するとページ遷移する">
-    <img
-      slot="figure"
-      src={predictablePattern.src}
-      alt="プルダウンメニューの値を変更する操作をしているイラスト"
-      width={predictablePattern.width}
-      height={predictablePattern.height}
-      loading="lazy"
-      decoding="async"
-    />
     HTMLの`select`要素で実装された並び順選択UIでは、値が変更されるとページ遷移が行われる。値が変更されたタイミングでページ遷移が起きることは予測が難しい。キーボードユーザーは上下キーを使って値をひとつ変えただけでページ遷移してしまうため、目的の項目を選ぶことができない。
   </Case>
 </Cases>

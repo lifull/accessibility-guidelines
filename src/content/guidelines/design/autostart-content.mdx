@@ -40,20 +40,22 @@ import Level from "../../../components/Level.astro";
 <Cases>
   <div slot="title">
     ##### 具体例①：自動再生する映像
+    
+    <p>
+      <img
+        src={autostartContent.src}
+        alt=""
+        width={autostartContent.width}
+        height={autostartContent.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
   </div>
   <Case span={2} type="bad" title="演出ビデオが背景で動き続ける">
     ページにアクセスすると背景で映像が流れ始める。映像の前面にはロゴ、ナビゲーション、テキストが表示されている。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
   </Case>
   <Case span={2} type="good" title="再生を一時停止できるようにする">
-    <img
-      slot="figure"
-      src={autostartContent.src}
-      alt=""
-      width={autostartContent.width}
-      height={autostartContent.height}
-      loading="lazy"
-      decoding="async"
-    />
     目立つ場所に一時停止ボタンを配置する。ユーザーは一時停止ボタンを押すことで再生を止めることができる。
   </Case>
   <Case span={2} type="good" title="再生を5秒以内に停止する">
