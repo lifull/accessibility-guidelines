@@ -32,7 +32,7 @@ import Level from "../../../components/Level.astro";
 
 <Cases>
   <div slot="title">
-    ##### 具体例①：ラベルのない検索フィールド
+    ##### 具体例：ラベルのない検索フィールド
   </div>
   <Case span={2} type="good">
     <div slot="figure">
@@ -45,28 +45,18 @@ import Level from "../../../components/Level.astro";
       ```
     </div>
     <span slot="title">`aria-labelledby`属性を使用する</span>
-    <span>コントロールに`aria-labelledby`属性を付与し、コントロールの名前を含む要素（不可視でも構わない）の`id`を指定します。</span>
+    <span>コントロールに`aria-labelledby`属性を付与し、コントロールの名前を含む要素（不可視でも構わない）の`id`を指定する。</span>
   </Case>
-</Cases>
-
-<Cases>
-  <div slot="title">
-    ##### 具体例②：分割された郵便番号フィールド
-  </div>
   <Case span={2} type="good">
     <div slot="figure">
       ```html
-      <fieldset>
-        <legend>郵便番号</legend>
-        <p>
-          <input type="text" aria-label="郵便番号 上3桁" />
-          -
-          <input type="text" aria-label="郵便番号 下4桁" />
-        </p>
-      </fieldset>
+      <form>
+        <input type="search" aria-label="検索キーワード" />
+        <button type="submit">検索</button>
+      </form>
       ```
     </div>
     <span slot="title">`aria-label`属性を使用する</span>
-    <span>`aria-label`属性を使うとコントロールに名前を直接指定できます。</span>
+    <span>`aria-label`属性を使用し、コントロールに名前を直接指定する。</span>
   </Case>
 </Cases>
