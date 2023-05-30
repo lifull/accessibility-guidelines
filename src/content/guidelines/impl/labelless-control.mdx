@@ -2,8 +2,8 @@
 area: impl
 category: forms
 level: 1
-title: 不可視のラベル
-slug: invisible-label
+title: ラベルのないコントロール
+slug: labelless-control
 ---
 
 import Checkpoint from "../../../components/Checkpoint.astro";
@@ -13,7 +13,7 @@ import Level from "../../../components/Level.astro";
 
 #### チェック項目
 
-<Checkpoint title="資料に名前の指定がない場合、名前の案を考え、コンテンツオーナーと認識をそろえる" />
+<Checkpoint title="コントロールにラベルがなく、資料に名前の指定もない場合、名前の案を考え、コンテンツオーナーと認識をそろえる" />
 
 <Checkpoint>
   {/* prettier-ignore */}
@@ -24,15 +24,15 @@ import Level from "../../../components/Level.astro";
 
 <Level level={frontmatter.level} />
 
-デザイン上の理由でフォームコントロールのラベルが画面上に表示されていない場合でも、フォームコントロールは名前を持つ必要があります。
+デザイン上の理由でフォームコントロールのラベルが画面上から省略されている場合でも、フォームコントロールは名前を持つ必要があります。
 
-可視ラベルのないコントロールに名前を付ける方法は2通りあります。`aria-labelledby`を使うと、ページ中の任意の要素のテキストをコントロールの名前として使用できます。`aria-label`属性はコントロールに直接名前を指定できます。
+ラベルのないコントロールに名前を付ける方法は2通りあります。`aria-labelledby`を使うと、ページ中の任意の要素のテキストをコントロールの名前として使用できます。`aria-label`属性はコントロールに直接名前を指定できます。
 
-`aria-labelledby`属性を優先して使用するようにしてください。`aria-label`属性は利用状況によってはうまく機能しません。たとえばウェブページを機械翻訳にかけたときに翻訳されないといった場合があります。
+`aria-labelledby`属性を優先して使用するようにしてください。`aria-label`属性は利用状況によってはうまく機能しません。たとえばウェブページを機械翻訳にかけたときに翻訳されない場合があります。
 
 <Cases>
   <div slot="title">
-    ##### 具体例①：可視ラベルのない検索フィールド
+    ##### 具体例①：ラベルのない検索フィールド
   </div>
   <Case span={2} type="good">
     <div slot="figure">
@@ -45,7 +45,7 @@ import Level from "../../../components/Level.astro";
       ```
     </div>
     <span slot="title">`aria-labelledby`属性を使用する</span>
-    <span>コントロールに`aria-labelledby`属性を付与し、ラベルの要素（不可視でも構わない）の`id`を指定します。</span>
+    <span>コントロールに`aria-labelledby`属性を付与し、コントロールの名前を含む要素（不可視でも構わない）の`id`を指定します。</span>
   </Case>
 </Cases>
 
