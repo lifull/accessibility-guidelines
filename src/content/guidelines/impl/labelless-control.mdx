@@ -1,0 +1,62 @@
+---
+area: impl
+category: forms
+level: 1
+title: ラベルのないコントロール
+slug: labelless-control
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Cases from "../../../components/Cases.astro";
+import Case from "../../../components/Case.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint title="コントロールにラベルがなく、資料に名前の指定もない場合、名前の案を考え、コンテンツオーナーと認識をそろえる" />
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`aria-labelledby`属性もしくは`aria-label`属性をつかってフォームコントロールに名前を指定する</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+デザイン上の理由でフォームコントロールのラベルが画面上から省略されている場合でも、フォームコントロールは名前を持つ必要があります。
+
+ラベルのないコントロールに名前を付ける方法は2通りあります。`aria-labelledby`を使うと、ページ中の任意の要素のテキストをコントロールの名前として使用できます。`aria-label`属性はコントロールに直接名前を指定できます。
+
+`aria-labelledby`属性を優先して使用するようにしてください。`aria-label`属性は利用状況によってはうまく機能しません。たとえばウェブページを機械翻訳にかけたときに翻訳されない場合があります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ラベルのない検索フィールド
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <form>
+        <span id="hidden-label" style="display: none">検索キーワード</span>
+        <input type="search" aria-labelledby="hidden-label" />
+        <button type="submit">検索</button>
+      </form>
+      ```
+    </div>
+    <span slot="title">`aria-labelledby`属性を使用する</span>
+    <span>コントロールに`aria-labelledby`属性を付与し、コントロールの名前を含む要素（不可視でも構わない）の`id`を指定する。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <form>
+        <input type="search" aria-label="検索キーワード" />
+        <button type="submit">検索</button>
+      </form>
+      ```
+    </div>
+    <span slot="title">`aria-label`属性を使用する</span>
+    <span>`aria-label`属性を使用し、コントロールに名前を直接指定する。</span>
+  </Case>
+</Cases>
