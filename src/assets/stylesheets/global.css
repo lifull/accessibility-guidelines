@@ -110,4 +110,13 @@
       scroll-margin-block: 3rem;
     }
   }
+  
+  @media (prefers-contrast: more) {
+    html {
+      --color-text: #000000;
+      --color-icon: #1f1f1f;
+      --color-dimmed: #1f1f1f;
+      --color-border: #1f1f1f;
+    }
+  }
 }
