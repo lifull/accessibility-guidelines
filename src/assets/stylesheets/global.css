@@ -2,7 +2,7 @@
   font-family: LIFULLFONT;
   font-style: normal;
   font-weight: normal;
-  font-display: optional;
+  font-display: swap;
   src: url("https://font.lifull.com/lifullfont/woff2/medium.woff2")
   format("woff2");
   unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
@@ -13,7 +13,7 @@
   font-family: LIFULLFONT;
   font-style: normal;
   font-weight: bold;
-  font-display: optional;
+  font-display: swap;
   src: url("https://font.lifull.com/lifullfont/woff2/bold.woff2")
   format("woff2");
   unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
@@ -24,7 +24,7 @@
   font-family: LIFULLFONT;
   font-style: normal;
   font-weight: 900;
-  font-display: optional;
+  font-display: swap;
   src: url("https://font.lifull.com/lifullfont/woff2/heavy.woff2")
   format("woff2");
   unicode-range: U+21-3B, U+3D, U+3F-5B, U+5D, U+5F, U+61-7B, U+7D, U+AB, U+F7,
