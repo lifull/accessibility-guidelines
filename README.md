@@ -63,4 +63,4 @@ LIFULLアクセシビリティガイドラインへの貢献は、以下の方�
 
 ## ライセンス
 
-このリポジトリのコンテンツは、[クリエイティブ・コモンズ 表示 4.0 国際 ライセンス (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.ja) の下でライセンスされています。
+このリポジトリのコンテンツは、[クリエイティブ・コモンズ 表示 4.0 国際 ライセンス (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.ja) の下でライセンスされています。

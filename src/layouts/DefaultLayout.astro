@@ -14,7 +14,7 @@ import radioButtonBlank from "../assets/images/radio-button-blank.svg";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
+const { title, titleSuffix = true, license } = Astro.props.frontmatter || Astro.props;
 ---
 
 <html class="no-js" lang="ja">
@@ -35,7 +35,8 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
     <link rel="license" href="/accessibility-guidelines/LICENSE.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <style is:inline>@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=optional");</style>
+    <link rel="preconnect" href="https://font.lifull.com" crossorigin />
+    <style is:inline>@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap");</style>
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-YKH9N173K4"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -54,7 +55,7 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
         <main id="main">
           <slot />
         </main>
-        <Footer />
+        <Footer license={license} />
       </div>
     </div>
   </body>
