@@ -1,7 +1,6 @@
 {
   "name": "lifull-accessibility-guidelines",
   "private": true,
-  "license": "CC-BY-4.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
