@@ -14,7 +14,7 @@ import radioButtonBlank from "../assets/images/radio-button-blank.svg";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
+const { title, titleSuffix = true, license } = Astro.props.frontmatter || Astro.props;
 ---
 
 <html class="no-js" lang="ja">
@@ -55,7 +55,7 @@ const { title, titleSuffix = true } = Astro.props.frontmatter || Astro.props;
         <main id="main">
           <slot />
         </main>
-        <Footer />
+        <Footer license={license} />
       </div>
     </div>
   </body>

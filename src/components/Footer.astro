@@ -1,19 +1,23 @@
 ---
 import ccBy from "../assets/images/cc-by.svg";
 import lifullLogo from "../assets/images/lifull-logo.svg";
+
+const { license = true } = Astro.props;
 ---
 
 <footer class="footer">
-  <p class="license">
-    <img src={ccBy.src} alt="CC BY" width="88" height="31" class="cc-by" />
-    <span>
-      本ガイドラインは
-      <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" rel="license">
-        CC BY 4.0 ライセンス
-      </a>
-      の下に提供されています
-    </span>
-  </p>
+  {license && (
+    <p class="license">
+      <img src={ccBy.src} alt="CC BY" width="88" height="31" class="cc-by" />
+      <span>
+        本ガイドラインは
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" rel="license">
+          CC BY 4.0 ライセンス
+        </a>
+        の下に提供されています。<a href="/accessibility-guidelines/LICENSE.html">ライセンス情報</a>もご覧ください。
+      </span>
+    </p>
+  )}
   <p class="lifull">
     <a href="https://lifull.com/" rel="external" class="logo-link">
       <img
