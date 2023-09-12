@@ -1,11 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
-  #push:
-  #  branches: [ publish ]
-  pull_request:
+  # Trigger the workflow every time you push to the `publish` branch
+  push:
+    branches: [ publish ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -28,16 +26,16 @@ jobs:
           # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
           # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
-  #deploy:
-  #  needs: build
-  #  runs-on: ubuntu-latest
-  #  environment:
-  #    name: github-pages
-  #    url: ${{ steps.deployment.outputs.page_url }}
-  #  steps:
-  #    - name: Deploy to GitHub Pages
-  #      id: deployment
-  #      uses: actions/deploy-pages@v1
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 
   upload-to-s3:
     needs: build
@@ -48,16 +46,15 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: github-pages
-      - name: Confirm the downloaded artifact
+      - name: Extract the downloaded artifact
         run: |
           mkdir -p artifact
           tar -xvf ${{steps.download.outputs.download-path}}/artifact.tar -C artifact
-          ls -l artifact
-      #- name: Configure AWS credentials
-      #  uses: aws-actions/configure-aws-credentials@v2
-      #  with:
-      #    role-to-assume: ${{ env.AWS_ROLE_ARN }}
-      #    aws-region: ap-northeast-1
-      #- name: Upload to S3
-      #  run: |
-      #    aws s3 sync artifact s3://${{ env.AWS_S3_BUCKET_NAME }}/accessibility-guidelines --delete
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      - name: Upload to S3
+        run: |
+          aws s3 sync artifact s3://${{ env.AWS_S3_BUCKET_NAME }}/accessibility-guidelines --exclude "*" --include "*.html" --delete
