@@ -40,6 +40,9 @@ jobs:
   upload-to-s3:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      AWS_ROLE_ARN: arn:aws:iam::919724784271:role/keelai-production-S3Stack-S3LoaderSourceUploadActi-YOGFUB3GYHD3
+      AWS_S3_BUCKET_NAME: keelai-production-s3stack-u0-s3loadersourcebucket-1908kbpqpaz9i
     steps:
       - name: Download artifact
         id: download
