@@ -28,7 +28,4 @@ export default defineConfig({
     ],
   },
   integrations: [mdx()],
-  experimental: {
-    assets: true,
-  },
 });
