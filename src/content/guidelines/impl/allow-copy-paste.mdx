@@ -1,0 +1,28 @@
+---
+area: impl
+category: forms
+level: 2
+title: コピー＆ペーストの許容
+slug: allow-copy-paste
+---
+
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Level from "../../../components/Level.astro";
+
+#### チェック項目
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">コピー＆ペーストを禁止しない</span>
+</Checkpoint>
+
+#### 「{frontmatter.title}」とは
+
+<Level level={frontmatter.level} />
+
+特定の認知障害を持つユーザーは、ユーザー名とパスワードの記憶に苦労することがあるため、コピー＆ペーストが禁止されているログインフォームなどが利用できないことがあります。
+
+##### 参考情報
+
+- [Understanding Success Criterion 3.3.8: Accessible Authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html)
+- [Understanding Success Criterion 3.3.9: Accessible Authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html)
