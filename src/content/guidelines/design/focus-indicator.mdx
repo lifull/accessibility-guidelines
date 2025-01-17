@@ -9,6 +9,7 @@ slug: focus-indicator
 import focusIndicator from "../../../assets/images/design/focus-indicator.svg";
 import focusIndicator2 from "../../../assets/images/design/focus-indicator-2.svg";
 import focusIndicator3 from "../../../assets/images/design/focus-indicator-3.svg";
+import focusIndicator4 from "../../../assets/images/design/focus-indicator-4.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -60,6 +61,17 @@ import Level from "../../../components/Level.astro";
       alt=""
       width={focusIndicator3.width}
       height={focusIndicator3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="背景色を用いて表現されたフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator4.src}
+      alt=""
+      width={focusIndicator4.width}
+      height={focusIndicator4.height}
       loading="lazy"
       decoding="async"
     />
