@@ -29,6 +29,8 @@ import Level from "../../../components/Level.astro";
 
 `input`要素の`type`属性や`autocomplete`属性を使用して入力フィールドの目的を特定しておくと、目的に応じたソフトウェアキーボードが表示されたり、ブラウザーに保存された値の補完機能を利用できるようになったりします。
 
+補完機能を提供することで、入力時にかかる認知負荷を下げることができます。ログイン画面の入力項目のような記憶を要する場所に設定することは特に重要です。
+
 <Cases>
   <div slot="title">
     ##### 具体例①：クレジットカード番号の入力欄
@@ -68,3 +70,8 @@ import Level from "../../../components/Level.astro";
     <span slot="title">入力方式を指定するために`inputmode`を用いる。</span>
   </Case>
 </Cases>
+
+##### 参考情報
+
+- [Understanding Success Criterion 3.3.8: Accessible Authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html)
+- [Understanding Success Criterion 3.3.9: Accessible Authentication](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html)

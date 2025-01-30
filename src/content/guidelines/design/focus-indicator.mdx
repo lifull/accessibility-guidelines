@@ -9,6 +9,7 @@ slug: focus-indicator
 import focusIndicator from "../../../assets/images/design/focus-indicator.svg";
 import focusIndicator2 from "../../../assets/images/design/focus-indicator-2.svg";
 import focusIndicator3 from "../../../assets/images/design/focus-indicator-3.svg";
+import focusIndicator4 from "../../../assets/images/design/focus-indicator-4.svg";
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Cases from "../../../components/Cases.astro";
 import Case from "../../../components/Case.astro";
@@ -18,6 +19,8 @@ import Level from "../../../components/Level.astro";
 
 <Checkpoint title="フォーカスインジケーターを除去しない" />
 <Checkpoint title="アウトライン型のフォーカスインジケーターは、APCA 45以上の色コントラストを確保する" />
+<Checkpoint title="フォーカスインジケーターは十分な太さ(2px以上)である" />
+<Checkpoint title="背景色を用いたフォーカス表現は比較対象となる要素との距離を空けすぎない" />
 
 #### 「{frontmatter.title}」とは
 
@@ -62,9 +65,21 @@ import Level from "../../../components/Level.astro";
       decoding="async"
     />
   </Case>
+  <Case type="good" title="背景色を用いて表現されたフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator4.src}
+      alt=""
+      width={focusIndicator4.width}
+      height={focusIndicator4.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
 </Cases>
 
 ##### 参考情報
 
 - [達成基準 2.4.7: フォーカスの可視化を理解する](https://waic.jp/translations/WCAG21/Understanding/focus-visible.html)
 - [達成基準 1.4.11: 非テキストのコントラストを理解する](https://waic.jp/translations/WCAG21/Understanding/non-text-contrast.html)
+- [達成基準 2.4.13: フォーカスの外観](https://waic.jp/translations/WCAG22/Understanding/focus-appearance.html)
