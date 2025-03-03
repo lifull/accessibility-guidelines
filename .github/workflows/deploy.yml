@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
 
   upload-to-s3:
     needs: build
@@ -52,7 +52,7 @@ jobs:
     steps:
       - name: Download artifact
         id: download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: github-pages
       - name: Extract the downloaded artifact
