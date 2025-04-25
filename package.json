@@ -5,13 +5,19 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "generate-llms": "node ./scripts/generate-llms-txt.js",
+    "generate-llms-from-html": "node ./scripts/generate-llms-from-html.js"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^2.1.3",
     "@astrojs/mdx": "^0.18.3",
     "@hotwired/stimulus": "^3.2.1",
     "astro": "^2.2.2",
-    "rehype-autolink-headings": "^6.1.1"
+    "rehype-autolink-headings": "^6.1.1",
+    "turndown": "^7.2.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3"
   }
 }

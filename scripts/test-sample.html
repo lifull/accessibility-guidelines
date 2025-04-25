@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アクセシビリティガイドライン | サンプル</title>
+</head>
+<body>
+  <header>
+    <nav>This should be removed</nav>
+  </header>
+  <main>
+    <h1>見出しレベルに一貫性を持たせる (レベル1)</h1>
+    <p>見出しレベル（h1～h6）は、文書構造を表すセマンティックな要素です。見出しの階層構造は、文書の論理的な構造を示し、スクリーンリーダーのユーザーがコンテンツを理解するのに役立ちます。</p>
+    
+    <h2>良い実装例</h2>
+    <p>以下のように、見出しレベルが論理的に使われている例：</p>
+    <pre><code>&lt;h1&gt;ページのメインタイトル&lt;/h1&gt;
+  &lt;h2&gt;セクション1&lt;/h2&gt;
+    &lt;h3&gt;サブセクション1.1&lt;/h3&gt;
+    &lt;h3&gt;サブセクション1.2&lt;/h3&gt;
+  &lt;h2&gt;セクション2&lt;/h2&gt;</code></pre>
+    
+    <h2>悪い実装例</h2>
+    <p>以下のように、見出しレベルが飛んでいる例：</p>
+    <pre><code>&lt;h1&gt;ページのメインタイトル&lt;/h1&gt;
+  &lt;h3&gt;セクション1&lt;/h3&gt; &lt;!-- h2をスキップしている --&gt;
+    &lt;h4&gt;サブセクション1.1&lt;/h4&gt;
+  &lt;h2&gt;セクション2&lt;/h2&gt; &lt;!-- 階層構造が一貫していない --&gt;</code></pre>
+    
+    <h2>テスト用の図</h2>
+    <figure>
+      <img src="example.jpg" alt="見出し構造の例">
+      <figcaption>見出し構造のサンプル図</figcaption>
+    </figure>
+    
+    <h2>チェックポイント</h2>
+    <ul>
+      <li>h1からh6までの見出しを順番に使用しているか</li>
+      <li>見出しレベルをスキップしていないか（h1の次にh3を使うなど）</li>
+      <li>見出しが装飾目的だけで使われていないか</li>
+    </ul>
+  </main>
+  <footer>
+    <p>Copyright © 2025</p>
+  </footer>
+</body>
+</html>
