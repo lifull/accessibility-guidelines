@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "generate-llms": "node ./scripts/generate-llms-txt.js",
-    "generate-llms-from-html": "node ./scripts/generate-llms-from-html.js"
+    "generate-llms-from-html": "npm run build && node ./scripts/generate-llms-from-html-improved.js"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^2.1.3",

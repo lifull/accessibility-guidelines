@@ -26,6 +26,8 @@ This file contains accessibility guidelines for designers and developers (HTML v
 
 ### [ガイドラインについて はじめに](https://lifull.github.io/accessibility-guidelines/introduction) (レベル1)
 
+### [画像に適切なalt属性を設定する](https://lifull.github.io/accessibility-guidelines/test/sample) (レベル1)
+
 ### [ガイドラインについて 利用方法](https://lifull.github.io/accessibility-guidelines/usage) (レベル1)
 
 ## 実装のガイドライン

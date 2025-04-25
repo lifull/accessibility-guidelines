@@ -185,8 +185,8 @@ function cleanupHtml(html) {
 
 // Define paths
 const DIST_DIR = path.join(__dirname, '..', 'dist');
-const OUTPUT_FILE = path.join(__dirname, '..', 'llms.txt');
-const OUTPUT_FILE_FULL = path.join(__dirname, '..', 'llms-full-html.txt');
+const OUTPUT_FILE = path.join(__dirname, '..', 'llms-from-html.txt');
+const OUTPUT_FILE_FULL = path.join(__dirname, '..', 'llms-full-from-html.txt');
 const BASE_URL = 'https://lifull.github.io/accessibility-guidelines';
 
 // Function to recursively get all files with .html extension
