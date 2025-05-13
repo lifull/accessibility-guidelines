@@ -1,0 +1,40 @@
+# LIFULL Accessibility Guidelines
+
+> アクセシビリティに配慮したデザインと実装のためのガイドライン
+
+This file contains accessibility guidelines for designers and developers (HTML version).
+
+## metadata
+- url: https://lifull.github.io/accessibility-guidelines/
+- version: v3.0
+
+## デザインのガイドライン
+
+### [ライセンス情報](https://lifull.github.io/accessibility-guidelines/LICENSE) (レベル1)
+
+### [アクセシブルなデザインパターン](https://lifull.github.io/accessibility-guidelines/accessible-patterns) (レベル1)
+
+### [代替テキストの考え方](https://lifull.github.io/accessibility-guidelines/alternative-text) (レベル1)
+
+### [デザイン コンテンツ](https://lifull.github.io/accessibility-guidelines/design-contents) (レベル1)
+
+### [デザイン フォーム・インタラクション](https://lifull.github.io/accessibility-guidelines/design-forms-and-interactions) (レベル1)
+
+### [デザイン ビジュアル](https://lifull.github.io/accessibility-guidelines/design-visual) (レベル1)
+
+### [LIFULL Accessibility Guidelines](https://lifull.github.io/accessibility-guidelines/index) (レベル1)
+
+### [ガイドラインについて はじめに](https://lifull.github.io/accessibility-guidelines/introduction) (レベル1)
+
+### [画像に適切なalt属性を設定する](https://lifull.github.io/accessibility-guidelines/test/sample) (レベル1)
+
+### [ガイドラインについて 利用方法](https://lifull.github.io/accessibility-guidelines/usage) (レベル1)
+
+## 実装のガイドライン
+
+### [実装 フォーム](https://lifull.github.io/accessibility-guidelines/impl-forms) (レベル1)
+
+### [実装 インタラクション](https://lifull.github.io/accessibility-guidelines/impl-interactions) (レベル1)
+
+### [実装 マークアップ](https://lifull.github.io/accessibility-guidelines/impl-markup) (レベル1)
+

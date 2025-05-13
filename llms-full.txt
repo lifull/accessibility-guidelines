@@ -1,0 +1,2152 @@
+# LIFULL Accessibility Guidelines
+
+> アクセシビリティに配慮したデザインと実装のためのガイドライン
+
+This file contains accessibility guidelines for designers and developers.
+
+## metadata
+- url: https://lifull.github.io/accessibility-guidelines/
+- version: v3.0
+
+## 目次
+
+- [デザインのガイドライン](#デザインのガイドライン)
+  - [自動再生するコンテンツ (レベル1)](#-1)
+  - [閃光 (レベル1)](#-1)
+  - [見出し (レベル1)](#-1)
+  - [画像の代替テキスト (レベル1)](#-1)
+  - [ページタイトル (レベル1)](#-1)
+  - [動画の字幕 (レベル1)](#-1)
+  - [音声のみのコンテンツ (レベル2)](#-2)
+  - [グラフや図 (レベル2)](#-2)
+  - [データ可視化 (レベル2)](#-2)
+  - [テキスト画像 (レベル2)](#-2)
+  - [表 (レベル2)](#-2)
+  - [動画コンテンツ（音声を含む） (レベル2)](#-2)
+  - [リンクテキスト (レベル3)](#-3)
+  - [コンテンツの順序 (レベル3)](#-3)
+  - [目次とサイトマップ (レベル3)](#-3)
+  - [カスタムUIのキーボード操作 (レベル1)](#ui-1)
+  - [定番のパターン (レベル1)](#-1)
+  - [キーボード操作 (レベル1)](#-1)
+  - [ホバーで表示されるコンテンツ (レベル2)](#-2)
+  - [エラーメッセージ (レベル2)](#-2)
+  - [エラーメッセージの提示 (レベル2)](#-2)
+  - [フォームコントロールのラベル (レベル2)](#-2)
+  - [シンプルなポインター操作 (レベル2)](#-2)
+  - [デバイスの向き (レベル3)](#-3)
+  - [新しいタブで開くリンク (レベル3)](#-3)
+  - [予測可能なパターン (レベル3)](#-3)
+  - [時間制限 (レベル3)](#-3)
+  - [ユーザー認証 (レベル3)](#-3)
+  - [フォーカスインジケーター (レベル1)](#-1)
+  - [リンクの判別 (レベル1)](#-1)
+  - [状態の判別 (レベル1)](#-1)
+  - [レスポンシブデザイン (レベル2)](#-2)
+  - [ターゲットサイズ (レベル2)](#-2)
+  - [テキストの色コントラスト (レベル2)](#-2)
+  - [テキストの均等割付 (レベル2)](#-2)
+  - [アイコンやUIコンポーネントの色コントラスト (レベル2)](#ui-2)
+- [実装のガイドライン](#実装のガイドライン)
+  - [背景画像 (レベル1)](#-1)
+  - [見出し (レベル1)](#-1)
+  - [画像の代替テキスト (レベル1)](#-1)
+  - [ページの言語 (レベル1)](#-1)
+  - [ページタイトル (レベル1)](#-1)
+  - [調整可能な文字サイズ (レベル2)](#-2)
+  - [グループ化された画像 (レベル2)](#-2)
+  - [ランドマーク領域 (レベル2)](#-2)
+  - [意味のある順序 (レベル2)](#-2)
+  - [改行と空白文字 (レベル2)](#-2)
+  - [正しい構文と文法 (レベル3)](#-3)
+  - [フォームコントロールのラベル (レベル1)](#-1)
+  - [ラベルのないコントロール (レベル1)](#-1)
+  - [コピー＆ペーストの許容 (レベル2)](#-2)
+  - [フォームコントロールのグループ化 (レベル2)](#-2)
+  - [入力目的の特定 (レベル2)](#-2)
+  - [フォームコントロールの説明文 (レベル3)](#-3)
+  - [ズームの許容 (レベル1)](#-1)
+  - [フォーカスインジケーター (レベル1)](#-1)
+  - [挿入されるコンテンツ (レベル1)](#-1)
+  - [ボタンの使用 (レベル1)](#-1)
+  - [ホバーで表示されるコンテンツ (レベル2)](#-2)
+  - [文脈に応じたフォーカス (レベル2)](#-2)
+  - [Escapeキー操作 (レベル2)](#escape-2)
+  - [外部コンテンツおよびUIライブラリ (レベル2)](#ui-2)
+  - [隠されているコンテンツ (レベル2)](#-2)
+  - [WAI-ARIA (レベル2)](#wai-aria-2)
+  - [背後のコンテンツ (レベル3)](#-3)
+  - [ダウンイベントの使用 (レベル3)](#-3)
+  - [ドラッグ操作の中断 (レベル3)](#-3)
+  - [ステータスの通知 (レベル3)](#-3)
+
+## デザインのガイドライン
+
+### 自動再生するコンテンツ (レベル1)
+
+- 再生が自動的に始まる
+  - 再生が5秒よりも長く続く
+  - 他のコンテンツと並行して提示される
+  - 再生を一時停止、または非表示にする手段がない
+
+
+
+  - 自動更新が自動的に始まる
+  - 他のコンテンツと並行して提示される
+  - 自動更新を一時停止、または非表示にする手段がない
+
+
+
+
+
+
+画面内に自動再生するコンテンツがあることで、特定のユーザーがウェブページの利用が困難になることがあります。以下はその一例です。
+
+- 注意欠陥障害をもつユーザーは動き続けるコンテンツに注意を取られ、ページのほかの部分を利用できなくなることがあります。
+- 情報の取得に時間がかかる人は、コンテンツを読み終わる前に表示が切り替わってしまうかもしれません。
+- コンテンツの変化に伴い、フォーカスがリセットされたり音声が途切れたりすることによって、スクリーンリーダー利用上の妨げになることがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：自動再生する映像
+    
+    <p>
+      <img
+        src={autostartContent.src}
+        alt=""
+        width={autostartContent.width}
+        height={autostartContent.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="bad" title="演出ビデオが背景で動き続ける">
+    ページにアクセスすると背景で映像が流れ始める。映像の前面にはロゴ、ナビゲーション、テキストが表示されている。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
+  </Case>
+  <Case span={2} type="good" title="再生を一時停止できるようにする">
+    目立つ場所に一時停止ボタンを配置する。ユーザーは一時停止ボタンを押すことで再生を止めることができる。
+  </Case>
+  <Case span={2} type="good" title="再生を5秒以内に停止する">
+    ページにアクセスすると背景で映像が流れるが、映像は5秒以内に終了し再生が止まる。
+  </Case>
+</Cases>
+
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：自動でスライドが切り替わるカルーセル
+  </div>
+  <Case type="bad" title="一時停止できない">
+    ページにアクセスするとカルーセルが自動的に再生を始める。目立つ場所に一時停止ボタンが配置されておらず、ユーザーが動きを止めることができない。
+  </Case>
+  <Case type="good" title="再生を一時停止できるようにする">
+    目立つ場所に一時停止ボタンを配置する。ユーザーは一時停止ボタンを押すことで再生を止めることができる。
+  </Case>
+  <Case type="good" title="自動再生しないようにする">
+    カルーセルを自動再生しないようにする。
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例③：注意喚起のアイコン
+  </div>
+  <Case type="bad" title="一定周期で動き続ける">
+    ユーザーの注意を促すためにヘッダーの通知アイコンが定期的に揺れ動く。ヘッダーはページスクロールに追随し常に表示されている。
+  </Case>
+  <Case type="good" title="動きを5秒以内に停止する">
+    ページを読み込むと、ヘッダーの通知アイコンが3回揺れ動き停止する。揺れる動きは5秒以内に停止する。
+  </Case>
+</Cases>
+
+詳細: [自動再生するコンテンツ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 閃光 (レベル1)
+
+<Checkpoint title="閃光を放つコンテンツは避ける" />
+<Checkpoint title="閃光を放つコンテンツは、1秒間に3回より遅く点滅するようにする" />
+<Checkpoint title="1秒間に3回以上点滅する場合は、点滅するコンテンツのサイズを小さくする" />
+
+
+
+
+
+閃光を放つ（激しく点滅する）コンテンツは可能な限り避けてください。必要な場合は点滅の速度や色差・面積を小さくする対策を講じてください。
+
+光感受性による発作性障害のある人は、閃光を放つコンテンツによって発作を引き起こす恐れがあります。
+
+詳細: [閃光](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 見出し (レベル1)
+
+<Checkpoint title="情報構造を階層化して整理し、セクションの内容を表す簡潔な見出しを付ける" />
+
+<Checkpoint title="連続した見出しレベル（H1→H2→H3→…）を用いる" />
+
+<Checkpoint title="メインエリアにひとつのH1見出しを設定する" />
+
+
+
+
+
+ページの情報構造を見出しを使って整理すると、ユーザーが情報を素早く把握できるようになります。特に、スクリーンリーダーの利用者は見出しを拾い読みすることでページの全体構造を把握しています。
+
+詳細: [見出し](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 画像の代替テキスト (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">「代替テキストの考え方」のガイドを参考に、代替テキストを指定する</span>
+
+
+
+
+
+
+視覚障害者はスクリーンリーダーを通じて代替テキストを合成音声または点字で読むことになります。ネットワーク状況によって画像がうまく読み込まれなかったときにも代替テキストが使われます。代替テキストが不十分だったり指定されていなかったりすると、必要な情報が伝わらなくなってしまいます。
+
+適切な代替テキストは前後の文脈やユーザーに伝えたい情報によって変化します。「代替テキストの考え方」は適切な代替テキストを考えるときに有用なガイドとなっています。
+
+詳細: [画像の代替テキスト](https://lifull.github.io/accessibility-guidelines/design/)
+
+### ページタイトル (レベル1)
+
+<Checkpoint title="ページのトピックを表す簡潔なテキストをページタイトルにする" />
+
+<Checkpoint title="ページごとに異なるユニークなページタイトルにする" />
+
+
+
+
+
+ページタイトルは、ページの主題を表す簡潔なテキストを指定してください。ページタイトルはブラウザのタブに表示され、スクリーンリーダーによって読み上げられます。ページの内容を把握したり、たくさん並んだタブの中から目的のタブを探すための重要な手がかりとしてページタイトルは重要です。
+
+詳細: [ページタイトル](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 動画の字幕 (レベル1)
+
+<Checkpoint title="動画に字幕を提供する（動画に埋め込むまたは、設定で有効化できるようにする）" />
+
+
+
+
+
+動画に字幕を付けると、聴覚障害者のみならず、音を出せない環境や状況にあるユーザーにとっても動画を利用しやすくなります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：字幕付きの動画
+
+    <p>
+      <img
+        src={videoCaption.src}
+        alt="字幕付き動画のイラスト"
+        width={videoCaption.width}
+        height={videoCaption.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="good" title="YouTubeに動画をアップロードする">
+    YouTubeに動画をアップロードすると自動的に音声が文字起こしされます。生成された字幕をもとに手直しをすると、字幕をつける手間が大幅に省けます。
+  </Case>
+</Cases>
+
+詳細: [動画の字幕](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 音声のみのコンテンツ (レベル2)
+
+<Checkpoint title="音声のみコンテンツに、代替コンテンツを提供する" />
+
+
+
+
+
+映像を伴わない音声のみのコンテンツ（例えばポッドキャスト）は、聴覚障害者が利用することができません。書き起こしテキストなどを用いて、音声と同等の情報を含む代替コンテンツを提供してください。
+
+詳細: [音声のみのコンテンツ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### グラフや図 (レベル2)
+
+<Checkpoint title="グラフの傾向や要点を簡潔にまとめ、テキストや代替テキストで提供する" />
+<Checkpoint title="グラフの元データをHTMLの表で提供するか、ダウンロードできるようにする（有用な場合）" />
+<Checkpoint title="図が伝えている情報をテキストや代替テキストで提供する" />
+
+
+
+
+
+グラフや図は多くの情報を効率的に伝えられる表現方法ですが、視覚に偏った表現になりがちなため、視覚による情報取得に制約があるユーザーには情報が伝わりづらいことがあります。
+
+グラフや図は複雑になりすぎないようにしてください。グラフや図に含まれる情報量が、本文または代替テキストが伝える情報量を大きく上回ることのないようにしてください。
+
+グラフの元データを利用できるようにしておくと、データの利用性やアクセシビリティが向上します。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：複雑な概念図
+    
+    <p>
+      <img
+        src={chartAndDiagram.src}
+        alt=""
+        width={chartAndDiagram.width}
+        height={chartAndDiagram.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="bad" title="画像のタイトルのみ指定されている">
+    複雑な概念を説明するための図があり、画像のタイトルが代替テキストに設定されている。スクリーンリーダー利用者には画像の内容が伝わらない。
+  </Case>
+  <Case span={2} type="good" title="複雑な図に具体的な代替テキストを設定する">
+    複雑な概念を説明するための図があり、概念の説明をテキスト化したものが代替テキストに設定されている。
+  </Case>
+  <Case span={2} type="good" title="本文を用いて概念について説明する">
+    図が説明している内容を、本文で取り上げる。見出しや箇条書き等を利用しわかりやすく表現する。図はあくまでも補佐的な役割にとどめるようにする。
+  </Case>
+</Cases>
+
+詳細: [グラフや図](https://lifull.github.io/accessibility-guidelines/design/)
+
+### データ可視化 (レベル2)
+
+<Checkpoint title="グラフの視覚的要素と凡例を色以外の手段で紐づけられるようにする" />
+
+
+
+
+
+グラフを表現している視覚的要素（点や線・面など）と凡例を、色だけを手掛かりに紐づけていると、ロービジョンや色覚特性のあるユーザーにとって利用しづらくなることがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：凡例付きの円グラフ
+  </div>
+  <Case type="bad" title="グラフ面と凡例を色で紐づけている">
+    <img
+      slot="figure"
+      src={dataVisualization.src}
+      alt="グラフ面と凡例を色で紐づけている例"
+      width={dataVisualization.width}
+      height={dataVisualization.height}
+      loading="lazy"
+      decoding="async"
+    />
+    グラフ面と凡例を色だけを手掛かりに紐づけている。P型色覚での見え方をシミュレーションすると色の判別が困難になる。
+  </Case>
+  <Case type="good" title="グラフ面に直接ラベルを配置する">
+    <img
+      slot="figure"
+      src={dataVisualization2.src}
+      alt="グラフ面から線を引きラベルを配置している例"
+      width={dataVisualization2.width}
+      height={dataVisualization2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    グラフ面に直接ラベルを配置することで、色に依存しない必要がなくなる。
+  </Case>
+</Cases>
+
+詳細: [データ可視化](https://lifull.github.io/accessibility-guidelines/design/)
+
+### テキスト画像 (レベル2)
+
+<Checkpoint title="テキスト画像を使用しない" />
+
+
+
+
+
+ロービジョンのユーザーはテキストを自分の読みやすい配色に変換する支援技術を使っていることがあります。テキストが画像化されていると、この変換が行われなくなります。ロゴやアプリケーションのスクリーンショットなど、テキストが画像と一体化している場合は例外です。
+
+詳細: [テキスト画像](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 表 (レベル2)
+
+<Checkpoint title="表は画像ではなくマークアップされるものとしてデザインする" />
+<Checkpoint title="入れ子構造になっている表や、見出しが入り組んでいる表は、より簡潔に表現できないか検討する" />
+
+
+
+
+
+表は画像化せず、HTMLをつかってマークアップされるものとしてデザインしてください。
+
+セルの結合を多用した表や1件のデータが複数行にわたる表、入れ子構造になっている表は、理解しやすさやスクリーンリーダーによる利用性が下がります。多くの情報量を表に含めようとせず、いくつかのシンプルな表に分割できないかどうか検討してください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：セルの結合のある表
+  </div>
+  <Case type="bad" title="セルを不必要に結合している">
+    <img
+      slot="figure"
+      src={table.src}
+      alt=""
+      width={table.width}
+      height={table.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="列を有効活用する">
+    <img
+      slot="figure"
+      src={table2.src}
+      alt=""
+      width={table2.width}
+      height={table2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：入れ子になった表
+  </div>
+  <Case type="bad" title="表が入れ子になっている">
+    <img
+      slot="figure"
+      src={table3.src}
+      alt=""
+      width={table3.width}
+      height={table3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="表を分割する">
+    <img
+      slot="figure"
+      src={table4.src}
+      alt=""
+      width={table4.width}
+      height={table4.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+詳細: [表](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 動画コンテンツ（音声を含む） (レベル2)
+
+<Checkpoint title="動画にキャプションを提供する" />
+<Checkpoint title="動画に音声解説を提供するか、代替コンテンツを提供する" />
+
+
+
+
+
+音声付きの動画コンテンツは、視覚障害者や聴覚障害者にとって情報取得の障壁になることがあります。
+
+音を出せないユーザーや聴覚障害者は音声から情報を取得できません。会話や音声・音楽に含まれる情報をキャプションとして提供する必要があります。
+
+視覚障害者は映像から情報を取得できません。動画と同等の情報を含む代替コンテンツを提供するか、音声解説を提供する必要があります。
+
+<Details summary="キャプションとは">
+  会話を文字にした字幕（subtitle）に対して、キャプション（caption）は動画の内容を理解するために必要な詳細な情報を含みます。たとえば効果音・音楽・笑い声・話者の特定・位置など。
+</Details>
+
+<Details summary="音声解説とは">
+  主音声のトラックだけでは理解できない重要で視覚的な詳細を説明するために、音声トラックに追加されたナレーション。動作、登場人物、場面の変化、画面上のテキスト、及びその他の視覚的なコンテンツに関する情報など。
+</Details>
+
+詳細: [動画コンテンツ（音声を含む）](https://lifull.github.io/accessibility-guidelines/design/)
+
+### リンクテキスト (レベル3)
+
+<Checkpoint title="「詳細はこちら」「ここをクリック」などのリンクテキストを避ける" />
+<Checkpoint title="新しいタブを開くリンクにはテキストまたはアイコンを添える" />
+<Checkpoint title="ファイルの種別を明示する" />
+
+
+
+
+
+リンクテキストは遷移先のページタイトルにするなど、遷移先が理解しやすいテキストにしてください。「ここをクリック」といったテキストは単体では遷移先が理解できないため、リンクの前後のテキストを読むまで遷移先が不明瞭な状態になります。
+
+また、リンクをクリックしたときに新しいタブが開かれたり、ファイルがダウンロードされたりすることをあらかじめテキストやアイコンを通じてユーザーに知らせるようにしてください。
+
+詳細: [リンクテキスト](https://lifull.github.io/accessibility-guidelines/design/)
+
+### コンテンツの順序 (レベル3)
+
+<Checkpoint title="コンテンツを意味のある順序で並べる" />
+
+
+
+
+
+スクリーンリーダーはコーディングされた順番どおりに読み上げます。視覚上の順序とコード上の順序が食い違っていたり、情報のヒエラルキーをうまくコード化できていなかったりすると、スクリーンリーダー利用者が混乱してしまうかもしれません。レイアウトを素直にコード化したときに情報のヒエラルキーが崩れてしまいそうなデザインは避けるか、エンジニアとコミュニケーションをとり意図したとおりに読み上げられるようにしてください。
+
+詳細: [コンテンツの順序](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 目次とサイトマップ (レベル3)
+
+<Checkpoint title="必要に応じて目次とサイトマップを提供する" />
+
+
+
+
+
+目次やサイトマップは、ページやウェブサイト全体がどのような構造になっているかを把握するのに役立ちます。
+
+詳細: [目次とサイトマップ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### カスタムUIのキーボード操作 (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">ARIAのキーボードガイダンスに従う</span>
+
+
+<Checkpoint title="妥当なキーボード操作方法についてエキスパートに相談する" />
+
+
+
+
+
+HTMLや既存のデザインパターンでは賄いきれない独自のUIをデザインする場合であっても、基本的なキーボード操作の慣習に従うようにしてください。
+
+詳細: [カスタムUIのキーボード操作](https://lifull.github.io/accessibility-guidelines/design/ui)
+
+### 定番のパターン (レベル1)
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">アクセシビリティが確保された定番のパターンをアクセシブルなデザインパターンから探し、目的が達成できるか検討する</span>
+
+
+
+
+
+
+HTMLにもともと備わっている要素はすべてアクセシブルになるように作られています。HTMLで賄いきれない場合でも、アクセシビリティ確保の方法論が確立されている定番のデザインパターン（タブ・ダイアログなど）を採用するようにしてください。
+
+詳細: [定番のパターン](https://lifull.github.io/accessibility-guidelines/design/)
+
+### キーボード操作 (レベル1)
+
+<Checkpoint title="キーボードですべてのコンテンツや機能を利用できるようにする" />
+
+
+
+
+
+ポインター操作やタッチ操作が使えない人のために、キーボード操作ですべてのコンテンツや機能を利用できるようにしてください。項目の選択・右クリック・ダブルクリック・ホバー・ホイール・ドラッグ＆ドロップ・タッチジェスチャーなどに依存している操作を見つけ、キーボード操作のみで完結できるようにデザインしてください。
+
+<Details summary="キーボード操作の必要性">
+  通常、ウェブページはキーボードのTabキーやEnterキー、矢印キーを使って操作することができます。細かい操作を苦手とする上肢障害のユーザーはマウスやタッチのようなポインティング操作が使えません。ユーザーが操作できる機能はすべて、マウスやタッチだけでなく、キーボードのみで操作できる必要があります。
+</Details>
+
+詳細: [キーボード操作](https://lifull.github.io/accessibility-guidelines/design/)
+
+### ホバーで表示されるコンテンツ (レベル2)
+
+<Checkpoint title="可能なかぎり、ホバーではなく選択でコンテンツを表示する" />
+<Checkpoint title="ユーザーによる明示的な閉じるアクションによって閉じるようにする" />
+
+
+
+
+
+拡大鏡を利用している弱視のユーザーにとって、ポインターホバーで表示されるコンテンツは気づきにくかったり、表示されたコンテンツを読もうとポインターを動かしたとき意図せず閉じてしまうことがあります。ホバーによるコンテンツの表示はできれば避け、明示的な開く・閉じるアクションをトリガーにして表示・非表示をしてください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ツールチップ
+  </div>
+  <Case type="bad" title="マウスオーバーで表示されるツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover.src}
+      alt="「i」アイコンにマウスオーバーしツールチップが表示されているイラスト"
+      width={contentOnHover.width}
+      height={contentOnHover.height}
+      loading="lazy"
+      decoding="async"
+    />
+    マウスオーバーで表示されるツールチップはタッチ端末からのアクセスが良くない。
+  </Case>
+  <Case type="bad" title="拡大鏡に対応していないツールチップ">
+    <img
+      slot="figure"
+      src={contentOnHover2.src}
+      alt="ツールチップを拡大鏡とともに利用し、ツールチップが画面外に表示されているイラスト"
+      width={contentOnHover2.width}
+      height={contentOnHover2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    拡大鏡をつかって画面を大きく拡大しているユーザーは、読みたいテキストが画面外に表示され気づけないことがある。気づけたとしても、ツールチップを読むためにアイコンからマウスカーソルを外すと、ツールチップが閉じてしまうかもしれない。
+  </Case>
+</Cases>
+
+詳細: [ホバーで表示されるコンテンツ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### エラーメッセージ (レベル2)
+
+<Checkpoint title="エラーの発生箇所と原因を具体的に記述する" />
+<Checkpoint title="エラーの修正方法を説明する" />
+
+
+
+
+
+ユーザーの操作によってエラーが発生したとき、エラーについての十分な情報を提示してください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例① エラーの原因を明記する
+  </div>
+  <Case type="bad" title="エラーの原因を明記しない">
+    <img
+      slot="figure"
+      src={errorMessage.src}
+      alt="エラーメッセージ：ログインできませんでした"
+      width={errorMessage.width}
+      height={errorMessage.height}
+      loading="lazy"
+      decoding="async"
+    />
+    なぜログインに失敗したかわからず、ユーザーは修正のためのアクションを起こせない。
+  </Case>
+  <Case type="good" title="エラーの原因を明記する">
+    <img
+      slot="figure"
+      src={errorMessage2.src}
+      alt="エラーメッセージ：ユーザー名またはパスワードが間違っています"
+      width={errorMessage2.width}
+      height={errorMessage2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    なぜログインに失敗したかわかり、ユーザーは修正のためのアクションを起こせる。
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例② エラーの修正方法を説明する
+  </div>
+  <Case type="bad" title="あいまいな修正指示">
+    <img
+      slot="figure"
+      src={errorMessage3.src}
+      alt="エラーメッセージ：ユーザー名を正しい形式で入力してください"
+      width={errorMessage3.width}
+      height={errorMessage3.height}
+      loading="lazy"
+      decoding="async"
+    />
+    正しい形式とは何かが不明瞭で、どのように修正すればよいのかわからない。
+  </Case>
+  <Case type="good" title="具体的で明快な修正指示">
+    <img
+      slot="figure"
+      src={errorMessage4.src}
+      alt="エラーメッセージ：ユーザー名は半角英数で入力してください"
+      width={errorMessage4.width}
+      height={errorMessage4.height}
+      loading="lazy"
+      decoding="async"
+    />
+    要求されている形式や文脈の情報を提供することで、正しい値に修正しやすくなる。
+  </Case>
+</Cases>
+
+詳細: [エラーメッセージ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### エラーメッセージの提示 (レベル2)
+
+<Checkpoint title="エラーメッセージを誰にでも見つけやすいようにする" />
+<Checkpoint title="エラー箇所に容易にたどり着けるようにする" />
+
+
+
+
+
+視覚障害をもつユーザーは操作箇所から離れた場所に注意喚起が出ても気づかない可能性があります。エラー提示の際にページ遷移を伴う場合、ページの上部に目立つようにエラーメッセージを提示してください。動的にエラーを提示する場合、ポインターやフォーカスの付近にエラーを提示するようにしてください。
+
+##### 気づきやすいエラーメッセージの提示パターン
+
+エラーメッセージを表示するタイミングには大別して2種類があります。エラーを含むHTMLをサーバーサイドから返却するものと、JavaScriptを使用してクライアントサイドで動的に行うものです。晴眼者にとってはあまり違いはありませんが、スクリーンリーダー利用者、拡大鏡利用者にとっての体験は大きく異なります。それぞれでの適切な提示方法について理解することが重要です。
+
+エラーを含むHTMLをサーバーサイドから返却する場合、ページ遷移を伴う点に特徴があります。以下のような点に留意するとよいでしょう。
+
+- エラーはページのできるだけ最初のほうに表示する
+- エラー文言から当該箇所にジャンプできるようにする
+- ページタイトルに「エラー」の文言を含めることでエラーの存在により気づきやすくなる
+
+クライアントサイドで動的にエラーを表示する場合、ユーザーが注目している場所から離れた場所にエラーを表示しても気づけないことがあります。以下のような点に留意するとよいでしょう。
+
+- 送信ボタンが押されたとき、送信ボタンの付近にエラーを表示する
+- または、エラーがあることをアラートダイアログで表示する。OKボタンを押すとエラーのあるフォームコントロールにフォーカスを移動する
+- または、エラーが発生した箇所に自動的にフォーカスを移動し、フォームコントロールのすぐそばにエラー文言を表示する
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：エラーを含むHTMLをサーバーサイドから返却する
+  </div>
+  <Case span={2} type="good" title="エラーを含むHTMLをサーバーサイドから返却する">
+    <img
+      slot="figure"
+      src={errorPresentation.src}
+      alt="フォームのエラー画面のイラスト。画面要素が次の順に並んでいる：①「お問合せ」見出し、②「未入力の必須項目があります：氏名」エラー概要文、③「氏名」ラベル、④「エラー：氏名が入力されていません」エラーメッセージ、⑤氏名入力欄、⑥送信ボタン（アクティブ状態）"
+      width={errorPresentation.width}
+      height={errorPresentation.height}
+      loading="lazy"
+      decoding="async"
+    />
+    エラーをページ上部に表示する。各箇所にもエラーの内容を表示する。ページ上部のエラーをクリックすると各箇所にジャンプできるようになっていると尚よい。
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：クライアントサイドで動的にエラーを表示する
+  </div>
+  <Case type="bad" title="送信ボタンを押せなくする">
+    送信ボタンのコントラストを落とし押せない状態にしていると、ユーザーは送信ボタンが見つけられなかったり、送信できない理由が理解できないことがある。
+  </Case>
+  <Case type="bad" title="ボタンから離れた位置にエラーを表示する">
+    送信ボタンから離れた位置で起きた変化は気づかれないことがある。
+  </Case>
+  <Case type="good" title="送信ボタンの付近にエラーを表示する">
+    送信ボタンを常に表示し、送信ボタンが押されたらボタン付近にエラーを表示すると、多くのユーザーがエラーに気づくことができる。
+  </Case>
+</Cases>
+
+詳細: [エラーメッセージの提示](https://lifull.github.io/accessibility-guidelines/design/)
+
+### フォームコントロールのラベル (レベル2)
+
+<Checkpoint title="すべてのフォームコントロールにラベルを設定する" />
+<Checkpoint title="フォームコントロールの付近にラベルを表示する" />
+<Checkpoint title="ラベルを常に表示する" />
+
+
+
+
+
+ユーザーの入力を受け付ける要素（フォームコントロール）のそばに常に表示されるラベルを配置することは、認知障害や弱視をもつユーザーの助けになります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：フォームコントロールのラベル
+  </div>
+  <Case type="bad" title="プレースホルダーでラベルを代用する">
+    <img
+      slot="figure"
+      src={formControlLabel.src}
+      alt=""
+      width={formControlLabel.width}
+      height={formControlLabel.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="bad" title="フォームコントロールとラベルが離れている">
+    <img
+      slot="figure"
+      src={formControlLabel2.src}
+      alt=""
+      width={formControlLabel2.width}
+      height={formControlLabel2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    <span>※程度の問題であり、左寄せのラベルを禁止するものではありません。</span>
+  </Case>
+  <Case type="good" title="フォームコントロールの付近にラベルを表示する">
+    <img
+      slot="figure"
+      src={formControlLabel3.src}
+      alt="フォームコントロールとラベルのセットの例：テキスト入力欄、チェックボックス、ラジオボタン、トグルボタン"
+      width={formControlLabel3.width}
+      height={formControlLabel3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+詳細: [フォームコントロールのラベル](https://lifull.github.io/accessibility-guidelines/design/)
+
+### シンプルなポインター操作 (レベル2)
+
+<Checkpoint title="タッチジェスチャー・ドラッグ・マウスホイールで操作する機能は、シンプルなポインター操作だけでも利用できるようにする" />
+
+
+
+
+
+ピンチ操作やスワイプなどのタッチジェスチャー、ドラッグなどのマウス操作は、運動機能に障害があるユーザーには利用できないかもしれません。マウスホイールなどのデバイス依存の操作は、ユーザーのデバイスが対応していないかもしれません。シングルクリックやダブルクリックなどのシンプルなポインター操作だけでも機能を利用できるようにしてください。 
+
+この要件にはページ全体や、`overflow: scroll;`で表現されるスクロール領域のスクロール操作は含まれません。
+
+詳細: [シンプルなポインター操作](https://lifull.github.io/accessibility-guidelines/design/)
+
+### デバイスの向き (レベル3)
+
+<Checkpoint title="デバイスの向きを制限しない" />
+<Checkpoint title="デバイスの回転なしですべてのコンテンツや機能を利用できるようにする" />
+
+
+
+
+
+運動機能障害を持つユーザーはデバイスの向きを固定して利用していることがあり、デバイスの向きが制限されたコンテンツや機能は利用できないかもしれません。
+
+詳細: [デバイスの向き](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 新しいタブで開くリンク (レベル3)
+
+<Checkpoint title="リンクやフォーム送信を同じタブで開く" />
+
+
+
+
+
+視覚的なコンテンツを知覚するのに困難を伴うユーザーをはじめとする一部のユーザーにとっては、リンクやフォーム送信を新しいタブで開くことは混乱の原因となりえます。
+
+詳細: [新しいタブで開くリンク](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 予測可能なパターン (レベル3)
+
+<Checkpoint title="UIがフォーカスを受取ったときや、フォームコントロール等の値を変更したとき、予測しづらいコンテンツの変化を起こさない" />
+<Checkpoint title="コンテンツを変化させるための確定する操作をユーザーにゆだねる" />
+
+
+
+
+
+予測しづらいことが起きると、支援技術のユーザーや認知障害を持つユーザーは混乱したり、操作ができなくなることがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：プルダウンメニューによるナビゲーション
+    
+    <p>
+      <img
+        src={predictablePattern.src}
+        alt="プルダウンメニューの値を変更する操作をしているイラスト"
+        width={predictablePattern.width}
+        height={predictablePattern.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </p>
+  </div>
+  <Case span={2} type="bad" title="値を変更するとページ遷移する">
+    HTMLの`select`要素で実装された並び順選択UIでは、値が変更されるとページ遷移が行われる。値が変更されたタイミングでページ遷移が起きることは予測が難しい。キーボードユーザーは上下キーを使って値をひとつ変えただけでページ遷移してしまうため、目的の項目を選ぶことができない。
+  </Case>
+</Cases>
+
+詳細: [予測可能なパターン](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 時間制限 (レベル3)
+
+<Checkpoint title="制限時間を設けない" />
+<Checkpoint title="制限時間が必要な場合、利用者が事前に制限時間を延長・無効化できるようにするか、制限時間を 20 時間以上とする" />
+
+
+
+
+
+認知障害をもつユーザーやコンテンツの言語に堪能でないユーザーは、コンテンツを利用するのに時間がかかることがあり、設けられた制限時間では足りないかもしれません。リアルタイムイベント等の制限時間を変更することが不可能な理由がある場合を除いて、制限時間は設けないようにしてください。
+
+詳細: [時間制限](https://lifull.github.io/accessibility-guidelines/design/)
+
+### ユーザー認証 (レベル3)
+
+<Checkpoint title="認知機能テストによるユーザー認証に代替手段を用意する" />
+
+
+
+
+
+パズル認証や計算問題、記憶力を試す問題などは、認知障害を持つユーザーには利用できないことがあります。
+
+詳細: [ユーザー認証](https://lifull.github.io/accessibility-guidelines/design/)
+
+### フォーカスインジケーター (レベル1)
+
+<Checkpoint title="フォーカスインジケーターを除去しない" />
+<Checkpoint title="アウトライン型のフォーカスインジケーターは、APCA 45以上の色コントラストを確保する" />
+<Checkpoint title="フォーカスインジケーターは十分な太さ(2px以上)である" />
+<Checkpoint title="背景色を用いたフォーカス表現は比較対象となる要素との距離を空けすぎない" />
+
+
+
+
+
+フォーカスインジケーターを非表示にすると、キーボードユーザーや弱視のユーザーはコンテンツや機能を利用できなくなってしまいます。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：視認性に配慮したフォーカスインジケーター
+  </div>
+  <Case type="bad" title="コントラストが低すぎる">
+    <img
+      slot="figure"
+      src={focusIndicator.src}
+      alt=""
+      width={focusIndicator.width}
+      height={focusIndicator.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="bad" title="色の変化のみ">
+    <img
+      slot="figure"
+      src={focusIndicator2.src}
+      alt=""
+      width={focusIndicator2.width}
+      height={focusIndicator2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="十分なコントラストのあるフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator3.src}
+      alt=""
+      width={focusIndicator3.width}
+      height={focusIndicator3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="背景色を用いて表現されたフォーカスインジケーター">
+    <img
+      slot="figure"
+      src={focusIndicator4.src}
+      alt=""
+      width={focusIndicator4.width}
+      height={focusIndicator4.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+詳細: [フォーカスインジケーター](https://lifull.github.io/accessibility-guidelines/design/)
+
+### リンクの判別 (レベル1)
+
+<Checkpoint title="インラインリンクには下線を引いたり一貫したアイコンを添えたりしてリンクとわかるようにする" />
+
+
+
+
+
+本文のような複数行にわたるテキストブロックに含まれるインラインリンクは、リンクとしての手がかりを備えていないと、特にロービジョンや認知障害のあるユーザーは見逃してしまうかもしれません。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：判別できるリンク
+  </div>
+  <Case type="bad" title="リンクを示すのに色だけを使用する">
+    <img
+      slot="figure"
+      src={linkIdentification.src}
+      alt=""
+      width={linkIdentification.width}
+      height={linkIdentification.height}
+      loading="lazy"
+      decoding="async"
+    />
+    本文中の一部のテキストがリンクのため青色で表現されている。
+  </Case>
+  <Case type="good" title="リンクを示すのに色と下線を使用する">
+    <img
+      slot="figure"
+      src={linkIdentification2.src}
+      alt=""
+      width={linkIdentification2.width}
+      height={linkIdentification2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    リンク色のほか下線をつかってリンクであることが表現されている。
+  </Case>
+</Cases>
+
+詳細: [リンクの判別](https://lifull.github.io/accessibility-guidelines/design/)
+
+### 状態の判別 (レベル1)
+
+<Checkpoint title="UIが状態を表現するとき、テキストや形状の変化で状態を判別できるようにする" />
+
+
+
+
+
+フォーカス・選択・ホバー・押下・展開・チェックなど、状態をもつUIコンポーネントは、状態の変化を視覚的に判別できるようにしてください。色に変化を持たせるだけでなく、色以外の手がかり（テキストや形状）を変化させることで状態を表現するようにしてください。ホバーのように状態の変化が装飾的なものであれば、テキストや形状の変化は必要ではありません。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：状態が判別できるUIコンポーネント
+  </div>
+  <Case type="good" title="押下状態がアイコンの変化でわかる">
+    <img
+      slot="figure"
+      src={stateIdentification.src}
+      alt="再生アイコンと一時停止アイコン、白抜きと塗りのお気に入りアイコン"
+      width={stateIdentification.width}
+      height={stateIdentification.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="チェック状態がアイコンの変化でわかる">
+    <img
+      slot="figure"
+      src={stateIdentification2.src}
+      alt="白抜きのアイコンとチェック付きのアイコン"
+      width={stateIdentification2.width}
+      height={stateIdentification2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="展開状態がアイコンの変化でわかる">
+    <img
+      slot="figure"
+      src={stateIdentification3.src}
+      alt="下向きと上向きの矢印アイコン"
+      width={stateIdentification3.width}
+      height={stateIdentification3.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="フォーカス状態が枠線の変化でわかる">
+    <img
+      slot="figure"
+      src={stateIdentification4.src}
+      alt="フォーカスインジケーター無しボタンと有りボタン"
+      width={stateIdentification4.width}
+      height={stateIdentification4.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="選択状態が塗りの変化でわかる">
+    <img
+      slot="figure"
+      src={stateIdentification5.src}
+      alt="タブの並び、最初のタブが塗られている"
+      width={stateIdentification5.width}
+      height={stateIdentification5.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+詳細: [状態の判別](https://lifull.github.io/accessibility-guidelines/design/)
+
+### レスポンシブデザイン (レベル2)
+
+<Checkpoint title="コンテンツ幅やレイアウトがビューポートの幅に応じるようにレスポンシブデザインを採用する"/>
+
+
+
+
+
+レスポンシブデザインはブラウザービューポートサイズの変動にレイアウトが応じるため、ズーム時にも横スクロールを必要とせずコンテンツを利用できます。
+
+詳細: [レスポンシブデザイン](https://lifull.github.io/accessibility-guidelines/design/)
+
+### ターゲットサイズ (レベル2)
+
+<Checkpoint title="リンク、ボタン、フォームコントロール等のポインター操作を受け付けるコンポーネントは、24px四方以上のサイズを確保する"/>
+
+
+
+
+
+小さすぎるターゲットは、タッチ操作するユーザーや細かい操作を苦手とするユーザーにとって使いにくいことがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ターゲットサイズ
+  </div>
+  <Case span={2} type="bad" title="不十分なターゲットサイズ">
+    <img
+      slot="figure"
+      src={targetSize.src}
+      alt="20pxのターゲットサイズをもつアイコンボタンが2つ間隔なしで並んでいるイラスト"
+      width={targetSize.width}
+      height={targetSize.height}
+      loading="lazy"
+      decoding="async"
+    />
+    ターゲットサイズが24px未満であり、隣接するコンポーネントとの間隔も確保されていない。
+  </Case>
+  <Case span={2} type="good" title="十分なターゲットサイズ">
+    <img
+      slot="figure"
+      src={targetSize2.src}
+      alt="44pxと24pxのターゲットサイズを持つアイコンボタンが2つずつ間隔なしで並んでいるイラストと、20pxのターゲットサイズを持つアイコンボタンが2つ4pxの間隔で並んでいるイラスト"
+      width={targetSize2.width}
+      height={targetSize2.height}
+      loading="lazy"
+      decoding="async"
+    />
+    ターゲットサイズを24px以上以上とする。ターゲットサイズが24px未満となる場合は、ターゲットサイズと隣接するコンポーネントとの間隔を足し合わせた値が24px以上になるようにする。
+  </Case>
+</Cases>
+
+詳細: [ターゲットサイズ](https://lifull.github.io/accessibility-guidelines/design/)
+
+### テキストの色コントラスト (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">記事本文など読みやすさが重要なテキストはAPCA 75以上の色コントラストを確保する</span>
+
+
+<Checkpoint title="記事本文以外の通常のテキストはAPCA 60以上の色コントラストを確保する" />
+
+<Checkpoint title="見出しなど大きいサイズのテキストはAPCA 45以上の色コントラストを確保する" />
+
+
+
+
+
+テキストの読みやすさには色のコントラストが重要です。特にロービジョンのユーザーには十分なコントラストが必要です。
+
+<Details summary="APCAとは">
+  APCA (Accessible Perceptual Contrast Algorithm) は2色のコントラスト比の計算アルゴリズムおよび評価手法です。WCAG 2.1で使われているコントラスト比計算の問題を解消するため開発されました。人間の知覚特性を加味した評価値を算出できることが特徴です。現在パブリックベータ版で、WCAGの次期バージョンにて取り入れられることが検討されています。
+</Details>
+
+<Details summary="LIFULLブランドカラー（#ED6103）について">
+  白背景とLIFULLオレンジの文字色の組み合わせをAPCAでコントラストを計算すると59.7となりAPCA 60を満たしません。これを取りざたして問題視する必要はありません。ただし、文字色はそのままに、白でない色を背景にする場合、コントラストを確保するために文字の色を見直すことを推奨します。
+</Details>
+
+詳細: [テキストの色コントラスト](https://lifull.github.io/accessibility-guidelines/design/)
+
+### テキストの均等割付 (レベル2)
+
+<Checkpoint title="複数行にわたるテキストを均等割り付けにせず、左寄せもしくは右寄せにする"/>
+
+
+
+
+
+特定の認知障害のあるユーザーは、均等割付されたテキストを読むことに苦労することがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：フォームコントロールのラベル
+  </div>
+  <Case type="bad" title="均等割付する">
+    <img
+      slot="figure"
+      src={textJustify.src}
+      alt=""
+      width={textJustify.width}
+      height={textJustify.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+  <Case type="good" title="均等割付しない">
+    <img
+      slot="figure"
+      src={textJustify2.src}
+      alt=""
+      width={textJustify2.width}
+      height={textJustify2.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </Case>
+</Cases>
+
+詳細: [テキストの均等割付](https://lifull.github.io/accessibility-guidelines/design/)
+
+### アイコンやUIコンポーネントの色コントラスト (レベル2)
+
+<p>
+    <img
+      src={uiContrast.src}
+      alt=""
+      width={uiContrast.width}
+      height={uiContrast.height}
+      loading="lazy"
+      decoding="async"
+    />
+  </p>
+
+  上記例では、白地`#FFFFFF`に対して`#AAAAAA`(Lc 45.8)、グレー地`#D9D9D9`に対して`#7F7F7F`(Lc 45.1)を確保しています。
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">必要とされた視覚的要素を、周囲の色に対してAPCA 45以上の色コントラストを確保する</span>
+
+
+
+
+
+
+フォームコントロールなどのユーザーが操作するUIコンポーネントや、アイコンやグラフなどの情報を持つグラフィックは、情報・機能・状態を判別し操作するために、充分なコントラストが必要です。
+
+ただし、UIコンポーネントがアクティブではないときはコントラストの確保は不要です。
+
+詳細: [アイコンやUIコンポーネントの色コントラスト](https://lifull.github.io/accessibility-guidelines/design/ui)
+
+## 実装のガイドライン
+
+### 背景画像 (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">情報を伝えている画像には`img`要素を使い、代替テキストを設定する</span>
+
+
+
+
+
+
+情報を伝えている画像を CSS で背景画像として設定すると、テキストから情報を得ているユーザーに情報が伝わらなくなってしまいます。背景画像には代替テキストが設定できません。また背景画像は印刷に表示されません。
+
+詳細: [背景画像](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 見出し (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">設計資料に従い、階層構造の深さに応じた見出し要素（`h1`～`h6`）を使って見出しをマークアップする</span>
+
+
+
+
+
+
+ページの情報構造を見出しを使って整理すると、ユーザーが情報を素早く把握できるようになります。特に、スクリーンリーダーの利用者は見出しを拾い読み<sup>※</sup>することでページの全体構造を把握しています。
+
+詳細: [見出し](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 画像の代替テキスト (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">`img`要素に代替テキストを指定するために`alt`属性を使用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">`img`要素を装飾画像とするために空の`alt`属性を使用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">`svg`要素やアイコンフォントに代替テキストを指定するために`role="img"`と`aria-label`属性を使用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">`svg`要素やアイコンフォントを装飾画像とするために`aria-hidden="true"`を使用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">イメージマップの`area`要素に代替テキストを指定するために`alt`属性を使用する</span>
+
+
+
+
+
+
+画像やアイコンなどの非テキストコンテンツには、適した手段で代替テキストを指定してください。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例① 意味のある画像
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img src="homes-logo.svg" alt="LIFULL HOME'S" width="300" height="100" />
+      ```
+    </div>
+    <span slot="title">`alt`属性を使用する</span>
+    <span>意味のある`img`要素に代替テキストを指定するために`alt`属性を使用する。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <button type="button">
+        <svg viewBox="0 0 64 64" role="img" aria-label="メニュー">…</svg>
+      </button>
+      ```
+    </div>
+    <span slot="title">`role="img"`と`aria-label`属性を使用する</span>
+    <span>`svg`要素に代替テキストを指定するために`role="img"`と`aria-label`属性を使用する。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <button type="button">
+        <span class="fa-solid fa-info" role="img" aria-label="情報"></span>
+      </button>
+      ```
+    </div>
+    <span slot="title">`role="img"`と`aria-label`属性を使用する</span>
+    <span>アイコンが描画される要素に代替テキストを指定するために`role="img"`と`aria-label`属性を使用する。</span>
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例② 装飾的な画像
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img src="homes-kun.png" alt="" width="75" height="50" />
+      ```
+    </div>
+    <span slot="title">空の`alt`属性を使用する</span>
+    <span>`img`要素を装飾画像とするために空の`alt`属性を使用する。`alt`属性値そのものを省略すると、環境によって読み上げられ方が定まらない。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <button type="button">
+        <span class="fa-brands fa-twitter" aria-hidden="true"></span>
+        ツイートする
+      </button>
+      ```
+    </div>
+    <span slot="title">`aria-hidden="true"`を使用する</span>
+    <span>`svg`要素やアイコンフォントを装飾画像とするために`aria-hidden="true"`を使用する。</span>
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例③ イメージマップ
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <img src="nihon-chizu.png" alt="日本地図" width="500" height="500" usemap="#map" />
+      <map id="map">
+        <area
+          shape="poly"
+          coords="476,31,492,25,540,85,587,84,590,122,523,161,431,190,427,145,484,91,485,62"
+          href="#hokkaido"
+          alt="北海道"
+        />
+        …
+      </map>
+      ```
+    </div>
+    <span slot="title">`area`要素に`alt`属性を使用する</span>
+    <span>イメージマップの`area`要素に代替テキストを指定するために`alt`属性を使用する。</span>
+  </Case>
+</Cases>
+
+##### 前工程で代替テキストが指定されなかった場合の対応
+
+代替テキストはコンテンツの一部であるため、コンテンツ設計やデザインの段階で決められることが理想です。実装段階で代替テキストが決定していない場合、代替テキスト案を書き、コンテンツオーナーと相談してください。
+
+- altディシジョンツリーに沿って画像のタイプを判別する
+- 画像が装飾的な画像ではない場合、代替テキストの考え方を参考に代替テキスト案を書き、コンテンツオーナーと相談する
+- 画像が複雑な情報を含みかつ本文やキャプションに同等の情報が含まれていなかったら、本文やキャプションに説明テキストを表示できないかどうかコンテンツオーナーと相談する
+
+詳細: [画像の代替テキスト](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ページの言語 (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">`html`要素に`lang`属性を使ってページ言語を明示する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">部分的に別の言語のテキストが挿入される場合、その部分を囲む要素に`lang`属性を使って言語を明示する</span>
+
+
+
+
+
+
+lang 属性を使うとページの全体や一部分に対して書かれている言語を明示することができます。機械がこれを読み取ることでテキストを適切に処理できるようになります。
+
+詳細: [ページの言語](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ページタイトル (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">設計資料に記載されたタイトルを`title`要素に指定する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">設計資料にタイトルが記載されていない場合、サイト内で一意になるタイトル案を作成し、コンテンツオーナーと相談する</span>
+
+
+
+
+
+
+ページタイトルはブラウザーのタブや検索結果に表示されたり、スクリーンリーダーによって読み上げられます。ページの内容を把握するための重要な手がかりとしてページタイトルは重要です。
+
+詳細: [ページタイトル](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 調整可能な文字サイズ (レベル2)
+
+<Checkpoint title="ユーザー設定を反映できるようにルート要素への相対（rem）単位で文字サイズを指定する" />
+
+
+
+
+
+ユーザーの視力や認知特性に合わせるために、ブラウザーのデフォルトの文字サイズを大きく設定しているユーザーがいます。ウェブサイトが文字サイズをpx単位で指定していると、ブラウザーの文字サイズの設定が無視されてしまいます。
+
+詳細: [調整可能な文字サイズ](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### グループ化された画像 (レベル2)
+
+<Checkpoint title="グループ化された画像に代替テキストを設定する" />
+
+
+
+
+
+複数の画像の並びがひとまとまりの情報を表現する場合、個別の画像に代替テキストを設定すると理解が難しくなる場合があります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：評価メーター
+  </div>
+  <Case span={2} type="bad" title="個別の画像に代替テキストを設定する">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span>
+        <img src="star-full.png" alt="星1">
+        <img src="star-full.png" alt="星1">
+        <img src="star-full.png" alt="星1">
+        <img src="star-half.png" alt="星0.5">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    連続して読み上げると「星1星1星1星0.5」となり、伝えたい情報が伝わらない。
+  </Case>
+  <Case span={2} type="good" title="先頭の画像に代替テキストを設定する">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span>
+        <img src="star-full.png" alt="5つ星のうち3.5">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-half.png" alt="">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    先頭の画像に数値の情報をまとめて設定し、残りの画像には空の文字列を設定する（＝装飾画像とする）ことで、数値の情報を伝えられる。
+  </Case>
+  <Case span={2} type="good" title="画像の並びをひとまとまりの画像として扱う">
+    <div slot="figure">
+      ```html
+      カスタマーレビュー
+      <span role="img" aria-label="5つ星のうち3.5">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-full.png" alt="">
+        <img src="star-half.png" alt="">
+        <img src="star-blank.png" alt="">
+      </span>
+      ```
+    </div>
+    `role="img"`属性を使用し、その要素をひとまとまりの画像として扱う。
+  </Case>
+</Cases>
+
+詳細: [グループ化された画像](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ランドマーク領域 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">サイト共通ヘッダーを`header`要素を使ってマークアップする</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">サイト共通フッターを`footer`要素を使ってマークアップする</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">ヘッダー、フッターを除く領域を`main`要素を使ってマークアップする</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">パンくずナビゲーションを`nav`要素を使ってマークアップする</span>
+
+
+
+
+
+
+ページの主たる領域をランドマークとしてマークアップすると、スクリーンリーダー利用者の使い勝手を向上させることができます。
+
+詳細: [ランドマーク領域](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 意味のある順序 (レベル2)
+
+<Checkpoint title="意味の通る順序でコンテンツをマークアップし、スタイルシートでレイアウトする" />
+
+
+
+
+
+スクリーンリーダー等の支援技術は、DOM上の要素順に従ってコンテンツを読み上げます。スタイルシートやスクリプトを使ってレイアウトを調整していると、視覚的な順序と意味順序、読み上げの順序がバラバラになってしまうことがあり、混乱を招くかもしれません。
+
+原則として、スタイルシートを無効化しても意味の通る順序でマークアップし、スタイルシートでレイアウトを実現するようにしてください。これによって視覚的な順序と読み上げの順序が一致しなくなり、支援技術による利用が著しく阻害されると思われる場合、デザイナーと話し合ってみてください。
+
+詳細: [意味のある順序](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 改行と空白文字 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">単語内の文字間隔を制御するために、CSS の`letter-spacing`を使用する</span>
+
+
+
+
+
+
+ゆったりとした文字間隔を実現するためにスペース文字を文字間に挿入すると、スクリーンリーダーは語句を適切に検出できなくなり、うまく読み上げられなくなってしまいます。
+
+詳細: [改行と空白文字](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 正しい構文と文法 (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">仕様に準拠したHTMLやCSSを記述する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">HTMLの構文と文法をチェックするためにNu Html Checkerを使用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">CSSの構文と文法をチェックするためにThe W3C CSS Validation Serviceを使用する</span>
+
+
+
+
+
+
+仕様に定められた構文と文法に準拠して HTML や CSS を記述することで、将来のウェブ技術の拡張や新しいユーザーエージェントに対して堅牢になります。
+
+詳細: [正しい構文と文法](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### フォームコントロールのラベル (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">`label`要素をつかってフォームコントロールとラベルを関連付ける</span>
+
+
+
+
+
+
+テキスト入力欄やチェックボックス、`select`要素など、HTMLに定義されているユーザーの入力を受け付ける要素（フォームコントロール）は全て名前を持つ必要があります。名前は、スクリーンリーダー利用者がフォームコントロールにフォーカスを合わせたときに読み上げられます。
+
+`label`要素を使うと、フォームコントロールに名前を付けられると同時にクリックやタップで選択できる範囲が広がるため、ユーザビリティ面にもメリットがあります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：テキスト入力欄
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        お名前
+        <input type="text" name="full-name" />
+      </label>
+      ```
+    </div>
+    <span slot="title">ラベルとテキスト入力欄を一つの`label`要素に含める</span>
+    <span>ラベルと入力欄を`label`要素で囲むと、入力欄の名前が「お名前」に設定されます。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label for="full-name">お名前</label>
+      <input id="full-name" type="text" name="full-name" />
+      ```
+    </div>
+    <span slot="title">テキスト入力欄に`id`を付与し、`label`要素の`for`属性で参照する</span>
+    <span>テキスト入力欄に`id`を付与し、`label`要素の`for`属性で参照することで、入力欄の名前が「お名前」に設定されます。ラベルとコントロールを隣同士に置けない場合などに便利です。</span>
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：チェックボックス
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        <input type="checkbox" name="receive-email" value="1" />
+        メールを受取る
+      </label>
+      ```
+    </div>
+    <span slot="title">チェックボックスとラベルを一つの`label`要素に含める</span>
+    <span>チェックボックスラベルを`label`要素で囲むと、チェックボックスの名前が「メールを受取る」に設定されます。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <input id="receive-email" type="checkbox" name="receive-email" value="1" />
+      <label for="receive-email">メールを受取る</label>
+      ```
+    </div>
+    <span slot="title">チェックボックスに`id`を付与し、`label`要素の`for`属性で参照する</span>
+    <span>チェックボックスに`id`を付与し、`label`要素の`for`属性で参照することで、チェックボックスの名前が「メールを受取る」に設定されます。ラベルとコントロールを隣同士に置けない場合などに便利です。</span>
+  </Case>
+</Cases>
+
+詳細: [フォームコントロールのラベル](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ラベルのないコントロール (レベル1)
+
+<Checkpoint>
+  {/* prettier-ignore */}
+  <span slot="title">`aria-labelledby`属性もしくは`aria-label`属性をつかってフォームコントロールに名前を指定する</span>
+
+
+
+
+
+
+デザイン上の理由でフォームコントロールのラベルが画面上から省略されている場合でも、フォームコントロールは名前を持つ必要があります。
+
+ラベルのないコントロールに名前を付ける方法は2通りあります。`aria-labelledby`を使うと、ページ中の任意の要素のテキストをコントロールの名前として使用できます。`aria-label`属性はコントロールに直接名前を指定できます。
+
+`aria-labelledby`属性を優先して使用するようにしてください。`aria-label`属性は利用状況によってはうまく機能しません。たとえばウェブページを機械翻訳にかけたときに翻訳されない場合があります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：ラベルのない検索フィールド
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <form>
+        <span id="hidden-label" style="display: none">検索キーワード</span>
+        <input type="search" aria-labelledby="hidden-label" />
+        <button type="submit">検索</button>
+      </form>
+      ```
+    </div>
+    <span slot="title">`aria-labelledby`属性を使用する</span>
+    <span>コントロールに`aria-labelledby`属性を付与し、コントロールの名前を含む要素（不可視でも構わない）の`id`を指定する。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <form>
+        <input type="search" aria-label="検索キーワード" />
+        <button type="submit">検索</button>
+      </form>
+      ```
+    </div>
+    <span slot="title">`aria-label`属性を使用する</span>
+    <span>`aria-label`属性を使用し、コントロールに名前を直接指定する。</span>
+  </Case>
+</Cases>
+
+詳細: [ラベルのないコントロール](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### コピー＆ペーストの許容 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">コピー＆ペーストを禁止しない</span>
+
+
+
+
+
+
+特定の認知障害を持つユーザーは、ユーザー名とパスワードの記憶に苦労することがあるため、コピー＆ペーストが禁止されているログインフォームなどが利用できないことがあります。
+
+詳細: [コピー＆ペーストの許容](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### フォームコントロールのグループ化 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">フォームコントロールをグルーピングするために`fieldset`要素を使用する</span>
+
+
+
+
+
+
+意味的にまとまりのある複数のフォームコントロールがある場合、それらをグループとしてマークアップしてください。スクリーンリーダーで当該フォームコントロールを操作するとき、所属するグループの名前も同時に読み上げられるようになり、文脈への理解が進みます。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例：性別の回答欄
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <fieldset>
+        <legend>性別</legend>
+        <p>
+          <label><input type="radio" name="gender" checked />未回答</label>
+          <label><input type="radio" name="gender" />男</label>
+          <label><input type="radio" name="gender" />女</label>
+        </p>
+      </fieldset>
+      ```
+    </div>
+    <span slot="title">`fieldset`要素で選択肢を囲う。</span>
+  </Case>
+</Cases>
+
+詳細: [フォームコントロールのグループ化](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 入力目的の特定 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">`type`属性と`autocomplete`属性を指定する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">数字キーボードを表示するために`inputmode`属性を使用する</span>
+
+
+
+
+
+
+`input`要素の`type`属性や`autocomplete`属性を使用して入力フィールドの目的を特定しておくと、目的に応じたソフトウェアキーボードが表示されたり、ブラウザーに保存された値の補完機能を利用できるようになったりします。
+
+補完機能を提供することで、入力時にかかる認知負荷を下げることができます。ログイン画面の入力項目のような記憶を要する場所に設定することは特に重要です。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：クレジットカード番号の入力欄
+  </div>
+  <Case span={2} type="bad">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="number" />
+      </label>
+      ```
+    </div>
+    <span slot="title">数字キーボードを表示するために`type="number"`を用いる</span>
+    <span>数字キーボードを表示する目的のために`type="number"`や`type="tel"`を用いるのは誤り。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="text" autocomplete="cc-number" />
+      </label>
+      ```
+    </div>
+    <span slot="title">補完種別を指定するために`autocomplete`属性を用いる。</span>
+  </Case>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <label>
+        カード番号
+        <input type="text" autocomplete="cc-number" inputmode="numeric" />
+      </label>
+      ```
+    </div>
+    <span slot="title">入力方式を指定するために`inputmode`を用いる。</span>
+  </Case>
+</Cases>
+
+詳細: [入力目的の特定](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### フォームコントロールの説明文 (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">`aria-describedby`属性をつかってフォームコントロールに説明文を指定する</span>
+
+
+
+
+
+
+フォームコントロールと説明文をプログラムが解釈できるように紐づけると、スクリーンリーダー利用者は、フォーカスをフォームコントロールから移動することなく説明の内容を取得できるようになります。
+
+<Cases>
+  <div slot="title">
+    ##### 具体例①：フォームコントロールの説明文
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <div class="form-group">
+        <label for="name">名前</label>
+        <p id="name-description">例）山田太郎</p>
+        <input id="name" aria-describedby="name-description" />
+      </div>
+      ```
+    </div>
+    <span slot="title">`aria-describedby`属性をつかってコントロールと説明文を紐づける</span>
+  </Case>
+</Cases>
+
+<Cases>
+  <div slot="title">
+    ##### 具体例②：フォームコントロールのエラー
+  </div>
+  <Case span={2} type="good">
+    <div slot="figure">
+      ```html
+      <div class="form-group">
+        <label for="name">名前</label>
+        <p id="name-description">例）山田太郎</p>
+        <p id="name-error">名前を入力してください。</p>
+        <input id="name" aria-describedby="name-description name-error" />
+      </div>
+      ```
+    </div>
+    <span slot="title">`aria-describedby`属性をつかってコントロールとエラーメッセージを紐づける</span>
+    <span>複数の`id`値をスペース区切りで指定することで、複数の要素にまたがる説明文およびエラーメッセージをコントロールに紐づけられる。</span>
+  </Case>
+</Cases>
+
+詳細: [フォームコントロールの説明文](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ズームの許容 (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">`viewport`メタデータに`user-scalable=no`や`maximum-scale`を指定しない</span>
+
+
+
+
+
+
+ロービジョンのユーザーを含む一部のユーザーにとっては、画面を任意の大きさにズームして表示できることは極めて重要です。そのような人にとって、ウェブサイトがズームを禁止しているとウェブサイトを利用できなくなることがあります。ズームされると大多数のユーザーに致命的な問題が起きない限り、ズームを許容してください。
+
+##### ヒント：入力フィールドにフォーカスしたときに画面がズームしないようにする
+
+iOS Safariにおいて、ユーザーが入力フィールドにフォーカスすると画面が自動的にズームすることがあります。入力フィールドの文字サイズを16px以上にすることでこの挙動を抑止できます。
+
+詳細: [ズームの許容](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### フォーカスインジケーター (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">フォーカスインジケーターを非表示にしない</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">フォーカスインジケーターを抑制するために`HTMLElement.blur()`を用いない</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">フォーカスを受け取ったUIが他の要素によって完全に隠されてはいけない</span>
+
+
+
+
+
+
+フォーカスインジケーターが不可視にされていると、キーボードユーザーはフォーカスの現在位置がわからず、操作を続けることができなくなってしまいます。
+
+また、フォーカスインジケーターを取り除くために`HTMLElement.blur()`を使用すると、フォーカス位置が失われ、キーボード操作を再度先頭からやり直さなければいけなくなってしまうかもしれません。
+
+##### ヒント：キーボード操作時だけフォーカスのスタイルを適用する
+
+`:focus`疑似クラスを使用すると、マウスやタッチ操作で選択したときにもスタイルが適用されます。キーボード操作時のみスタイルを適用したい場合、かわりに`:focus-visible`疑似クラスを使用します。
+
+##### ヒント：フォーカスを受け取ったUIが追従コンテンツによって隠されないようにする
+
+ページをTabキーで下に移動すると、フォーカスの当たった要素が表示領域に収まるようにスクロールを伴いますが、追従ヘッダ等がある場合、それによってフォーカスされたUIが隠れてしまうケースがあります。このような場合、`scroll-padding`プロパティを設定することで要素の重なりを回避することができます。
+
+##### ヒント：Cookieの利用同意を求めるモーダルダイアログにフォーカスを移動する
+
+Cookie利用同意のポップアップはしばしばダイアログとして実装され、ページの読み込み後すぐに表示されます。 このダイアログを背面と対話可能なモードレスダイアログとして実装すると、背面のUIがダイアログに完全に隠され、操作が困難になる可能性があります。この問題を回避するため、ダイアログはモーダルとして実装し、閉じるまでフォーカスが外側のコンテンツに移動しないようにすることが推奨されます。
+
+詳細: [フォーカスインジケーター](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 挿入されるコンテンツ (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">動的に追加・表示されるコンテンツのDOMノードをトリガーの直後に配置する</span>
+
+
+
+
+
+
+サブメニューやモーダルダイアログ、ディスクロージャー、「もっと見る」による追加読み込みなど、コンテンツが動的に追加・表示されるUIについて、そのコンテンツのDOMノードは操作の起点（トリガー）の直後になるようにしてください。トリガーの直後にコンテンツが挿入されることで、キーボードやスクリーンリーダーを使用したときに、トリガーの操作後に自然な流れで操作や読み上げを続けることができます。
+
+JavaScriptによってフォーカス位置を制御できる場合、このガイドラインは必須ではありません。
+
+詳細: [挿入されるコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ボタンの使用 (レベル1)
+
+{/* prettier-ignore */}
+  <span slot="title">トリガーとなるコンポーネントを`button`要素でマークアップする</span>
+
+
+
+
+
+
+ユーザーのクリックやタップを起点にしてインタラクションが発生する場合、他に適切な要素がなければ、トリガーの要素には`button`要素を使用してください。
+
+`button`要素はデフォルトでキーボードフォーカスを受け取り、スペースバーを含むキーボード操作によってクリックイベントを発生させることができます。`a`要素や`span`要素にJavaScriptでこれらの挙動を模倣して作るのは実装面・テスト面で大きなコストになりえます。
+
+##### ヒント：ボタンが持つデフォルトスタイルをリセットする
+
+```css
+button {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+  font-size: 100%;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: none;
+}
+```
+
+詳細: [ボタンの使用](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ホバーで表示されるコンテンツ (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">ホバーやフォーカスで表示されるコンテンツは明示的に閉じられるまで表示し続ける</span>
+
+
+
+
+
+
+ホバーやフォーカスがコンテンツ表示のトリガーとなっている場合、ユーザーによって明示的に閉じられるまでそのコンテンツを表示し続けてください。トリガーからポインターやフォーカスが外れた時点でコンテンツを非表示にしたり、時限式に閉じることは避けてください。
+
+明示的に閉じる操作とは例えば次のような操作です。
+
+- Escapeキーが押される
+- 表示されたコンテンツの中の閉じるボタンが選択される
+- トリガーとコンテンツの両方からポインターが外れ、0.5秒以上が経過する
+- トリガーとコンテンツとは無関係の場所がクリックされる
+
+詳細: [ホバーで表示されるコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### 文脈に応じたフォーカス (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">モーダルコンテンツを開いたとき、開かれたコンテンツにフォーカスを移動する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">モーダルコンテンツを閉じたとき、開くために使用したボタンにフォーカスを戻す</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">コンテンツを追加で読み込む操作をしたとき、読み込まれたコンテンツにフォーカスを移動する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">ページ内リンクを模したスクロール操作をしたとき、スクロール先にフォーカスを移動する</span>
+
+
+
+
+
+
+キーボードやスクリーンリーダーなどのシーケンシャルな操作体系の環境でスムーズに操作を行えるように、ユーザーの操作に応じた適切な位置にフォーカスを移動してください。
+
+詳細: [文脈に応じたフォーカス](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### Escapeキー操作 (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">Escapeキーでポップアップメニューやダイアログ、ツールチップを閉じられるようにする</span>
+
+
+
+
+
+
+Escapeキーは「現在のコンテキストから抜ける」ための慣習的に用いられているキー操作です。ポップアップメニューやダイアログ、ツールチップなど、一時的に、ほかのコンテンツより前面に表示されるコンテンツをEscapeキーで閉じられるようにしてください。
+
+詳細: [Escapeキー操作](https://lifull.github.io/accessibility-guidelines/impl/escape)
+
+### 外部コンテンツおよびUIライブラリ (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">iframeで埋め込まれる外部コンテンツがアクセシブルなことを確認する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">アクセシビリティに配慮された外部UIライブラリを採用する</span>
+
+
+
+
+
+
+アクセシビリティはページ全体として評価されるため、採用している外部のUIライブラリや、iframeとして埋め込んでいる外部コンテンツもアクセシビリティに配慮したつくりになっている必要があります。
+
+詳細: [外部コンテンツおよびUIライブラリ](https://lifull.github.io/accessibility-guidelines/impl/ui)
+
+### 隠されているコンテンツ (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">非表示コンテンツに`display: none`や`visibility: hidden`も併用する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">`display: none`や`visibility: hidden`が指定できない場合、非表示コンテンツに`aria-hidden="true"`を指定し、非表示コンテンツが含むインタラクティブ要素に`tabindex="-1"`を指定する</span>
+
+
+
+
+
+
+DOMツリー上には存在するものの非表示にされているコンテンツは、意図的にそうしていない限り、キーボードや支援技術からもアクセスできないようにしてください。
+
+キーボードや支援技術からもアクセスできてしまう非表示コンテンツとは、例えば次ような方法で非表示にしたコンテンツです。
+
+- `opacity`を`0`にする
+- `overflow: hidden`と`width`や`height`、`clip`を使ってコンテンツの一部分または全部を切り取る
+- `position`や`transform`などを使って画面外ないし親要素の範囲外に追いやる
+
+詳細: [隠されているコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### WAI-ARIA (レベル2)
+
+{/* prettier-ignore */}
+  <span slot="title">APGを参考に適切な役割、ステート、プロパティの値を設定する</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">APGを参考に適切なキーボードインタラクションを実装する</span>
+
+
+
+
+
+
+インタラクションを含むUIはHTMLのセマンティクスに加えてWAI-ARIAを実装することでアクセシビリティを高められることがあります。
+
+WAI-ARIAに定義された役割やステート、プロパティは、想定されていない使われ方をすると逆にアクセシビリティを損なうことがあります。使い方について不明瞭な箇所があれば、社内のエキスパートに相談してください。
+
+詳細: [WAI-ARIA](https://lifull.github.io/accessibility-guidelines/impl/wai-aria)
+
+### 背後のコンテンツ (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">背後に隠されたコンテンツにキーボードフォーカスを移せないようにする</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">背後に隠されたコンテンツを支援技術からも隠す</span>
+
+
+
+
+
+
+ダイアログなどのモーダルコンテンツが表示されているとき、背後に隠されたコンテンツはキーボードや支援技術からアクセスされないようにしてください。
+
+詳細: [背後のコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ダウンイベントの使用 (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">`mousedown`, `pointerdown`, `touchstart`を機能実行のトリガーにしない</span>
+
+
+
+
+
+
+ダウンイベント（`mousedown`, `pointerdown`, `touchstart`）を機能実行のトリガーにしていると、細かい動作が苦手なユーザーは意図せず機能を実行してしまうことがあります。かわりにアップイベント（`mouseup`, `pointerup`, `touchend`）や、`click`, `input`, `change`のような、より意図に近いイベントを用いるようにしてください。
+
+詳細: [ダウンイベントの使用](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ドラッグ操作の中断 (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">ドラッグ操作を中止できるようにする</span>
+
+
+
+
+
+
+UIがドラッグアンドドロップ操作を求めるとき、ドラッグの途中で操作を中止する手段を設けてください。中止する手段の例としては次のようなものがあります。
+
+- ドロップエリアは画面の中の一部分であり、それ以外の箇所にドロップしても何も起こらない
+- ドロップ操作をした後、簡単な操作で元に戻すことができる
+- ドラッグ中にEscapeキーを押すとドラッグ操作を中止できる
+
+詳細: [ドラッグ操作の中断](https://lifull.github.io/accessibility-guidelines/impl/)
+
+### ステータスの通知 (レベル3)
+
+{/* prettier-ignore */}
+  <span slot="title">ARIAライブリージョンを適切に使用し、状態変化や通知メッセージを支援技術に伝える</span>
+
+
+
+  {/* prettier-ignore */}
+  <span slot="title">スクリーンリーダーを使用して動作検証を行う</span>
+
+
+
+
+
+
+アプリケーションの状態変化や通知メッセージをUIに表示する場合、スクリーンリーダー等の支援技術にも同様の情報を伝える必要があります。WAI-ARIAのライブリージョンを使うことで実現可能です。
+
+詳細: [ステータスの通知](https://lifull.github.io/accessibility-guidelines/impl/)
+

@@ -1,0 +1,148 @@
+# LIFULL Accessibility Guidelines
+
+> アクセシビリティに配慮したデザインと実装のためのガイドライン
+
+This file contains accessibility guidelines for designers and developers.
+
+## metadata
+- url: https://lifull.github.io/accessibility-guidelines/
+- version: v3.0
+
+## デザインのガイドライン
+
+### [自動再生するコンテンツ](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [閃光](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [見出し](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [画像の代替テキスト](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [ページタイトル](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [動画の字幕](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [音声のみのコンテンツ](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [グラフや図](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [データ可視化](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [テキスト画像](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [表](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [動画コンテンツ（音声を含む）](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [リンクテキスト](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [コンテンツの順序](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [目次とサイトマップ](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [カスタムUIのキーボード操作](https://lifull.github.io/accessibility-guidelines/design/ui) (レベル1)
+
+### [定番のパターン](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [キーボード操作](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [ホバーで表示されるコンテンツ](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [エラーメッセージ](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [エラーメッセージの提示](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [フォームコントロールのラベル](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [シンプルなポインター操作](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [デバイスの向き](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [新しいタブで開くリンク](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [予測可能なパターン](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [時間制限](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [ユーザー認証](https://lifull.github.io/accessibility-guidelines/design/) (レベル3)
+
+### [フォーカスインジケーター](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [リンクの判別](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [状態の判別](https://lifull.github.io/accessibility-guidelines/design/) (レベル1)
+
+### [レスポンシブデザイン](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [ターゲットサイズ](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [テキストの色コントラスト](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [テキストの均等割付](https://lifull.github.io/accessibility-guidelines/design/) (レベル2)
+
+### [アイコンやUIコンポーネントの色コントラスト](https://lifull.github.io/accessibility-guidelines/design/ui) (レベル2)
+
+## 実装のガイドライン
+
+### [背景画像](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [見出し](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [画像の代替テキスト](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [ページの言語](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [ページタイトル](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [調整可能な文字サイズ](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [グループ化された画像](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [ランドマーク領域](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [意味のある順序](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [改行と空白文字](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [正しい構文と文法](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
+### [フォームコントロールのラベル](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [ラベルのないコントロール](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [コピー＆ペーストの許容](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [フォームコントロールのグループ化](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [入力目的の特定](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [フォームコントロールの説明文](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
+### [ズームの許容](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [フォーカスインジケーター](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [挿入されるコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [ボタンの使用](https://lifull.github.io/accessibility-guidelines/impl/) (レベル1)
+
+### [ホバーで表示されるコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [文脈に応じたフォーカス](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [Escapeキー操作](https://lifull.github.io/accessibility-guidelines/impl/escape) (レベル2)
+
+### [外部コンテンツおよびUIライブラリ](https://lifull.github.io/accessibility-guidelines/impl/ui) (レベル2)
+
+### [隠されているコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/) (レベル2)
+
+### [WAI-ARIA](https://lifull.github.io/accessibility-guidelines/impl/wai-aria) (レベル2)
+
+### [背後のコンテンツ](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
+### [ダウンイベントの使用](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
+### [ドラッグ操作の中断](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
+### [ステータスの通知](https://lifull.github.io/accessibility-guidelines/impl/) (レベル3)
+
