@@ -5,7 +5,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "generate-llms": "node ./scripts/generate-llms-txt.js"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^2.1.3",
